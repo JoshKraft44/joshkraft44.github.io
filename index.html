@@ -13,8 +13,8 @@
     }
 
     body {
-      background-color: #000;
-      color: #f4f4dc;
+      background-color: #fff;
+      color: #111;
       font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
       line-height: 1.6;
       padding: 2rem;
@@ -26,7 +26,7 @@
     }
 
     a:hover {
-      color: #a8a8a8;
+      color: #555;
     }
 
     /* Utility Classes */
@@ -41,11 +41,11 @@
     }
 
     .text-muted {
-      color: #888;
+      color: #666;
     }
 
     .hover-glow:hover {
-      box-shadow: 0 0 10px rgba(244, 244, 220, 0.2);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     /* Header */
@@ -60,7 +60,7 @@
 
     header .descriptors {
       font-size: 1.2rem;
-      color: #888;
+      color: #666;
     }
 
     header .social-links {
@@ -88,12 +88,12 @@
 
     #introduction em {
       font-style: normal;
-      color: #a8a8a8;
+      color: #555;
     }
 
     #introduction strong {
       font-weight: normal;
-      color: #f4f4dc;
+      color: #111;
     }
 
     /* Technologies Section */
@@ -104,19 +104,7 @@
     #technologies h2 {
       font-size: 1.5rem;
       margin-bottom: 1rem;
-      color: #888;
-    }
-
-    #technologies .tech-icons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
-
-    #technologies .tech-icons i {
-      font-size: 2rem;
-      color: #f4f4dc;
+      color: #666;
     }
 
     /* Projects Section */
@@ -127,7 +115,7 @@
     #projects h2 {
       font-size: 1.5rem;
       margin-bottom: 1rem;
-      color: #888;
+      color: #666;
     }
 
     #projects .project-grid {
@@ -137,16 +125,16 @@
     }
 
     #projects .project-card {
-      background-color: #111;
+      background-color: #f9f9f9;
       padding: 1.5rem;
-      border: 1px solid #333;
+      border: 1px solid #ddd;
       border-radius: 8px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     #projects .project-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(244, 244, 220, 0.1);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
     #projects .project-card h3 {
@@ -156,28 +144,28 @@
 
     #projects .project-card p {
       font-size: 0.9rem;
-      color: #888;
+      color: #666;
       margin-bottom: 1rem;
     }
 
     #projects .project-card .tech-stack {
       font-size: 0.8rem;
-      color: #555;
+      color: #888;
     }
 
     /* Footer */
     footer {
       margin-top: 4rem;
       text-align: center;
-      color: #888;
+      color: #666;
     }
 
     footer a {
-      color: #f4f4dc;
+      color: #111;
     }
 
     footer a:hover {
-      color: #a8a8a8;
+      color: #555;
     }
 
     /* Responsive Design */
@@ -210,7 +198,7 @@
       </div>
       <h1>Josh Kraft</h1>
       <div class="descriptors">
-        > student > builder > programmer
+        > student > entrepreneur > builder
       </div>
     </header>
 
@@ -223,22 +211,13 @@
 
     <!-- Technologies Section -->
     <section id="technologies">
-      <h2>&technologies</h2>
-      <p>I work with a variety of tools and technologies to bring ideas to life:</p>
-      <div class="tech-icons">
-        <i class="fab fa-js"></i>
-        <i class="fab fa-react"></i>
-        <i class="fab fa-python"></i>
-        <i class="fab fa-html5"></i>
-        <i class="fab fa-css3-alt"></i>
-        <i class="fab fa-git"></i>
-        <i class="fab fa-docker"></i>
-      </div>
+      <h2>technologies</h2>
+      <!-- Removed technology icons and text -->
     </section>
 
     <!-- Projects Section -->
     <section id="projects">
-      <h2>&main_projects</h2>
+      <h2>main_projects</h2>
       <div class="project-grid">
         <!-- Project 1 -->
         <div class="project-card hover-glow">
