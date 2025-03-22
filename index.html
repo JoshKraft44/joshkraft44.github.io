@@ -81,20 +81,34 @@
       text-align: left; /* Align left instead of center */
     }
 
-    #introduction p {
+    .intro {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .intro p {
       font-size: 1.1rem;
       max-width: 800px;
       margin: 0; /* Remove auto margin to align left */
     }
 
-    #introduction em {
+    .intro em {
       font-style: normal;
       color: #555;
     }
 
-    #introduction strong {
+    .intro strong {
       font-weight: normal;
       color: #111;
+    }
+
+    .profile-image {
+      max-width: 250px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-left: 2rem;
     }
 
     /* Projects Section */
@@ -180,6 +194,17 @@
       #projects .project-grid {
         grid-template-columns: 1fr;
       }
+
+      .intro {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .profile-image {
+        margin-left: 0;
+        margin-top: 1.5rem;
+        max-width: 100%;
+      }
     }
   </style>
   <!-- Font Awesome for Icons -->
@@ -201,9 +226,14 @@
 
     <!-- Introduction Section -->
     <section id="introduction">
-      <p>
-        I'm a <em>Computer Science</em> student at the <strong>University of Calgary</strong>, passionate about building <em>web applications</em> and exploring <em>systems thinking</em>. I love turning ideas into reality through code, design, and collaboration.
-      </p>
+      <div class="intro">
+        <div>
+          <p>
+            I'm a <em>Computer Science</em> student at the <strong>University of Calgary</strong>, passionate about building <em>web applications</em> and exploring <em>systems thinking</em>. I love turning ideas into reality through code, design, and collaboration.
+          </p>
+        </div>
+        <img src="assets/profile.jpg" alt="Photo of Josh Kraft" class="profile-image" />
+      </div>
     </section>
 
     <!-- Projects Section -->
