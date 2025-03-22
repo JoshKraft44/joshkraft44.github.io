@@ -1,74 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Josh Kraft</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Playfair+Display&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name - Portfolio</title>
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-  <div class="container">
-
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-text">
-        <h1>Josh Kraft</h1>
-        <h2>Builder • Coder • Collaborator</h2>
-        <p>I create projects with intention — blending code, design, and storytelling. This site is a reflection of how I think, work, and learn in public.</p>
-        <div class="socials">
-          <a href="#">LinkedIn</a>
-          <a href="#">GitHub</a>
-          <a href="#">Instagram</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <!-- optional: add a headshot or brand logo -->
-        <img src="assets/placeholder.png" alt="Josh Kraft">
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects">
-      <h3>Featured Projects</h3>
-
-      <div class="project-card">
-        <h4>Antler Addiction</h4>
-        <p class="description">
-          A small business I co-founded selling sustainably sourced deer antlers as pet chews and decor. Powered by Shopify and passion.
-        </p>
-        <div class="tech-stack">
-          <span>Shopify</span>
-          <span>Branding</span>
-          <span>Logistics</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h4>JoshKraft.ca</h4>
-        <p class="description">
-          A hand-built portfolio to showcase my work and growth as a developer. Built using GitHub Pages and custom CSS — no frameworks, no shortcuts.
-        </p>
-        <div class="tech-stack">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>GitHub</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h4>CancelCulture</h4>
-        <p class="description">
-          An upcoming app for planning spontaneous hangouts with close friends. Designed to make your social life more human, less group chat.
-        </p>
-        <div class="tech-stack">
-          <span>React Native</span>
-          <span>Firebase</span>
-          <span>Design</span>
-        </div>
-      </div>
-
-    </section>
-  </div>
+  <header>
+    <h1>Your Name</h1>
+    <p>Brief personal introduction goes here.</p>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <a href="projects/project1.html" class="project-item">
+        <h3>Project 1</h3>
+        <p>Brief description of Project 1.</p>
+      </a>
+      <!-- Repeat for other projects -->
+    </div>
+  </section>
+  <footer id="contact">
+    <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
+  </footer>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
