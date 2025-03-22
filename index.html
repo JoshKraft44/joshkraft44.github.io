@@ -78,12 +78,13 @@
     /* Introduction Section */
     #introduction {
       margin-bottom: 4rem;
+      text-align: left; /* Align left instead of center */
     }
 
     #introduction p {
       font-size: 1.1rem;
       max-width: 800px;
-      margin: 0 auto;
+      margin: 0; /* Remove auto margin to align left */
     }
 
     #introduction em {
@@ -94,17 +95,6 @@
     #introduction strong {
       font-weight: normal;
       color: #111;
-    }
-
-    /* Technologies Section */
-    #technologies {
-      margin-bottom: 4rem;
-    }
-
-    #technologies h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #666;
     }
 
     /* Projects Section */
@@ -130,6 +120,7 @@
       border: 1px solid #ddd;
       border-radius: 8px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative; /* For positioning the arrow */
     }
 
     #projects .project-card:hover {
@@ -140,6 +131,12 @@
     #projects .project-card h3 {
       font-size: 1.2rem;
       margin-bottom: 0.5rem;
+      display: inline-block; /* To position the arrow next to the title */
+    }
+
+    #projects .project-card:hover h3::after {
+      content: " →"; /* Add arrow on hover */
+      color: #555;
     }
 
     #projects .project-card p {
@@ -193,12 +190,12 @@
     <!-- Header -->
     <header>
       <div class="social-links">
-        <a href="https://github.com/joshkraft" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/joshkraft" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/joshkraft44" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/josh-kraft" target="_blank"><i class="fab fa-linkedin"></i></a>
       </div>
       <h1>Josh Kraft</h1>
       <div class="descriptors">
-        > student > entrepreneur > builder
+        > student > entrepreneur > programmer
       </div>
     </header>
 
@@ -209,34 +206,31 @@
       </p>
     </section>
 
-    <!-- Technologies Section -->
-    <section id="technologies">
-      <h2>technologies</h2>
-      <!-- Removed technology icons and text -->
-    </section>
-
     <!-- Projects Section -->
     <section id="projects">
-      <h2>main_projects</h2>
+      <h2>Main Projects</h2>
       <div class="project-grid">
-        <!-- Project 1 -->
-        <div class="project-card hover-glow">
+        <!-- Project 1: Antler Addiction -->
+        <a href="#" class="project-card hover-glow"> <!-- Replace # with actual link -->
           <h3>"Antler Addiction"</h3>
-          <p>A web app for tracking and analyzing wildlife data, built with React and Node.js.</p>
-          <div class="tech-stack">// React, Node.js, MongoDB</div>
-        </div>
-        <!-- Project 2 -->
-        <div class="project-card hover-glow">
-          <h3>"Social Organizer"</h3>
-          <p>An app for organizing social gatherings with friends, built with Flutter and Firebase.</p>
-          <div class="tech-stack">// Flutter, Firebase</div>
-        </div>
-        <!-- Project 3 -->
-        <div class="project-card hover-glow">
+          <p>
+            A sustainable business selling naturally shed deer antlers for home décor and pet chews, with hundreds of orders shipped worldwide and a 5.0-star rating from over 200 customers.
+          </p>
+        </a>
+        <!-- Project 2: Cancel Culture -->
+        <a href="#" class="project-card hover-glow"> <!-- Replace # with actual link -->
+          <h3>"Cancel Culture"</h3>
+          <p>
+            An iOS app in progress designed to keep friends accountable to making plans and not canceling them, with features like local attractions and bill splitting.
+          </p>
+        </a>
+        <!-- Project 3: Portfolio Website -->
+        <a href="#" class="project-card hover-glow"> <!-- Replace # with actual link -->
           <h3>"Portfolio Website"</h3>
-          <p>This website itself, built with HTML, CSS, and a touch of creativity.</p>
-          <div class="tech-stack">// HTML, CSS</div>
-        </div>
+          <p>
+            This website itself, built with HTML, CSS, and a touch of creativity.
+          </p>
+        </a>
       </div>
     </section>
 
@@ -244,9 +238,9 @@
     <footer>
       <p>&copy; 2023 Josh Kraft</p>
       <p>
-        <a href="mailto:josh@example.com">josh@example.com</a> | 
-        <a href="https://github.com/joshkraft" target="_blank">GitHub</a> | 
-        <a href="https://linkedin.com/in/joshkraft" target="_blank">LinkedIn</a>
+        <a href="mailto:joshua.kraft@ucalgary.ca">joshua.kraft@ucalgary.ca</a> | 
+        <a href="https://github.com/joshkraft44" target="_blank">GitHub</a> | 
+        <a href="https://linkedin.com/in/josh-kraft" target="_blank">LinkedIn</a>
       </p>
     </footer>
   </div>
