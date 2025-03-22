@@ -5,40 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Josh Kraft</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Josh Kraft</h1>
-    <p>Developer. Builder. Curious Human.</p>
-    <div class="socials">
-      <a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
-      <a href="https://www.instagram.com/your-profile" target="_blank">Instagram</a>
-      <!-- Add GitHub, email, etc -->
-    </div>
-  </header>
+  <div class="container">
 
-  <section class="projects">
-    <div class="project-card">
-      <p class="visibility">public</p>
-      <h2>"Antler Addiction"</h2>
-      <p class="description">A small business turning sustainably sourced deer antlers into pet chews and decor. Built with Shopify + Etsy integrations.</p>
-      <p class="tech">Shopify, Branding, Fulfillment</p>
-    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Josh Kraft</h1>
+        <h2>Builder • Coder • Collaborator</h2>
+        <p>I create projects with intention — blending code, design, and storytelling. This site is a reflection of how I think, work, and learn in public.</p>
+        <div class="socials">
+          <a href="#">LinkedIn</a>
+          <a href="#">GitHub</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <!-- optional: add a headshot or brand logo -->
+        <img src="assets/placeholder.png" alt="Josh Kraft">
+      </div>
+    </section>
 
-    <div class="project-card">
-      <p class="visibility">public</p>
-      <h2>"This Website"</h2>
-      <p class="description">A portfolio site hand-coded as a learning journey. Hosted via GitHub Pages, styled from scratch, and built to scale.</p>
-      <p class="tech">HTML, CSS, GitHub Pages</p>
-    </div>
+    <!-- Projects Section -->
+    <section class="projects">
+      <h3>Featured Projects</h3>
 
-    <div class="project-card">
-      <p class="visibility">public</p>
-      <h2>"CloseCircle"</h2>
-      <p class="description">A social planning app (in development) to coordinate small get-togethers with friends, keeping social lives spontaneous and intimate.</p>
-      <p class="tech">Planned: React Native, Firebase</p>
-    </div>
-  </section>
+      <div class="project-card">
+        <div class="card-header">
+          <span class="visibility">public</span>
+          <h4>"Antler Addiction"</h4>
+        </div>
+        <p class="description">
+          A small business I co-founded selling sustainably sourced deer antlers as pet chews and decor. Powered by Shopify and passion.
+        </p>
+        <div class="tech-stack">
+          <span>Shopify</span>
+          <span>Branding</span>
+          <span>Logistics</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="card-header">
+          <span class="visibility">public</span>
+          <h4>"This Site"</h4>
+        </div>
+        <p class="description">
+          A hand-built portfolio to showcase my work and growth as a developer. Built using GitHub Pages and custom CSS — no frameworks, no shortcuts.
+        </p>
+        <div class="tech-stack">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>GitHub</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="card-header">
+          <span class="visibility">public</span>
+          <h4>"CloseCircle"</h4>
+        </div>
+        <p class="description">
+          An upcoming app for planning spontaneous hangouts with close friends. Designed to make your social life more human, less group chat.
+        </p>
+        <div class="tech-stack">
+          <span>React Native</span>
+          <span>Firebase</span>
+          <span>Design</span>
+        </div>
+      </div>
+
+    </section>
+  </div>
 </body>
 </html>
-

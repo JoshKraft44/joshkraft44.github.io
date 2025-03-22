@@ -1,50 +1,122 @@
 body {
-    font-family: monospace;
-    background: #0d0d0d;
-    color: #f5f5f5;
-    margin: 0;
-    padding: 2rem;
-  }
-  
-  header {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  
-  .socials a {
-    margin: 0 0.5rem;
-    color: #999;
-    text-decoration: none;
-    font-size: 0.9rem;
-  }
-  
-  .projects {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .project-card {
-    border-left: 3px solid red;
-    padding-left: 1rem;
-    background: #1a1a1a;
-    padding: 1rem;
-    border-radius: 6px;
-    transition: background 0.3s ease;
-  }
-  
-  .project-card:hover {
-    background: #2a2a2a;
-  }
-  
-  .project-card h2 {
-    color: #bada55;
-  }
-  
-  .project-card .tech {
-    font-size: 0.85rem;
-    color: #aaa;
-  }
-  
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f7f7f7;
+  color: #1a1a1a;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+}
+
+.hero-text h2 {
+  font-weight: 300;
+  margin: 0.5rem 0 1rem;
+}
+
+.hero-text p {
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.socials a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.socials a:hover {
+  color: #000;
+}
+
+.hero-image img {
+  max-width: 250px;
+  border-radius: 12px;
+  opacity: 0.9;
+}
+
+/* Projects Section */
+.projects {
+  margin-top: 4rem;
+}
+
+.projects h3 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.project-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-header .visibility {
+  font-size: 0.85rem;
+  color: crimson;
+  font-family: monospace;
+}
+
+.card-header h4 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.project-card .description {
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.tech-stack {
+  margin-top: 1rem;
+}
+
+.tech-stack span {
+  display: inline-block;
+  font-size: 0.75rem;
+  background: #eee;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  color: #444;
+}
