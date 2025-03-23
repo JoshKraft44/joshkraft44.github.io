@@ -51,6 +51,7 @@
     /* Header */
     header {
       margin-bottom: 4rem;
+      position: relative; /* For overlapping the image */
     }
 
     header h1 {
@@ -79,13 +80,15 @@
     #introduction {
       margin-bottom: 4rem;
       text-align: left; /* Align left instead of center */
+      position: relative; /* For overlapping the image */
     }
 
     .intro {
       display: flex;
       flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
+      align-items: flex-start; /* Align items to the top */
+      justify-content: flex-start;
+      gap: 2rem; /* Added gap for spacing */
     }
 
     .intro p {
@@ -108,7 +111,8 @@
       max-width: 250px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      margin-left: 4rem; /* Increased margin for more whitespace */
+      margin-left: 15; /* No left margin */
+      margin-top: -7rem; /* Shift the image upward */
     }
 
     /* Projects Section */
@@ -198,11 +202,11 @@
       .intro {
         flex-direction: column;
         align-items: flex-start;
+        gap: 1.5rem; /* Adjusted gap for mobile */
       }
 
       .profile-image {
-        margin-left: 0;
-        margin-top: 1.5rem;
+        margin-top: 0; /* Reset margin for mobile */
         max-width: 100%;
       }
     }
@@ -229,10 +233,11 @@
       <div class="intro">
         <div>
           <p>
-            I'm a <em>Computer Science</em> student at the <strong>University of Calgary</strong>, passionate about building <em>web applications</em> and exploring <em>systems thinking</em>. I love turning ideas into reality through code, design, and collaboration.
+            <p>
+              I'm a <em>Computer Science</em> student at the <strong>University of Calgary</strong>. I care deeply about <em>self-improvement</em> and <em>entrepreneurship</em>, and I enjoy the process of taking ideas from rough concepts to polished, intentional work.
           </p>
         </div>
-        <img src="assets/profile.jpg" alt="Photo of Josh Kraft" class="profile-image" />
+        <img src="assets/profile.JPG" alt="Photo of Me" class="profile-image" />
       </div>
     </section>
 
@@ -266,7 +271,7 @@
 
     <!-- Footer -->
     <footer>
-      <p>&copy; 2023 Josh Kraft</p>
+      <p>&copy; 2024 Josh Kraft</p>
       <p>
         <a href="mailto:joshua.kraft@ucalgary.ca">joshua.kraft@ucalgary.ca</a> | 
         <a href="https://github.com/joshkraft44" target="_blank">GitHub</a> | 
