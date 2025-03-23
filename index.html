@@ -51,6 +51,7 @@
     /* Header */
     header {
       margin-bottom: 4rem;
+      position: relative; /* For overlapping the image */
     }
 
     header h1 {
@@ -79,14 +80,15 @@
     #introduction {
       margin-bottom: 4rem;
       text-align: left; /* Align left instead of center */
+      position: relative; /* For overlapping the image */
     }
 
     .intro {
       display: flex;
       flex-direction: row;
-      align-items: center;
-      justify-content: flex-start; /* Changed to flex-start */
-      gap: 11rem; /* Added gap for spacing */
+      align-items: flex-start; /* Align items to the top */
+      justify-content: flex-start;
+      gap: 2rem; /* Added gap for spacing */
     }
 
     .intro p {
@@ -110,6 +112,7 @@
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       margin-left: 0; /* No left margin */
+      margin-top: -4rem; /* Shift the image upward */
     }
 
     /* Projects Section */
@@ -203,8 +206,7 @@
       }
 
       .profile-image {
-        margin-left: 0;
-        margin-top: 1.5rem;
+        margin-top: 0; /* Reset margin for mobile */
         max-width: 100%;
       }
     }
@@ -231,10 +233,9 @@
       <div class="intro">
         <div>
           <p>
-        <p>
-      I'm a <em>Computer Science</em> student at the <strong>University of Calgary</strong>. I care deeply about <em>self-improvement</em> and <em>entrepreneurship</em>, and I enjoy the process of taking ideas from rough concepts to polished, intentional work.
-  </p>
-            
+            <p>
+              I'm a <em>Computer Science</em> student at the <strong>University of Calgary</strong>. I care deeply about <em>self-improvement</em> and <em>entrepreneurship</em>, and I enjoy the process of taking ideas from rough concepts to polished, intentional work.
+          </p>
         </div>
         <img src="assets/profile.JPG" alt="Photo of Josh Kraft" class="profile-image" />
       </div>
