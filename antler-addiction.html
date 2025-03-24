@@ -75,12 +75,18 @@
       gap: 1rem; /* Gap between images */
     }
 
-    .image-group.horizontal {
+    .image-group.vertical {
       flex-direction: column; /* Stack images vertically */
     }
 
-    .image-group.vertical {
+    .image-group.horizontal {
       flex-direction: row; /* Place images side by side */
+    }
+
+    .image-group.grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2x2 grid */
+      gap: 1rem; /* Gap between grid items */
     }
 
     .caption {
@@ -105,8 +111,12 @@
         flex-direction: column;
       }
 
-      .image-group.vertical {
+      .image-group.horizontal {
         flex-direction: column; /* Stack images vertically on mobile */
+      }
+
+      .image-group.grid {
+        grid-template-columns: 1fr; /* Stack images vertically on mobile */
       }
     }
   </style>
@@ -117,7 +127,7 @@
     <h1>Antler Addiction</h1>
     <p class="subtitle"><b>A sustainable business born from a love for nature and craftsmanship.</b></p>
 
-    <!-- Summary Section: 2 Horizontal Images -->
+    <!-- Summary Section: 2 Vertical Images -->
     <section class="section">
       <div class="text">
         <p>
@@ -125,13 +135,13 @@
           Alongside my brother, I co-founded Antler Addiction in 2021. From the outset, we aimed to turn what many saw as discarded natural material into a meaningful product — antler chews for dogs and antler décor for homes. It started small: listing items on Etsy, using any boxes and packaging we could find, and figuring out how to price and present our offering in a market that was entirely unfamiliar.         
         </p>
       </div>
-      <div class="image-group horizontal">
+      <div class="image-group vertical">
         <img src="/assets/antler1.jpg" alt="Antler collection at the family cabin">
         <img src="/assets/antler2.jpg" alt="Antler products ready for shipping">
       </div>
     </section>
 
-    <!-- Challenges Section: 2 Vertical iPhone Images -->
+    <!-- Challenges Section: 2 Horizontal Images -->
     <section class="section reverse">
       <div class="text">
         <h2>Challenges</h2>
@@ -141,13 +151,13 @@
           Despite these roadblocks, we adapted. I worked to clarify customs and shipping workflows, ensure compliance with regulations, and rebuilt trust with agencies on both sides of the border.            
         </p>
       </div>
-      <div class="image-group vertical">
+      <div class="image-group horizontal">
         <img src="/assets/antler3.jpg" alt="iPhone image 1">
         <img src="/assets/antler4.jpg" alt="iPhone image 2">
       </div>
     </section>
 
-    <!-- What I Learned Section: 4 Vertical Images -->
+    <!-- What I Learned Section: 4 Images in a 2x2 Grid -->
     <section class="section">
       <div class="text">
         <h2>What I Learned</h2>
@@ -156,7 +166,7 @@
           I also dove into the technical side of e-commerce. Beyond maintaining our Etsy presence, I developed our Shopify storefront, customizing the default layout with Liquid (Shopify’s templating language) to better highlight our products and brand. I configured complex shipping options, designed a responsive layout, and continually worked on improving the customer experience. I experimented with driving organic traffic through Instagram, Pinterest, and SEO while competing with large-scale antler sellers with more resources and experience.            
         </p>
       </div>
-      <div class="image-group vertical">
+      <div class="image-group grid">
         <img src="/assets/antler5.jpg" alt="Image 1">
         <img src="/assets/antler6.jpg" alt="Image 2">
         <img src="/assets/antler7.jpg" alt="Image 3">
