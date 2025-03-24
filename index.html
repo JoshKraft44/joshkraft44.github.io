@@ -48,7 +48,7 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    /* Header */
+    /* Header - Updated */
     header {
       margin-bottom: 4rem;
       position: relative;
@@ -64,13 +64,12 @@
     .name-social-container {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 2.5rem;
     }
 
     header h1 {
       font-size: 3rem;
-      margin-bottom: 0.5rem;
-      margin-right: 1.5rem;
+      margin-right: 0.5rem;
     }
 
     header .descriptors {
@@ -88,11 +87,13 @@
       font-size: 1.5rem;
     }
 
-    /* Navigation - Updated */
     .nav-menu {
       display: flex;
       gap: 1.5rem;
-      margin-bottom: 2rem; /* Added space between nav and intro */
+      position: absolute;
+      left: 72%; /* Positions nav about 2/3 across */
+      transform: translateX(-50%);
+      margin-top: 1rem;
     }
 
     .nav-menu a {
@@ -104,7 +105,7 @@
       color: #555;
     }
 
-    /* Introduction Section - Updated */
+    /* Introduction Section */
     #introduction {
       margin-bottom: 4rem;
       text-align: left;
@@ -115,19 +116,16 @@
       display: flex;
       flex-direction: row;
       align-items: flex-start;
-      justify-content: flex-start;
+      justify-content: space-between;
       gap: 2rem;
-    }
-
-    .intro-content {
-      display: flex;
-      flex-direction: column;
+      margin-right: 4rem;
     }
 
     .intro p {
       font-size: 1.1rem;
       max-width: 500px;
       margin: 0;
+      margin-right: 3rem;
     }
 
     .intro em {
@@ -144,7 +142,8 @@
       max-width: 250px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      margin-top: 0;
+      margin-left: 0;
+      margin-top: -3.5rem;
     }
 
     /* Projects Section */
@@ -253,9 +252,12 @@
       }
 
       .nav-menu {
+        position: static;
+        transform: none;
         margin-top: 1rem;
         gap: 1rem;
         flex-wrap: wrap;
+        justify-content: center;
       }
 
       .intro {
@@ -265,6 +267,7 @@
       }
 
       .profile-image {
+        margin-top: 0;
         max-width: 100%;
       }
 
@@ -301,25 +304,26 @@
         <div class="name-social-container">
           <h1>Josh Kraft</h1>
           <div class="social-links">
-            <a href="https://github.com/joshkraft44" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://linkedin.com/in/josh-kraft" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/joshkraft44" target="_blank"><i class="fab fa-github"></i></a>
           </div>
         </div>
+        <nav class="nav-menu">
+          <a href="#introduction">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#footer">Contact</a>
+        </nav>
         <div class="descriptors">
           > student > entrepreneur > programmer
         </div>
       </div>
     </header>
 
+    <!-- Rest of your HTML remains the same -->
     <!-- Introduction Section -->
     <section id="introduction">
-      <nav class="nav-menu">
-        <a href="#introduction">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#footer">Contact</a>
-      </nav>
       <div class="intro">
-        <div class="intro-content">
+        <div>
           <p>
             I'm a <em>Computer Science</em> student at the <strong>University of Calgary</strong>. I care deeply about <em>self-improvement</em> and <em>entrepreneurship</em>, and I enjoy tackling meaningful, difficult, and nuanced problems.
           </p>
@@ -338,7 +342,7 @@
             <div class="project-text">
               <h3>Antler Addiction</h3>
               <p>
-                A sustainable business selling naturally shed deer antlers for home décor and pet chews, with hundreds of orders shipped worldwide and a 5.0-star rating from over 200 customers.
+                A sustainable business I cofounded selling naturally shed deer antlers for home décor and pet chews, with hundreds of orders shipped worldwide and a 5.0-star rating from over 200 customers.
               </p>
               <div class="tech-stack">E-commerce · Sustainability · Business Operations</div>
             </div>
