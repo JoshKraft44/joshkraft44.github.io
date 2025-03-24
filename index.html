@@ -57,20 +57,19 @@
     .header-content {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: baseline;
       flex-wrap: wrap;
-      margin-bottom: 0.5rem;
     }
 
-    .header-left {
+    .name-nav-container {
       display: flex;
-      align-items: center;
-      gap: 2rem;
+      align-items: baseline;
+      gap: 4rem; /* Increased gap between name and nav */
     }
 
     header h1 {
       font-size: 3rem;
-      margin-right: 1.5rem;
+      margin-bottom: 0.5rem;
     }
 
     header .descriptors {
@@ -242,25 +241,18 @@
 
       .header-content {
         flex-direction: column;
-        align-items: flex-start;
       }
 
-      .header-left {
+      .name-nav-container {
         flex-direction: column;
-        align-items: flex-start;
         gap: 1rem;
-        width: 100%;
+        margin-bottom: 1rem;
       }
 
       .nav-menu {
-        margin-bottom: 1rem;
+        margin-top: 1rem;
         gap: 1rem;
         flex-wrap: wrap;
-      }
-
-      .name-social-container {
-        width: 100%;
-        justify-content: space-between;
       }
 
       .intro {
@@ -304,13 +296,13 @@
     <!-- Header -->
     <header>
       <div class="header-content">
-        <div class="header-left">
+        <div class="name-nav-container">
+          <h1>Josh Kraft</h1>
           <nav class="nav-menu">
             <a href="#introduction">About</a>
             <a href="#projects">Projects</a>
             <a href="#footer">Contact</a>
           </nav>
-          <h1>Josh Kraft</h1>
         </div>
         <div class="social-links">
           <a href="https://github.com/joshkraft44" target="_blank"><i class="fab fa-github"></i></a>
