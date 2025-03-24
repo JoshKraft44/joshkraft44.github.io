@@ -64,12 +64,13 @@
     .name-social-container {
       display: flex;
       align-items: center;
-      gap: 4rem;
+      gap: 1.5rem;
     }
 
     header h1 {
       font-size: 3rem;
       margin-bottom: 0.5rem;
+      margin-right: 1.5rem;
     }
 
     header .descriptors {
@@ -142,57 +143,80 @@
       margin-top: -3.5rem;
     }
 
-    /* Projects Section */
+    /* Projects Section - Updated */
     #projects {
       margin-bottom: 4rem;
     }
 
     #projects h2 {
       font-size: 1.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       color: #666;
     }
 
-    #projects .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    .project-list {
+      display: flex;
+      flex-direction: column;
       gap: 2rem;
     }
 
-    #projects .project-card {
-      background-color: #f9f9f9;
-      padding: 1.5rem;
-      border: 1px solid #ddd;
+    .project-card {
+      background-color: #f5f5f5; /* Slightly darker background */
+      border: 1px solid #e0e0e0; /* Added border */
       border-radius: 8px;
+      padding: 2rem;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
+      width: 100%;
     }
 
-    #projects .project-card:hover {
+    .project-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     }
 
-    #projects .project-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      display: inline-block;
+    .project-content {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
     }
 
-    #projects .project-card:hover h3::after {
-      content: " →";
-      color: #555;
+    .project-text {
+      flex: 1;
     }
 
-    #projects .project-card p {
-      font-size: 0.9rem;
-      color: #666;
+    .project-image {
+      flex: 1;
+      border-radius: 8px;
+      overflow: hidden;
+      max-height: 250px;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover .project-image img {
+      transform: scale(1.03);
+    }
+
+    .project-card h3 {
+      font-size: 1.5rem;
       margin-bottom: 1rem;
     }
 
-    #projects .project-card .tech-stack {
-      font-size: 0.8rem;
+    .project-card p {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-card .tech-stack {
+      font-size: 0.9rem;
       color: #888;
+      font-style: italic;
     }
 
     /* Footer */
@@ -230,10 +254,6 @@
         flex-wrap: wrap;
       }
 
-      #projects .project-grid {
-        grid-template-columns: 1fr;
-      }
-
       .intro {
         flex-direction: column;
         align-items: flex-start;
@@ -243,6 +263,17 @@
       .profile-image {
         margin-top: 0;
         max-width: 100%;
+      }
+
+      /* Project card responsive */
+      .project-content {
+        flex-direction: column;
+      }
+
+      .project-image {
+        width: 100%;
+        max-height: 200px;
+        order: -1; /* Image on top for mobile */
       }
     }
   </style>
@@ -288,8 +319,7 @@
       <div class="intro">
         <div>
           <p>
-            <p>
-              I'm a <em>Computer Science</em> student at the <strong>University of Calgary</strong>. I care deeply about <em>self-improvement</em> and <em>entrepreneurship</em>, and I enjoy tackling meaningful, difficult, and nuanced problems.
+            I'm a <em>Computer Science</em> student at the <strong>University of Calgary</strong>. I care deeply about <em>self-improvement</em> and <em>entrepreneurship</em>, and I enjoy tackling meaningful, difficult, and nuanced problems.
           </p>
         </div>
         <img src="assets/profile.JPG" alt="Photo of Me" class="profile-image" />
@@ -299,27 +329,53 @@
     <!-- Projects Section -->
     <section id="projects">
       <h2>Main Projects</h2>
-      <div class="project-grid">
+      <div class="project-list">
         <!-- Project 1: Antler Addiction -->
         <a href="antler-addiction.html" class="project-card hover-glow">
-          <h3>"Antler Addiction"</h3>
-          <p>
-            A sustainable business selling naturally shed deer antlers for home décor and pet chews, with hundreds of orders shipped worldwide and a 5.0-star rating from over 200 customers.
-          </p>
+          <div class="project-content">
+            <div class="project-text">
+              <h3>Antler Addiction</h3>
+              <p>
+                A sustainable business selling naturally shed deer antlers for home décor and pet chews, with hundreds of orders shipped worldwide and a 5.0-star rating from over 200 customers.
+              </p>
+              <div class="tech-stack">E-commerce · Sustainability · Business Operations</div>
+            </div>
+            <div class="project-image">
+              <img src="assets/antler-addiction.jpg" alt="Antler Addiction Project">
+            </div>
+          </div>
         </a>
+
         <!-- Project 2: Cancel Culture -->
         <a href="cancel-culture.html" class="project-card hover-glow">
-          <h3>"Cancel Culture"</h3>
-          <p>
-            An iOS app in progress designed to keep friends accountable to making plans and not canceling them, with features like local attractions and bill splitting.
-          </p>
+          <div class="project-content">
+            <div class="project-text">
+              <h3>Cancel Culture</h3>
+              <p>
+                An iOS app in progress designed to keep friends accountable to making plans and not canceling them, with features like local attractions and bill splitting.
+              </p>
+              <div class="tech-stack">iOS · Swift · Social Networking</div>
+            </div>
+            <div class="project-image">
+              <img src="assets/cancel-culture.jpg" alt="Cancel Culture App">
+            </div>
+          </div>
         </a>
+
         <!-- Project 3: Portfolio Website -->
         <a href="portfolio-website.html" class="project-card hover-glow">
-          <h3>"Portfolio Website"</h3>
-          <p>
-            This website itself, built with HTML, CSS, and a touch of creativity.
-          </p>
+          <div class="project-content">
+            <div class="project-text">
+              <h3>Portfolio Website</h3>
+              <p>
+                This website itself, built with HTML, CSS, and a touch of creativity. A clean, minimalist showcase of my work and skills.
+              </p>
+              <div class="tech-stack">HTML · CSS · Responsive Design</div>
+            </div>
+            <div class="project-image">
+              <img src="assets/portfolio.jpg" alt="Portfolio Website">
+            </div>
+          </div>
         </a>
       </div>
     </section>
