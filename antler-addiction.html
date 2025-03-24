@@ -81,6 +81,12 @@
 
     .image-group.horizontal {
       flex-direction: row; /* Place images side by side */
+      max-width: 100%; /* Ensure the container doesn't overflow */
+    }
+
+    .image-group.horizontal img {
+      max-width: 50%; /* Each image takes up half the container width */
+      height: auto; /* Maintain aspect ratio */
     }
 
     .image-group.grid {
@@ -113,6 +119,10 @@
 
       .image-group.horizontal {
         flex-direction: column; /* Stack images vertically on mobile */
+      }
+
+      .image-group.horizontal img {
+        max-width: 100%; /* Full width on mobile */
       }
 
       .image-group.grid {
