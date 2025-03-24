@@ -61,15 +61,15 @@
       flex-wrap: wrap;
     }
 
-    .name-nav-container {
+    .name-social-container {
       display: flex;
-      align-items: baseline;
-      gap: 4rem; /* Increased gap between name and nav */
+      align-items: center;
+      gap: 1rem;
     }
 
     header h1 {
       font-size: 3rem;
-      margin-bottom: 0.5rem;
+      margin-right: 0.5rem;
     }
 
     header .descriptors {
@@ -91,6 +91,9 @@
     .nav-menu {
       display: flex;
       gap: 1.5rem;
+      position: absolute;
+      left: 66%; /* Positions nav about 2/3 across */
+      transform: translateX(-50%);
     }
 
     .nav-menu a {
@@ -243,16 +246,17 @@
         flex-direction: column;
       }
 
-      .name-nav-container {
-        flex-direction: column;
-        gap: 1rem;
+      .name-social-container {
         margin-bottom: 1rem;
       }
 
       .nav-menu {
+        position: static;
+        transform: none;
         margin-top: 1rem;
         gap: 1rem;
         flex-wrap: wrap;
+        justify-content: center;
       }
 
       .intro {
@@ -296,24 +300,25 @@
     <!-- Header -->
     <header>
       <div class="header-content">
-        <div class="name-nav-container">
+        <div class="name-social-container">
           <h1>Josh Kraft</h1>
-          <nav class="nav-menu">
-            <a href="#introduction">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#footer">Contact</a>
-          </nav>
+          <div class="social-links">
+            <a href="https://linkedin.com/in/josh-kraft" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/joshkraft44" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
         </div>
-        <div class="social-links">
-          <a href="https://github.com/joshkraft44" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://linkedin.com/in/josh-kraft" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <nav class="nav-menu">
+          <a href="#introduction">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#footer">Contact</a>
+        </nav>
+        <div class="descriptors">
+          > student > entrepreneur > programmer
         </div>
-      </div>
-      <div class="descriptors">
-        > student > entrepreneur > programmer
       </div>
     </header>
 
+    <!-- Rest of your HTML remains the same -->
     <!-- Introduction Section -->
     <section id="introduction">
       <div class="intro">
