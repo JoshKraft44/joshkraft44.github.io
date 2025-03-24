@@ -51,7 +51,7 @@
     /* Header */
     header {
       margin-bottom: 4rem;
-      position: relative; /* For overlapping the image */
+      position: relative;
     }
 
     .header-content {
@@ -59,6 +59,12 @@
       justify-content: space-between;
       align-items: baseline;
       flex-wrap: wrap;
+    }
+
+    .name-social-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
 
     header h1 {
@@ -73,9 +79,6 @@
     }
 
     header .social-links {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
       display: flex;
       gap: 1rem;
     }
@@ -102,22 +105,22 @@
     /* Introduction Section */
     #introduction {
       margin-bottom: 4rem;
-      text-align: left; /* Align left instead of center */
-      position: relative; /* For overlapping the image */
+      text-align: left;
+      position: relative;
     }
 
     .intro {
       display: flex;
       flex-direction: row;
-      align-items: flex-start; /* Align items to the top */
+      align-items: flex-start;
       justify-content: flex-start;
-      gap: 2rem; /* Added gap for spacing */
+      gap: 2rem;
     }
 
     .intro p {
       font-size: 1.1rem;
-      max-width: 500px; /* Reduced width for the paragraph */
-      margin: 0; /* Remove auto margin to align left */
+      max-width: 500px;
+      margin: 0;
       margin-right: 5.5rem;
     }
 
@@ -135,8 +138,8 @@
       max-width: 250px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      margin-left: 5; /* No left margin */
-      margin-top: -3.5rem; /* Shift the image upward */
+      margin-left: 5;
+      margin-top: -3.5rem;
     }
 
     /* Projects Section */
@@ -162,7 +165,7 @@
       border: 1px solid #ddd;
       border-radius: 8px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative; /* For positioning the arrow */
+      position: relative;
     }
 
     #projects .project-card:hover {
@@ -173,11 +176,11 @@
     #projects .project-card h3 {
       font-size: 1.2rem;
       margin-bottom: 0.5rem;
-      display: inline-block; /* To position the arrow next to the title */
+      display: inline-block;
     }
 
     #projects .project-card:hover h3::after {
-      content: " →"; /* Add arrow on hover */
+      content: " →";
       color: #555;
     }
 
@@ -213,14 +216,12 @@
         font-size: 2rem;
       }
 
-      header .social-links {
-        position: static;
-        justify-content: center;
-        margin-top: 1rem;
-      }
-
       .header-content {
         flex-direction: column;
+      }
+
+      .name-social-container {
+        margin-bottom: 1rem;
       }
 
       .nav-menu {
@@ -236,11 +237,11 @@
       .intro {
         flex-direction: column;
         align-items: flex-start;
-        gap: 1.5rem; /* Adjusted gap for mobile */
+        gap: 1.5rem;
       }
 
       .profile-image {
-        margin-top: 0; /* Reset margin for mobile */
+        margin-top: 0;
         max-width: 100%;
       }
     }
@@ -263,12 +264,14 @@
   <div class="container">
     <!-- Header -->
     <header>
-      <div class="social-links">
-        <a href="https://github.com/joshkraft44" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/josh-kraft" target="_blank"><i class="fab fa-linkedin"></i></a>
-      </div>
       <div class="header-content">
-        <h1>Josh Kraft</h1>
+        <div class="name-social-container">
+          <h1>Josh Kraft</h1>
+          <div class="social-links">
+            <a href="https://github.com/joshkraft44" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/josh-kraft" target="_blank"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
         <nav class="nav-menu">
           <a href="#introduction">About</a>
           <a href="#projects">Projects</a>
