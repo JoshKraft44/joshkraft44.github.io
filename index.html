@@ -56,20 +56,19 @@
 
     .header-content {
       display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
+      flex-direction: column;
     }
 
     .name-social-container {
       display: flex;
-      align-items: center;
-      gap: 1.5rem;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
     }
 
     header h1 {
       font-size: 3rem;
-      margin-bottom: 0.5rem;
       margin-right: 1.5rem;
     }
 
@@ -77,6 +76,7 @@
       font-size: 1.2rem;
       color: #666;
       width: 100%;
+      margin-bottom: 1rem;
     }
 
     header .social-links {
@@ -92,7 +92,8 @@
     .nav-menu {
       display: flex;
       gap: 1.5rem;
-      margin-bottom: 2rem; /* Added space between nav and intro */
+      justify-content: flex-start; /* Align left */
+      margin-bottom: 1rem;
     }
 
     .nav-menu a {
@@ -104,7 +105,7 @@
       color: #555;
     }
 
-    /* Introduction Section - Updated */
+    /* Introduction Section */
     #introduction {
       margin-bottom: 4rem;
       text-align: left;
@@ -119,15 +120,11 @@
       gap: 2rem;
     }
 
-    .intro-content {
-      display: flex;
-      flex-direction: column;
-    }
-
     .intro p {
       font-size: 1.1rem;
       max-width: 500px;
       margin: 0;
+      margin-right: 5.5rem;
     }
 
     .intro em {
@@ -144,10 +141,11 @@
       max-width: 250px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      margin-top: 0;
+      margin-left: 9;
+      margin-top: -3.5rem;
     }
 
-    /* Projects Section */
+    /* Projects Section - Updated */
     #projects {
       margin-bottom: 4rem;
     }
@@ -265,9 +263,11 @@
       }
 
       .profile-image {
+        margin-top: 0;
         max-width: 100%;
       }
 
+      /* Project card responsive */
       .project-content {
         flex-direction: column;
       }
@@ -298,6 +298,11 @@
     <!-- Header -->
     <header>
       <div class="header-content">
+        <nav class="nav-menu">
+          <a href="#introduction">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#footer">Contact</a>
+        </nav>
         <div class="name-social-container">
           <h1>Josh Kraft</h1>
           <div class="social-links">
@@ -313,13 +318,8 @@
 
     <!-- Introduction Section -->
     <section id="introduction">
-      <nav class="nav-menu">
-        <a href="#introduction">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#footer">Contact</a>
-      </nav>
       <div class="intro">
-        <div class="intro-content">
+        <div>
           <p>
             I'm a <em>Computer Science</em> student at the <strong>University of Calgary</strong>. I care deeply about <em>self-improvement</em> and <em>entrepreneurship</em>, and I enjoy tackling meaningful, difficult, and nuanced problems.
           </p>
