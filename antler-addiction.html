@@ -65,13 +65,22 @@
       flex-direction: row-reverse;
     }
 
-    .section img {
-      flex: 1;
-      max-width: 45%;
-    }
-
     .section .text {
       flex: 1;
+    }
+
+    .image-group {
+      flex: 1;
+      display: flex;
+      gap: 1rem; /* Gap between images */
+    }
+
+    .image-group.horizontal {
+      flex-direction: column; /* Stack images vertically */
+    }
+
+    .image-group.vertical {
+      flex-direction: row; /* Place images side by side */
     }
 
     .caption {
@@ -95,6 +104,10 @@
       .section.reverse {
         flex-direction: column;
       }
+
+      .image-group.vertical {
+        flex-direction: column; /* Stack images vertically on mobile */
+      }
     }
   </style>
 </head>
@@ -104,40 +117,51 @@
     <h1>Antler Addiction</h1>
     <p class="subtitle"><b>A sustainable business born from a love for nature and craftsmanship.</b></p>
 
-    <!-- Summary Section -->
-    <section class="section"> 
-        <div class="text">
-      <p>
-        Antler Addiction began during the COVID-19 pandemic, when time spent walking our family’s ranch in Alberta led to an unexpected hobby: collecting naturally shed deer antlers. What started as a fun appreciation for the landscape and its wildlife gradually turned into something more — a unique business opportunity rooted in sustainability, craftsmanship, and direct-to-customer connection.
-        Alongside my brother, I co-founded Antler Addiction in 2021. From the outset, we aimed to turn what many saw as discarded natural material into a meaningful product — antler chews for dogs and antler décor for homes. It started small: listing items on Etsy, using any boxes and packaging we could find, and figuring out how to price and present our offering in a market that was entirely unfamiliar.         
-      </p>
-    </div>
-    <img src="/assets/antler4.jpg" alt="Img1">
+    <!-- Summary Section: 2 Horizontal Images -->
+    <section class="section">
+      <div class="text">
+        <p>
+          Antler Addiction began during the COVID-19 pandemic, when time spent walking our family’s ranch in Alberta led to an unexpected hobby: collecting naturally shed deer antlers. What started as a fun appreciation for the landscape and its wildlife gradually turned into something more — a unique business opportunity rooted in sustainability, craftsmanship, and direct-to-customer connection.
+          Alongside my brother, I co-founded Antler Addiction in 2021. From the outset, we aimed to turn what many saw as discarded natural material into a meaningful product — antler chews for dogs and antler décor for homes. It started small: listing items on Etsy, using any boxes and packaging we could find, and figuring out how to price and present our offering in a market that was entirely unfamiliar.         
+        </p>
+      </div>
+      <div class="image-group horizontal">
+        <img src="/assets/antler1.jpg" alt="Antler collection at the family cabin">
+        <img src="/assets/antler2.jpg" alt="Antler products ready for shipping">
+      </div>
     </section>
 
-    <!-- Challenges Section -->
+    <!-- Challenges Section: 2 Vertical iPhone Images -->
     <section class="section reverse">
       <div class="text">
         <h2>Challenges</h2>
         <p>
-            As the business scaled, so did the complexity. Packaging antlers was more difficult than expected — the sharp tips often tore through cardboard boxes. To fix this, we began carefully wrapping the tips in foam to prevent damage in transit, while taking additional measures when necessary.
-            Shipping antlers internationally presented its own learning curve. We had to navigate regulatory paperwork, including commercial invoices and international wildlife clearance forms. Despite over 150 successfully processed shipments to the United States, a sudden change in protocol by U.S. Fish & Wildlife last year led to a surprise investigation. Canadian federal wildlife officers arrived at our home and conducted a search of our garage after parcels were held in the United States. Though we were never really at fault, and we had previously been told we could utilize the mail system, we were now told that the rules have always specified the requirement of a broker for each U.S. shipment — adding over $30 USD in fees per order.
-            Despite these roadblocks, we adapted. I worked to clarify customs and shipping workflows, ensure compliance with regulations, and rebuilt trust with agencies on both sides of the border.            
+          As the business scaled, so did the complexity. Packaging antlers was more difficult than expected — the sharp tips often tore through cardboard boxes. To fix this, we began carefully wrapping the tips in foam to prevent damage in transit, while taking additional measures when necessary.
+          Shipping antlers internationally presented its own learning curve. We had to navigate regulatory paperwork, including commercial invoices and international wildlife clearance forms. Despite over 150 successfully processed shipments to the United States, a sudden change in protocol by U.S. Fish & Wildlife last year led to a surprise investigation. Canadian federal wildlife officers arrived at our home and conducted a search of our garage after parcels were held in the United States. Though we were never really at fault, and we had previously been told we could utilize the mail system, we were now told that the rules have always specified the requirement of a broker for each U.S. shipment — adding over $30 USD in fees per order.
+          Despite these roadblocks, we adapted. I worked to clarify customs and shipping workflows, ensure compliance with regulations, and rebuilt trust with agencies on both sides of the border.            
         </p>
       </div>
-      <img src="/assets/antler2.jpg" alt="Img2">
+      <div class="image-group vertical">
+        <img src="/assets/antler3.jpg" alt="iPhone image 1">
+        <img src="/assets/antler4.jpg" alt="iPhone image 2">
+      </div>
     </section>
 
-    <!-- What I Learned Section -->
-    <section class="section"> 
+    <!-- What I Learned Section: 4 Vertical Images -->
+    <section class="section">
       <div class="text">
         <h2>What I Learned</h2>
         <p>
-            This project taught me more than just logistics or small business management — it taught me how to adapt under pressure, navigate ambiguity, and stay resilient and optimistic when things don’t go according to plan. I learned how to communicate clearly and professionally with suppliers, customers, government officials, and other business employees, something I would consider incredibly important and impactful.
-            I also dove into the technical side of e-commerce. Beyond maintaining our Etsy presence, I developed our Shopify storefront, customizing the default layout with Liquid (Shopify’s templating language) to better highlight our products and brand. I configured complex shipping options, designed a responsive layout, and continually worked on improving the customer experience. I experimented with driving organic traffic through Instagram, Pinterest, and SEO while competing with large-scale antler sellers with more resources and experience.            
+          This project taught me more than just logistics or small business management — it taught me how to adapt under pressure, navigate ambiguity, and stay resilient and optimistic when things don’t go according to plan. I learned how to communicate clearly and professionally with suppliers, customers, government officials, and other business employees, something I would consider incredibly important and impactful.
+          I also dove into the technical side of e-commerce. Beyond maintaining our Etsy presence, I developed our Shopify storefront, customizing the default layout with Liquid (Shopify’s templating language) to better highlight our products and brand. I configured complex shipping options, designed a responsive layout, and continually worked on improving the customer experience. I experimented with driving organic traffic through Instagram, Pinterest, and SEO while competing with large-scale antler sellers with more resources and experience.            
         </p>
       </div>
-      <img src="/assets/antler3.jpg" alt="Img3">
+      <div class="image-group vertical">
+        <img src="/assets/antler5.jpg" alt="Image 1">
+        <img src="/assets/antler6.jpg" alt="Image 2">
+        <img src="/assets/antler7.jpg" alt="Image 3">
+        <img src="/assets/antler8.jpg" alt="Image 4">
+      </div>
     </section>
 
     <!-- Closing Reflection -->
