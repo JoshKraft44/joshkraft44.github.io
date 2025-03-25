@@ -20,7 +20,16 @@
       padding: 2rem;
     }
 
-    /* Header - Matches index.html exactly */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #555;
+    }
+
+    /* Header - Now exactly matches index.html */
     header {
       margin-bottom: 4rem;
       position: relative;
@@ -42,28 +51,34 @@
     header h1 {
       font-size: 3rem;
       margin-right: 0.5rem;
-      text-align: left;
     }
 
-    .subtitle {
-      font-size: 1.1rem;
-      max-width: 500px;
-      margin: 0;
-      margin-right: 6.6rem;
-      text-align: left;
+    header .descriptors {
+      font-size: 1.2rem;
+      color: #666;
+      width: 100%;
+    }
+
+    header .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    header .social-links i {
+      font-size: 1.5rem;
     }
 
     .nav-menu {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.2rem;
       position: absolute;
-      left: 72%;
+      left: 72%; /* Positions nav about 2/3 across */
       transform: translateX(-50%);
       margin-top: 1rem;
     }
 
     .nav-menu a {
-      font-size: 1rem;
+      font-size: 1.5rem;
       transition: color 0.2s ease;
     }
 
@@ -75,9 +90,23 @@
       max-width: 250px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      margin-left: 5rem;
-      margin-top: -3.5rem;
+      margin-left: auto; 
+      margin-top: 0;
       margin-right: 0;
+    }
+
+    /* Introduction Section - Modified for this page */
+    .intro {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      max-width: 500px;
+      margin: 0;
     }
 
     /* Rest of your existing styles */
@@ -170,6 +199,10 @@
         flex-direction: column;
       }
 
+      .name-social-container {
+        margin-bottom: 1rem;
+      }
+
       .nav-menu {
         position: static;
         transform: none;
@@ -208,24 +241,39 @@
       }
     }
   </style>
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <div class="container">
-    <!-- Header matching index.html -->
+    <!-- Header matching index.html exactly -->
     <header>
       <div class="header-content">
         <div class="name-social-container">
           <h1>Antler Addiction</h1>
-          <p class="subtitle"><b>A sustainable business born from a love for nature, "shed hunting" and entrepreneurial spirit.</b></p>
+          <div class="social-links">
+            <a href="https://linkedin.com/in/josh-kraft" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/joshkraft44" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
         </div>
         <nav class="nav-menu">
           <a href="index.html">Home</a>
           <a href="index.html#projects">Projects</a>
           <a href="contact.html">Contact</a>
         </nav>
-        <img src="/assets/antler-logo.jpg" alt="Antler Addiction Logo" class="logo-image">
+        <div class="descriptors">
+          > sustainable business > e-commerce > nature products
+        </div>
       </div>
     </header>
+
+    <!-- Introduction Section -->
+    <div class="intro">
+      <p>
+        <b>A sustainable business born from a love for nature, "shed hunting" and entrepreneurial spirit.</b>
+      </p>
+      <img src="/assets/antler-logo.jpg" alt="Antler Addiction Logo" class="logo-image">
+    </div>
 
     <!-- Rest of your content remains the same -->
     <section class="section">
