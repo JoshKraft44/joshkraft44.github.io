@@ -47,6 +47,7 @@
       max-width: 100%;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
     }
 
     .container {
@@ -54,9 +55,10 @@
       margin: 0 auto;
     }
 
+    /* Improved Section Layout */
     .section {
       display: flex;
-      align-items: center;
+      align-items: flex-start; /* Align items to top */
       gap: 3rem;
       margin-bottom: 4rem;
     }
@@ -67,32 +69,47 @@
 
     .section .text {
       flex: 1;
+      min-width: 300px; /* Prevent text from becoming too narrow */
     }
 
+    /* Image Group Improvements */
     .image-group {
       flex: 1;
       display: flex;
-      gap: 1rem; /* Gap between images */
+      gap: 1rem;
+      align-self: stretch; /* Fill available height */
     }
 
     .image-group.vertical {
-      flex-direction: column; /* Stack images vertically */
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .image-group.vertical img {
+      height: calc(50% - 0.5rem); /* Account for gap */
     }
 
     .image-group.horizontal {
-      flex-direction: row; /* Place images side by side */
-      max-width: 100%; /* Ensure the container doesn't overflow */
+      flex-direction: row;
+      align-items: flex-start; /* Align images to top */
     }
 
     .image-group.horizontal img {
-      max-width: 50%; /* Each image takes up half the container width */
-      height: auto; /* Maintain aspect ratio */
+      width: 50%;
+      height: auto;
+      max-height: 400px; /* Limit max height */
     }
 
     .image-group.grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2x2 grid */
-      gap: 1rem; /* Gap between grid items */
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .image-group.grid img {
+      max-height: 200px;
+      width: 100%;
     }
 
     .caption {
@@ -102,56 +119,75 @@
       text-align: center;
     }
 
+    /* Hero Section Specific */
+    .hero-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .hero-text {
+      grid-column: 1;
+    }
+
+    .hero-images {
+      grid-column: 2;
+      display: grid;
+      grid-template-rows: auto auto;
+      gap: 1rem;
+      height: 100%;
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
-      .section {
+      .section, 
+      .section.reverse,
+      .hero-section {
+        display: flex;
         flex-direction: column;
         gap: 1.5rem;
       }
 
-      .section img {
-        max-width: 100%;
-      }
-
-      .section.reverse {
+      .image-group.horizontal {
         flex-direction: column;
       }
 
-      .image-group.horizontal {
-        flex-direction: column; /* Stack images vertically on mobile */
-      }
-
       .image-group.horizontal img {
-        max-width: 100%; /* Full width on mobile */
+        width: 100%;
+        max-height: none;
       }
 
       .image-group.grid {
-        grid-template-columns: 1fr; /* Stack images vertically on mobile */
+        grid-template-columns: 1fr;
+      }
+
+      .hero-images {
+        grid-column: 1;
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Project Title and Subtitle -->
-    <h1>Antler Addiction</h1>
-    <p class="subtitle"><b>A sustainable business born from a love for nature and craftsmanship.</b></p>
-
-    <!-- Summary Section: 2 Vertical Images -->
-    <section class="section">
-      <div class="text">
+    <!-- Hero Section with Side-by-Side Layout -->
+    <section class="hero-section">
+      <div class="hero-text">
+        <h1>Antler Addiction</h1>
+        <p class="subtitle"><b>A sustainable business born from a love for nature and craftsmanship.</b></p>
         <p>
-            A sustainable business born from a love for nature and entrepreneurship.
-            Antler Addiction started in 2021 as a small project, after collecting naturally shed deer antlers on our family ranch during the COVID-19 pandemic. What began as a hobby grew into a business — turning discarded antlers into meaningful, sustainable products like pet chews and home décor.            
+          A sustainable business born from a love for nature and entrepreneurship.
+          Antler Addiction started in 2021 as a small project, after collecting naturally shed deer antlers on our family ranch during the COVID-19 pandemic. What began as a hobby grew into a business — turning discarded antlers into meaningful, sustainable products like pet chews and home décor.
         </p>
       </div>
-      <div class="image-group vertical">
-        <img src="/assets/antler1.JPG" alt="Row1 photos">
-        <img src="/assets/antler2.JPG" alt="Row1 photos">
+      <div class="hero-images">
+        <img src="/assets/antler1.JPG" alt="Antler collection">
+        <img src="/assets/antler2.JPG" alt="Finished products">
       </div>
     </section>
 
-    <!-- Challenges Section: 2 Horizontal Images -->
+    <!-- Challenges Section -->
     <section class="section reverse">
       <div class="text">
         <h2>Challenges</h2>
@@ -160,24 +196,24 @@
         </p>
       </div>
       <div class="image-group horizontal">
-        <img src="/assets/antler3.JPG" alt="Challenges">
-        <img src="/assets/antler4.JPG" alt="Challenges">
+        <img src="/assets/antler3.JPG" alt="Shipping challenges">
+        <img src="/assets/antler4.JPG" alt="Regulatory documents">
       </div>
     </section>
 
-    <!-- What I Learned Section: 4 Images in a 2x2 Grid -->
+    <!-- What I Learned Section -->
     <section class="section">
       <div class="text">
         <h2>What I Learned</h2>
         <p>
-            Through this, I developed skills in e-commerce, professional communication, teamwork, and more. Improving store layouts and shipping logic, learning how to drive traffic through social platforms and SEO, and staying accountable each and every day - all while managing a full course load as a student, has been an incredibly fulfilling pursuit. 
+          Through this, I developed skills in e-commerce, professional communication, teamwork, and more. Improving store layouts and shipping logic, learning how to drive traffic through social platforms and SEO, and staying accountable each and every day - all while managing a full course load as a student, has been an incredibly fulfilling pursuit. 
         </p>
       </div>
       <div class="image-group grid">
-        <img src="/assets/antler5.JPG" alt="Image 1">
-        <img src="/assets/antler6.JPG" alt="Image 2">
-        <img src="/assets/antler7.JPG" alt="Image 3">
-        <img src="/assets/antler8.JPG" alt="Image 4">
+        <img src="/assets/antler5.JPG" alt="Workspace">
+        <img src="/assets/antler6.JPG" alt="Product photography">
+        <img src="/assets/antler7.JPG" alt="Packaging">
+        <img src="/assets/antler8.JPG" alt="Inventory">
       </div>
     </section>
 
