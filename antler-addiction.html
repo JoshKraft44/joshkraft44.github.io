@@ -29,9 +29,9 @@
       color: #555;
     }
 
-    /* Header - matches index.html */
+    /* Header - matches index.html exactly */
     header {
-      margin-bottom: 2rem;
+      margin-bottom: 4rem;
       position: relative;
     }
 
@@ -85,7 +85,8 @@
     }
 
     .hero-logo {
-      max-width: 250px;
+      max-width: 400px; /* Increased by ~60% */
+      width: 100%;
       border-radius: 12px;
       margin: 2rem auto;
       display: block;
@@ -104,18 +105,6 @@
       font-size: 1.8rem;
       color: #333;
       margin-bottom: 1.5rem;
-      position: relative;
-      display: inline-block;
-    }
-
-    .section-heading::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 50%;
-      height: 3px;
-      background-color: #f0f0f0;
     }
 
     .intro-section {
@@ -179,12 +168,10 @@
 
     .image-group.horizontal {
       flex-direction: row;
-      max-width: 100%;
     }
 
     .image-group.horizontal img {
-      max-width: 50%;
-      height: auto;
+      width: calc(50% - 0.5rem);
     }
 
     .image-group.grid {
@@ -220,10 +207,6 @@
 
     /* Responsive Design */
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
       .header-content {
         flex-direction: column;
       }
@@ -245,6 +228,10 @@
         padding: 2rem 0;
       }
 
+      .hero-logo {
+        max-width: 300px;
+      }
+
       .intro-section,
       .section {
         flex-direction: column;
@@ -264,7 +251,7 @@
       }
 
       .image-group.horizontal img {
-        max-width: 100%;
+        width: 100%;
       }
 
       .image-group.grid {
@@ -394,11 +381,9 @@
           Through this, I developed skills in e-commerce, professional communication, teamwork, and more. Improving store layouts and shipping logic, learning how to drive traffic through social platforms and SEO, and staying accountable each and every day - all while managing a full course load as a student, has been an incredibly fulfilling pursuit. 
         </p>
       </div>
-      <div class="image-group grid">
-        <img src="/assets/antler5.JPG" alt="Image 1">
-        <img src="/assets/antler6.JPG" alt="Image 2">
-        <img src="/assets/antler7.JPG" alt="Image 3">
-        <img src="/assets/antler8.JPG" alt="Image 4">
+      <div class="image-group">
+        <img src="/assets/antler5.JPG" alt="Antler product photography">
+        <img src="/assets/antler6.JPG" alt="Antler packaging">
       </div>
     </section>
 
