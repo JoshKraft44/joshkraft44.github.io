@@ -20,7 +20,16 @@
       padding: 2rem;
     }
 
-    /* Header - Matches index.html exactly */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #555;
+    }
+
+    /* Header - matches index.html exactly */
     header {
       margin-bottom: 4rem;
       position: relative;
@@ -42,20 +51,17 @@
     header h1 {
       font-size: 3rem;
       margin-right: 0.5rem;
-      text-align: left;
     }
 
-    .subtitle {
-      font-size: 1.1rem;
-      max-width: 500px;
-      margin: 0;
-      margin-right: 6.6rem;
-      text-align: left;
+    header .descriptors {
+      font-size: 1.2rem;
+      color: #666;
+      width: 100%;
     }
 
     .nav-menu {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.2rem;
       position: absolute;
       left: 72%;
       transform: translateX(-50%);
@@ -63,7 +69,7 @@
     }
 
     .nav-menu a {
-      font-size: 1rem;
+      font-size: 1.5rem;
       transition: color 0.2s ease;
     }
 
@@ -71,40 +77,70 @@
       color: #555;
     }
 
-    .logo-image {
-      max-width: 250px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      margin-left: 5rem;
-      margin-top: -3.5rem;
-      margin-right: 0;
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 3rem 0;
+      margin: 2rem 0;
     }
 
-    /* Rest of your existing styles */
-    h2 {
-      font-size: 1.8rem;
-      margin-top: 3rem;
-      margin-bottom: 1.5rem;
+    .hero-logo {
+      max-width: 400px; /* Increased by ~60% */
+      width: 100%;
+      border-radius: 12px;
+      margin: 2rem auto;
+      display: block;
+    }
+
+    .hero-subtitle {
+      font-size: 1.4rem;
       color: #333;
-    }
-
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
       max-width: 700px;
-    }
-
-    img {
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .container {
-      max-width: 1200px;
       margin: 0 auto;
+      line-height: 1.6;
     }
 
+    /* Overview Section */
+    .section-heading {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+
+    .intro-section {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .intro-text {
+      flex: 1.5;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .intro-image {
+      flex: 1;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .intro-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Section divider */
+    .section-divider {
+      border: 0;
+      height: 1px;
+      background-color: #eee;
+      margin: 3rem 0;
+    }
+
+    /* Project Content Sections */
     .section {
       display: flex;
       align-items: center;
@@ -132,12 +168,10 @@
 
     .image-group.horizontal {
       flex-direction: row;
-      max-width: 100%;
     }
 
     .image-group.horizontal img {
-      max-width: 50%;
-      height: auto;
+      width: calc(50% - 0.5rem);
     }
 
     .image-group.grid {
@@ -145,6 +179,13 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
     }
+
+    .image-group img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
 
     /* Accomplishments Styles */
     .accomplishments {
@@ -160,14 +201,25 @@
       border-radius: 8px;
     }
 
+    .accomplishments-column ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+
+    .accomplishments-column ul ul {
+      list-style-type: circle;
+      padding-left: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
       .header-content {
         flex-direction: column;
+      }
+
+      .name-social-container {
+        margin-bottom: 1rem;
       }
 
       .nav-menu {
@@ -179,16 +231,26 @@
         justify-content: center;
       }
 
-      .logo-image {
-        max-width: 250px;
-        margin-left: 0;
-        margin-right: auto;
-        margin-top: 1.5rem;
+      .hero {
+        padding: 2rem 0;
       }
 
+      .hero-logo {
+        max-width: 300px;
+      }
+
+      .intro-section,
       .section {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 2rem;
+      }
+
+      .intro-text,
+      .intro-image,
+      .section .text,
+      .image-group {
+        flex: none;
+        width: 100%;
       }
 
       .image-group.horizontal {
@@ -196,7 +258,7 @@
       }
 
       .image-group.horizontal img {
-        max-width: 100%;
+        width: 100%;
       }
 
       .image-group.grid {
@@ -208,36 +270,51 @@
       }
     }
   </style>
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <div class="container">
-    <!-- Header matching index.html -->
+    <!-- Header -->
     <header>
       <div class="header-content">
         <div class="name-social-container">
           <h1>Antler Addiction</h1>
-          <p class="subtitle"><b>A sustainable business born from a love for nature, "shed hunting" and entrepreneurial spirit.</b></p>
         </div>
         <nav class="nav-menu">
           <a href="index.html">Home</a>
           <a href="index.html#projects">Projects</a>
+          <a href="https://substack.com/@joshkraft1" target="_blank">Writings</a> 
           <a href="contact.html">Contact</a>
         </nav>
-        <img src="/assets/antler-logo.jpg" alt="Antler Addiction Logo" class="logo-image">
+        <div class="descriptors">
+          > E-Commerce > Business Operations > Web Design
+        </div>
       </div>
     </header>
 
-    <!-- Rest of your content remains the same -->
-    <section class="section">
-      <div class="text">
+    <!-- Hero Section -->
+    <div class="hero">
+      <img src="/assets/antler-addiction.JPG" alt="Antler Addiction Logo" class="hero-logo">
+      <p class="hero-subtitle">
+        A sustainable business born from a love for nature, <em>shed hunting</em> and entrepreneurial spirit.
+      </p>
+    </div>
+
+    <!-- Overview Section -->
+    <section class="intro-section">
+      <div class="intro-text">
+        <h2 class="section-heading">Overview</h2>
         <p>
-          Antler Addiction started in 2021 as a small project, after collecting naturally shed deer antlers on our family ranch during the COVID-19 pandemic. What began as a hobby grew into a business — utilizing unnoticed antlers for purposeful, sustainable products like pet chews and home décor.            
+          Antler Addiction started in 2021 as a small project, after collecting naturally shed deer antlers on our family ranch during the COVID-19 pandemic. What began as a hobby grew into a business — utilizing unnoticed antlers for purposeful, sustainable products like pet chews and home décor.
         </p>
       </div>
-      <div class="image-group vertical">
+      <div class="intro-image">
         <img src="/assets/antler2.JPG" alt="Antler products">
       </div>
     </section>
+
+    <hr class="section-divider">
 
     <!-- Challenges Section -->
     <section class="section reverse">
@@ -258,33 +335,47 @@
       <h2>Accomplishments</h2>
       <div class="accomplishments">
         <div class="accomplishments-column">
-          <h3>🛠️ Contributions</h3>
+          <h3>Contributions</h3>
           <ul>
-            <li>Helped maintain Etsy's Star Seller badge every month for 4+ years</li>
-            <li>4.8+ average rating</li>
-            <li>95% of customer messages answered within 24 hours</li>
-            <li>Fewer than 3 support cases per month</li>
-            <li>Assisted with Shopify store setup</li>
-            <li>Theme and layout configuration</li>
-            <li>Product and listing import</li>
-            <li>App/extension integration</li>
+            <li>Helped maintain Etsy's Star Seller badge every month for 4+ years:
+              <ul>
+                <li>4.8+ average rating</li>
+                <li>95% of customer messages answered within 24 hours</li>
+                <li>Fewer than 3 support cases per month</li>
+              </ul>
+            </li>
+            <li>Assisted with Shopify store setup:
+              <ul>
+                <li>Theme and layout configuration</li>
+                <li>Product and listing import</li>
+                <li>App/Extension integration</li>
+              </ul>
+            </li>
             <li>Supported trademark filing for Antler Addiction, covering antlers, apparel, and future categories</li>
-            <li>Expanded antler sourcing network across Alberta</li>
-            <li>Built relationships with sellers in Lethbridge, Edmonton, Grand Prairie, Canmore, Strathmore, and more</li>
+            <li>Expanded antler sourcing network across Alberta:
+              <ul>
+                <li>Built relationships with sellers in Lethbridge, Canmore, Red Deer, Edmonton, Grand Prairie, and other locations</li>
+              </ul>
+            </li>
           </ul>
         </div>
         <div class="accomplishments-column">
-          <h3>🚀 Personally Led</h3>
+          <h3>Personal</h3>
           <ul>
-            <li>Personally fulfilled over 200 orders</li>
-            <li>Handled packing, labeling, shipping, and all customer communication</li>
+            <li>Personally fulfilled over 200 orders, for which I:
+              <ul>
+                <li>Handled packing, labeling, shipping, and all customer communication</li>
+              </ul>
+            </li>
             <li>Completed hundreds of E-declarations for U.S. wildlife compliance</li>
-            <li>Built and customized the Shopify frontend</li>
-            <li>Injected logo via Liquid code</li>
-            <li>Replaced default cart icon with custom design</li>
-            <li>Designed and implemented a custom "About" page</li>
-            <li>Designed and constructed an 8' x 4' modular photography stand</li>
-            <li>Simplified and standardized the product photography workflow</li>
+            <li>Built and customized the Shopify frontend:
+              <ul>
+                <li>Injected logo via Liquid code</li>
+                <li>Replaced default cart icon with custom design</li>
+                <li>Designed and implemented a custom "About" page</li>
+              </ul>
+            </li>
+            <li>Designed and constructed an 8' x 4' modular photography stand to simplify photography work</li>
           </ul>
         </div>
       </div>
@@ -298,11 +389,9 @@
           Through this, I developed skills in e-commerce, professional communication, teamwork, and more. Improving store layouts and shipping logic, learning how to drive traffic through social platforms and SEO, and staying accountable each and every day - all while managing a full course load as a student, has been an incredibly fulfilling pursuit. 
         </p>
       </div>
-      <div class="image-group grid">
-        <img src="/assets/antler5.JPG" alt="Image 1">
-        <img src="/assets/antler6.JPG" alt="Image 2">
-        <img src="/assets/antler7.JPG" alt="Image 3">
-        <img src="/assets/antler8.JPG" alt="Image 4">
+      <div class="image-group">
+        <img src="/assets/antler5.JPG" alt="Antler product photography">
+        <img src="/assets/antler6.JPG" alt="Antler packaging">
       </div>
     </section>
 
