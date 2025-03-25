@@ -17,7 +17,6 @@
       font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
       line-height: 1.6;
       min-height: 100vh;
-      padding: 1rem 2rem;
     }
 
     a {
@@ -29,9 +28,11 @@
       color: #555;
     }
 
-    .container {
-      max-width: 1200px;
+    /* Main container */
+    .about-container {
+      max-width: 960px;
       margin: 0 auto;
+      padding: 2rem;
     }
 
     /* Header - Matching index.html */
@@ -71,7 +72,6 @@
       left: 72%;
       transform: translateX(-50%);
       margin-top: 1rem;
-      margin-left: 1rem;
     }
 
     .nav-menu a {
@@ -83,55 +83,54 @@
       color: #555;
     }
 
-    /* Hero Section */
-    .hero {
+    /* Intro Section */
+    .intro-section {
       display: flex;
       align-items: flex-start;
       gap: 3rem;
       margin-bottom: 4rem;
     }
 
-    .hero-content {
+    .about-text {
       flex: 1;
     }
 
-    .hero h1 {
+    .intro-section h1 {
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
       line-height: 1.2;
     }
 
-    .hero p {
+    .intro-section p {
       font-size: 1.1rem;
       color: #666;
-      max-width: 800px;
     }
 
-    .hero-image {
-      max-width: 300px;
+    .profile-img {
+      max-width: 280px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    /* Horizontal Sections */
-    .section {
-      margin-bottom: 3rem;
-      padding-bottom: 2rem;
+    /* Content Sections */
+    .content-section {
+      margin-bottom: 3.5rem;
+      padding-bottom: 2.5rem;
       border-bottom: 1px solid #eee;
-      max-width: 900px;
     }
 
-    .section:last-child {
+    .content-section:last-child {
       border-bottom: none;
+      margin-bottom: 2rem;
     }
 
-    .section h2 {
+    .content-section h2 {
       font-size: 1.5rem;
       margin-bottom: 1.5rem;
       color: #444;
     }
 
-    .section p {
+    .content-section p {
       color: #666;
       margin-bottom: 1.5rem;
       line-height: 1.7;
@@ -140,7 +139,8 @@
     .interests-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 0.8rem;
+      margin-top: 1rem;
     }
 
     .interest-item {
@@ -161,8 +161,9 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      body {
-        padding: 1rem;
+      .about-container {
+        padding: 1.5rem;
+        max-width: 100%;
       }
 
       header h1 {
@@ -186,18 +187,20 @@
         justify-content: center;
       }
 
-      .hero {
-        flex-direction: column;
+      .intro-section {
+        flex-direction: column-reverse;
         gap: 2rem;
+        margin-bottom: 3rem;
       }
 
-      .hero-image {
+      .profile-img {
         max-width: 100%;
-        margin-top: 0;
+        margin: 0 auto;
       }
 
-      .section {
-        max-width: 100%;
+      .content-section {
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
       }
     }
   </style>
@@ -205,7 +208,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <div class="container">
+  <div class="about-container">
     <!-- Header matching index.html -->
     <header>
       <div class="header-content">
@@ -224,43 +227,48 @@
       </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>About Me</h1>
-        <p>
+    <main>
+      <!-- Intro Section -->
+      <section class="intro-section">
+        <div class="about-text">
+          <h1>About Me</h1>
+          <p>
             I care deeply about self-improvement and entrepreneurship, and I enjoy tackling meaningful, difficult, and nuanced problems.
+          </p>
+        </div>
+        <img src="assets/portugal.JPG" alt="Josh Kraft" class="profile-img">
+      </section>
+
+      <!-- Background Section -->
+      <section class="content-section">
+        <h2>Background</h2>
+        <p>
+          I'm currently studying Computer Science at the University of Calgary, with a strong focus on entrepreneurship.
+          My journey into computer science stemmed from an obsessive enjoyment of mathematics, problem-solving, and building things. Over time, I've become especially interested in how technology and business intersect — whether that's through coding full-scale applications, launching startups, or exploring other creative projects. 
         </p>
-      </div>
-      <img src="assets/portugal.JPG" alt="Josh Kraft" class="hero-image">
-    </section>
+        <p>
+          I co-founded a small business during the pandemic, which taught me more about logistics, marketing, and adaptability than any textbook could. Alongside that, I've worked on personal and collaborative coding projects, always seeking ways to improve, learn, and create something meaningful.
+          I'm particularly drawn to clean design, user-centered thinking, and building intuitive interfaces — as well as solving hard backend problems that make everything tick.
+        </p>
+      </section>
 
-    <!-- Horizontal Sections -->
-    <section class="section">
-      <h2>Background</h2>
-      <p>
-        I'm currently studying Computer Science at the University of Calgary, with a strong focus on entrepreneurship.
-        My journey into computer science stemmed from an obsessive enjoyment of mathematics, problem-solving, and building things. Over time, I've become especially interested in how technology and business intersect — whether that's through coding full-scale applications, launching startups, or exploring other creative projects. 
-        I co-founded a small business during the pandemic, which taught me more about logistics, marketing, and adaptability than any textbook could. Alongside that, I've worked on personal and collaborative coding projects, always seeking ways to improve, learn, and create something meaningful.
-        I'm particularly drawn to clean design, user-centered thinking, and building intuitive interfaces — as well as solving hard backend problems that make everything tick.
-      </p>
-    </section>
-
-    <section class="section">
-      <h2>Interests</h2>
-      <p>When I'm not coding or working on projects:</p>
-      <div class="interests-list">
-        <span class="interest-item">Reading</span>
-        <span class="interest-item">Hiking</span>
-        <span class="interest-item">Writing</span>
-        <span class="interest-item">Weightlifting</span>
-        <span class="interest-item">Chess</span>
-        <span class="interest-item">Photography</span>
-        <span class="interest-item">Self-improvement</span>
-        <span class="interest-item">Cooking</span>
-        <span class="interest-item">Travel</span>
-      </div>
-    </section>
+      <!-- Interests Section -->
+      <section class="content-section">
+        <h2>Interests</h2>
+        <p>When I'm not coding or working on projects:</p>
+        <div class="interests-list">
+          <span class="interest-item">Reading</span>
+          <span class="interest-item">Hiking</span>
+          <span class="interest-item">Writing</span>
+          <span class="interest-item">Weightlifting</span>
+          <span class="interest-item">Chess</span>
+          <span class="interest-item">Photography</span>
+          <span class="interest-item">Self-improvement</span>
+          <span class="interest-item">Cooking</span>
+          <span class="interest-item">Travel</span>
+        </div>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
