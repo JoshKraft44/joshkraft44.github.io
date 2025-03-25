@@ -209,6 +209,17 @@
       margin-bottom: 0.5rem;
     }
 
+    .descriptors {
+      font-size: 1.2rem;
+      color: #666;
+      width: 100%;
+      white-space: nowrap; /* Prevent line breaks */
+    }
+    
+    .breadcrumb, .store-links {
+      display: inline; /* Ensure inline display */
+    }
+    
     .store-links {
       font-size: 1rem;
       color: #777;
@@ -224,7 +235,6 @@
       color: #333;
       text-decoration: underline;
     }
-    
     /* Responsive Design */
     @media (max-width: 768px) {
       .header-content {
@@ -294,7 +304,7 @@
         <div class="title-container">
           <h1>Antler Addiction</h1>
           <div class="descriptors">
-            > E-Commerce > Business Operations > Web Design
+            <span class="breadcrumb">> E-Commerce > Business Operations > Web Design</span>
             <span class="store-links"> | visit our <a href="#etsy-url" class="store-link">Etsy</a> | <a href="#shopify-url" class="store-link">Shopify</a></span>
           </div>
         </div>
