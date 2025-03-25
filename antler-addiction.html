@@ -220,21 +220,53 @@
       display: inline; /* Ensure inline display */
     }
     
-    .store-links {
-      font-size: 1rem;
-      color: #777;
-      margin-left: 0.3rem;
+    .store-links-container {
+      position: absolute;
+      right: 0;
+      top: 100%;
+      margin-top: 0.5rem;
+      text-align: right;
     }
     
-    .store-link {
+    .store-links {
+      font-size: 0.9rem;
+      color: #777;
+      padding: 0.2rem 0.5rem;
+      background: #f5f5f5;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    
+    .store-links a {
       color: #666;
       transition: color 0.2s ease;
     }
     
-    .store-link:hover {
+    .store-links a:hover {
       color: #333;
       text-decoration: underline;
     }
+    
+    /* Update nav-menu to be position-relative */
+    .nav-menu {
+      position: relative;
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .store-links-container {
+        position: static;
+        text-align: left;
+        margin-top: 1rem;
+      }
+      .nav-menu {
+        flex-wrap: wrap;
+      }
+    }
+    
     /* Responsive Design */
     @media (max-width: 768px) {
       .header-content {
@@ -304,8 +336,7 @@
         <div class="title-container">
           <h1>Antler Addiction</h1>
           <div class="descriptors">
-            <span class="breadcrumb">> E-Commerce > Business Operations > Web Design</span>
-            <span class="store-links"> | visit our <a href="#etsy-url" class="store-link">Etsy</a> | <a href="#shopify-url" class="store-link">Shopify</a></span>
+            > E-Commerce > Business Operations > Web Design
           </div>
         </div>
         <nav class="nav-menu">
@@ -313,6 +344,11 @@
           <a href="index.html#projects">Projects</a>
           <a href="https://substack.com/@joshkraft1" target="_blank">Writings</a> 
           <a href="contact.html">Contact</a>
+          <div class="store-links-container">
+            <div class="store-links">
+              visit our <a href="#etsy-url">Etsy</a> | <a href="#shopify-url">Shopify</a>
+            </div>
+          </div>
         </nav>
       </div>
     </header>
