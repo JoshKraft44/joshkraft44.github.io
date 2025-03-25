@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
   <title>Josh Kraft - Portfolio</title>
   <style>
     * {
@@ -45,12 +45,12 @@
 
     .hover-glow:hover {
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
     }
 
     /* Header - Updated */
     header {
       margin-bottom: 4rem;
-      position: relative;
     }
 
     .header-content {
@@ -89,10 +89,9 @@
     .nav-menu {
       display: flex;
       gap: 1.2rem;
-      position: absolute;
-      left: 72%; /* Positions nav about 2/3 across */
-      transform: translateX(-50%);
       margin-top: 1rem;
+      justify-content: flex-end;
+      flex: 1;
     }
 
     .nav-menu a {
@@ -108,11 +107,11 @@
     #introduction {
       margin-bottom: 4rem;
       text-align: left;
-      position: relative;
     }
 
-        .intro {
+    .intro {
       display: flex;
+      justify-content: space-between;
       align-items: flex-start;
       gap: 2rem;
     }
@@ -121,7 +120,6 @@
       font-size: 1.1rem;
       max-width: 500px;
       margin: 0;
-      margin-right: 6.6rem;
     }
 
     .intro em {
@@ -138,9 +136,7 @@
       max-width: 250px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      margin-left: 5rem; 
-      margin-top: -3.5rem;
-      margin-right: 0;
+      align-self: center;
     }
 
     /* Projects Section */
@@ -224,6 +220,8 @@
       margin-top: 4rem;
       text-align: center;
       color: #666;
+      border-top: 1px solid #eee;
+      padding-top: 2rem;
     }
 
     footer a {
@@ -267,8 +265,7 @@
         max-width: 250px;
         border-radius: 12px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        margin-left: 6; 
-        margin-right: auto; 
+        margin: 1.5rem auto;
       }
 
       .project-content {
@@ -284,6 +281,9 @@
   </style>
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <script>
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -304,15 +304,19 @@
         <div class="name-social-container">
           <h1>Josh Kraft</h1>
           <div class="social-links">
-            <a href="https://linkedin.com/in/josh-kraft" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/joshkraft44" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/josh-kraft" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/joshkraft44" target="_blank" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
           </div>
         </div>
         <nav class="nav-menu">
           <a href="#introduction">About</a>
           <a href="#projects">Projects</a>
           <a href="contact.html">Contact</a>
-          <a href="https://substack.com/@joshkraft1" target="_blank">Writings</a> 
+          <a href="https://substack.com/@joshkraft1" target="_blank">Writings <i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-left: 0.2em;"></i></a> 
         </nav>
         <div class="descriptors">
           > student > entrepreneur > programmer
@@ -320,7 +324,6 @@
       </div>
     </header>
 
-    <!-- Rest of your HTML remains the same -->
     <!-- Introduction Section -->
     <section id="introduction">
       <div class="intro">
@@ -329,7 +332,7 @@
             I'm a <em>Computer Science</em> student at the <strong>University of Calgary</strong>. I care deeply about <em>self-improvement</em> and <em>entrepreneurship</em>, and I enjoy tackling meaningful, difficult, and nuanced problems.
           </p>
         </div>
-        <img src="assets/profile.JPG" alt="Photo of Me" class="profile-image" />
+        <img src="assets/profile.JPG" alt="Photo of Me" class="profile-image" loading="lazy" />
       </div>
     </section>
 
@@ -348,7 +351,7 @@
               <div class="tech-stack">E-Commerce · Business Operations · Web Design </div>
             </div>
             <div class="project-image">
-              <img src="assets/website1.JPG" alt="Antler Addiction Project">
+              <img src="assets/website1.JPG" alt="Antler Addiction Project" loading="lazy">
             </div>
           </div>
         </a>
@@ -364,7 +367,7 @@
               <div class="tech-stack">iOS · Flutter · Dart</div>
             </div>
             <div class="project-image"> 
-              <img src="assets/cancel-culture.png" alt="Cancel Culture App">
+              <img src="assets/cancel-culture.png" alt="Cancel Culture App" loading="lazy">
             </div>
           </div>
         </a>
@@ -377,10 +380,10 @@
               <p>
                 This website itself, built with HTML, CSS, and a touch of creativity. A clean, minimalist showcase of my work and skills.
               </p>
-              <div class="tech-stack">HTML · CSS ·  JavaScript</div>
+              <div class="tech-stack">HTML · CSS · JavaScript</div>
             </div>
             <div class="project-image">
-              <img src="assets/portfolio.jpg" alt="Portfolio Website">
+              <img src="assets/portfolio.jpg" alt="Portfolio Website" loading="lazy">
             </div>
           </div>
         </a>
