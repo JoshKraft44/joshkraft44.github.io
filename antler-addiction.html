@@ -89,24 +89,20 @@
     .logo-image {
       max-width: 250px;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      margin-left: auto; 
-      margin-top: 0;
-      margin-right: 0;
+      margin: 2rem auto; /* Centers horizontally and adds vertical space */
+      display: block; /* Needed for margin auto to work */
     }
 
-    /* Introduction Section - Modified for this page */
+    /* Update intro section to remove the image from it */
     .intro {
-      display: flex;
-      align-items: flex-start;
-      gap: 2rem;
       margin-bottom: 2rem;
+      text-align: center; /* Center the intro text */
     }
 
     .intro p {
       font-size: 1.1rem;
-      max-width: 500px;
-      margin: 0;
+      max-width: 700px; /* Slightly wider for better readability */
+      margin: 0 auto; /* Center the paragraph */
     }
 
     /* Rest of your existing styles */
@@ -263,12 +259,14 @@
       </div>
     </header>
 
-    <!-- Introduction Section -->
+    <!-- Logo positioned below navigation -->
+    <img src="/assets/antler-addiction.JPG" alt="Antler Addiction Logo" class="logo-image">
+
+    <!-- Introduction Section (now without image) -->
     <div class="intro">
       <p>
         <b>A sustainable business born from a love for nature, "shed hunting" and entrepreneurial spirit.</b>
       </p>
-      <img src="/assets/antler-addiction.JPG" alt="Antler Addiction Logo" class="logo-image">
     </div>
 
     <!-- Rest of your content remains the same -->
