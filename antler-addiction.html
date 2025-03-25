@@ -20,23 +20,64 @@
       padding: 2rem;
     }
 
-    h1, h2, h3 {
-      font-weight: normal;
-      margin-bottom: 1rem;
+    /* Header Styles */
+    header {
+      margin-bottom: 4rem;
+      position: relative;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      text-align: center;
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .name-social-container {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-right: 0.5rem;
+      text-align: left; /* Left-aligned title */
     }
 
     .subtitle {
-      text-align: center;
+      text-align: left; /* Left-aligned subtitle */
       max-width: 100%;
       margin-bottom: 3rem;
     }
 
+    .nav-menu {
+      display: flex;
+      gap: 1.5rem;
+      position: absolute;
+      right: 0; /* Align to right */
+      margin-top: 1rem;
+    }
+
+    .nav-menu a {
+      font-size: 1.5rem; /* Larger nav text */
+      transition: color 0.2s ease;
+    }
+
+    .nav-menu a:hover {
+      color: #555;
+    }
+
+    .logo-image {
+      max-width: 250px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      right: 0;
+      margin-top: 4rem; /* Position below nav */
+    }
+
+    /* Existing Content Styles */
     h2 {
       font-size: 1.8rem;
       margin-top: 3rem;
@@ -79,34 +120,27 @@
     .image-group {
       flex: 1;
       display: flex;
-      gap: 1rem; /* Gap between images */
+      gap: 1rem;
     }
 
     .image-group.vertical {
-      flex-direction: column; /* Stack images vertically */
+      flex-direction: column;
     }
 
     .image-group.horizontal {
-      flex-direction: row; /* Place images side by side */
-      max-width: 100%; /* Ensure the container doesn't overflow */
+      flex-direction: row;
+      max-width: 100%;
     }
 
     .image-group.horizontal img {
-      max-width: 50%; /* Each image takes up half the container width */
-      height: auto; /* Maintain aspect ratio */
+      max-width: 50%;
+      height: auto;
     }
 
     .image-group.grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2x2 grid */
-      gap: 1rem; /* Gap between grid items */
-    }
-
-    .caption {
-      font-size: 0.9rem;
-      color: #666;
-      margin-top: 0.5rem;
-      text-align: center;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
     }
 
     /* Accomplishments Styles */
@@ -148,29 +182,42 @@
 
     /* Responsive Design */
     @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .header-content {
+        flex-direction: column;
+      }
+
+      .nav-menu {
+        position: static;
+        margin-top: 1rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .logo-image {
+        position: static;
+        margin: 2rem auto;
+        display: block;
+      }
+
       .section {
         flex-direction: column;
         gap: 1.5rem;
       }
 
-      .section img {
-        max-width: 100%;
-      }
-
-      .section.reverse {
+      .image-group.horizontal {
         flex-direction: column;
       }
 
-      .image-group.horizontal {
-        flex-direction: column; /* Stack images vertically on mobile */
-      }
-
       .image-group.horizontal img {
-        max-width: 100%; /* Full width on mobile */
+        max-width: 100%;
       }
 
       .image-group.grid {
-        grid-template-columns: 1fr; /* Stack images vertically on mobile */
+        grid-template-columns: 1fr;
       }
 
       .accomplishments {
@@ -181,24 +228,35 @@
 </head>
 <body>
   <div class="container">
-    <!-- Project Title and Subtitle -->
-    <h1>Antler Addiction</h1>
-    <p class="subtitle"><b>A sustainable business born from a love for nature, "shed hunting" and entrepreneurial spirit.</b></p>
+    <!-- Header with Navigation -->
+    <header>
+      <div class="header-content">
+        <div>
+          <h1>Antler Addiction</h1>
+          <p class="subtitle"><b>A sustainable business born from a love for nature, "shed hunting" and entrepreneurial spirit.</b></p>
+        </div>
+        <nav class="nav-menu">
+          <a href="index.html">Home</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://yourusername.substack.com" target="_blank">Writings</a>
+        </nav>
+        <img src="/assets/antler-logo.jpg" alt="Antler Addiction Logo" class="logo-image">
+      </div>
+    </header>
 
-    <!-- Summary Section: Now with just 1 Vertical Image -->
+    <!-- Summary Section -->
     <section class="section">
       <div class="text">
         <p>
-            Antler Addiction started in 2021 as a small project, after collecting naturally shed deer antlers on our family ranch during the COVID-19 pandemic. What began as a hobby grew into a business — utilizing unnoticed antlers for purposeful, sustainable products like pet chews and home décor.            
+          Antler Addiction started in 2021 as a small project, after collecting naturally shed deer antlers on our family ranch during the COVID-19 pandemic. What began as a hobby grew into a business — utilizing unnoticed antlers for purposeful, sustainable products like pet chews and home décor.            
         </p>
       </div>
       <div class="image-group vertical">
-        <!-- Removed first image, keeping only the second one -->
         <img src="/assets/antler2.JPG" alt="Antler products">
       </div>
     </section>
 
-    <!-- Challenges Section: 2 Horizontal Images -->
+    <!-- Challenges Section -->
     <section class="section reverse">
       <div class="text">
         <h2>Challenges</h2>
@@ -212,7 +270,7 @@
       </div>
     </section>
 
-    <!-- New Accomplishments Section -->
+    <!-- Accomplishments Section -->
     <section>
       <h2>Accomplishments</h2>
       <div class="accomplishments">
@@ -249,12 +307,12 @@
       </div>
     </section>
 
-    <!-- What I Learned Section: 4 Images in a 2x2 Grid -->
+    <!-- What I Learned Section -->
     <section class="section">
       <div class="text">
         <h2>What I Learned</h2>
         <p>
-            Through this, I developed skills in e-commerce, professional communication, teamwork, and more. Improving store layouts and shipping logic, learning how to drive traffic through social platforms and SEO, and staying accountable each and every day - all while managing a full course load as a student, has been an incredibly fulfilling pursuit. 
+          Through this, I developed skills in e-commerce, professional communication, teamwork, and more. Improving store layouts and shipping logic, learning how to drive traffic through social platforms and SEO, and staying accountable each and every day - all while managing a full course load as a student, has been an incredibly fulfilling pursuit. 
         </p>
       </div>
       <div class="image-group grid">
@@ -269,7 +327,7 @@
     <section>
       <h2>Closing Thoughts</h2>
       <p>
-       What began as a side project during a global shutdown turned into an entrepreneurial journey — one that challenged me, taught me, and continues to evolve. While the logistics and workload were never easy, the process gave me an appreciation for the full arc of building something from scratch. 
+        What began as a side project during a global shutdown turned into an entrepreneurial journey — one that challenged me, taught me, and continues to evolve. While the logistics and workload were never easy, the process gave me an appreciation for the full arc of building something from scratch. 
       </p>
     </section>
   </div>
