@@ -18,6 +18,8 @@
       font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
       line-height: 1.6;
       padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     a {
@@ -29,47 +31,45 @@
       color: #555;
     }
 
-    /* Header - matches index.html exactly */
+    /* Header - redesigned for better balance */
     header {
       margin-bottom: 4rem;
       position: relative;
     }
 
     .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 2rem;
     }
 
-    .name-social-container {
+    .title-container {
       display: flex;
-      align-items: center;
-      gap: 2.5rem;
+      flex-direction: column;
+      max-width: 600px;
+      margin-right: auto;
     }
 
     header h1 {
       font-size: 3rem;
-      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
     }
 
     header .descriptors {
       font-size: 1.2rem;
       color: #666;
-      width: 100%;
+      margin-left: 0.5rem;
     }
 
     .nav-menu {
       display: flex;
-      gap: 1.2rem;
-      position: absolute;
-      left: 72%;
-      transform: translateX(-50%);
-      margin-top: 1rem;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
     }
 
     .nav-menu a {
-      font-size: 1.5rem;
+      font-size: 1.1rem;
       transition: color 0.2s ease;
     }
 
@@ -82,13 +82,17 @@
       text-align: center;
       padding: 3rem 0;
       margin: 2rem 0;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero-logo {
       max-width: 400px; /* Increased by ~60% */
       width: 100%;
       border-radius: 12px;
-      margin: 2rem auto;
+      margin: 2rem;
+
       display: block;
     }
 
@@ -180,12 +184,6 @@
       gap: 1rem;
     }
 
-    .image-group img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
 
     /* Accomplishments Styles */
     .accomplishments {
@@ -210,6 +208,64 @@
       list-style-type: circle;
       padding-left: 1.5rem;
       margin-bottom: 0.5rem;
+    }
+
+    .descriptors {
+      font-size: 1.2rem;
+      color: #666;
+      width: 100%;
+      white-space: nowrap; /* Prevent line breaks */
+    }
+    
+    .breadcrumb, .store-links {
+      display: inline; /* Ensure inline display */
+    }
+    
+    .store-links-container {
+      position: absolute;
+      right: 0;
+      top: 100%;
+      margin-top: 2.7rem;
+      text-align: right;
+    }
+    
+    .store-links {
+      font-size: 0.9rem;
+      color: #777;
+      padding: 0.2rem 0.5rem;
+      background: #f5f5f5;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    
+    .store-links a {
+      color: #666;
+      transition: color 0.2s ease;
+    }
+    
+    .store-links a:hover {
+      color: #333;
+      text-decoration: underline;
+    }
+    
+    /* Update nav-menu to be position-relative */
+    .nav-menu {
+      position: relative;
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .store-links-container {
+        position: static;
+        text-align: left;
+        margin-top: 1rem;
+      }
+      .nav-menu {
+        flex-wrap: wrap;
+      }
     }
 
     /* Responsive Design */
@@ -278,18 +334,23 @@
     <!-- Header -->
     <header>
       <div class="header-content">
-        <div class="name-social-container">
+        <div class="title-container">
           <h1>Antler Addiction</h1>
+          <div class="descriptors">
+            > E-Commerce > Business Operations > Web Design
+          </div>
         </div>
         <nav class="nav-menu">
           <a href="index.html">Home</a>
           <a href="index.html#projects">Projects</a>
           <a href="https://substack.com/@joshkraft1" target="_blank">Writings</a> 
           <a href="contact.html">Contact</a>
+          <div class="store-links-container">
+            <div class="store-links">
+              visit our <a href="#etsy-url">Etsy</a> | <a href="#shopify-url">Shopify</a>
+            </div>
+          </div>
         </nav>
-        <div class="descriptors">
-          > E-Commerce > Business Operations > Web Design
-        </div>
       </div>
     </header>
 
@@ -389,7 +450,7 @@
           Through this, I developed skills in e-commerce, professional communication, teamwork, and more. Improving store layouts and shipping logic, learning how to drive traffic through social platforms and SEO, and staying accountable each and every day - all while managing a full course load as a student, has been an incredibly fulfilling pursuit. 
         </p>
       </div>
-      <div class="image-group">
+      <div class="image-group horizontal">
         <img src="/assets/antler5.JPG" alt="Antler product photography">
         <img src="/assets/antler6.JPG" alt="Antler packaging">
       </div>
