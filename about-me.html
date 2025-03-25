@@ -17,6 +17,7 @@
       font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
       line-height: 1.6;
       min-height: 100vh;
+      padding: 2rem;
     }
 
     a {
@@ -31,32 +32,63 @@
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem;
     }
 
-    /* Header */
-    .header {
+    /* Header - Matching index.html */
+    header {
+      margin-bottom: 4rem;
+      position: relative;
+    }
+
+    .header-content {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-      margin-bottom: 3rem;
+      align-items: baseline;
+      flex-wrap: wrap;
     }
 
-    .back-link {
-      font-size: 1.1rem;
+    .name-social-container {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 2.5rem;
     }
 
-    .social-links {
+    header h1 {
+      font-size: 3rem;
+      margin-right: 0.5rem;
+    }
+
+    header .descriptors {
+      font-size: 1.2rem;
+      color: #666;
+      width: 100%;
+    }
+
+    header .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    header .social-links i {
+      font-size: 1.5rem;
+    }
+
+    .nav-menu {
       display: flex;
       gap: 1.5rem;
+      position: absolute;
+      left: 72%;
+      transform: translateX(-50%);
+      margin-top: 1rem;
     }
 
-    .social-links i {
-      font-size: 1.3rem;
+    .nav-menu a {
+      font-size: 1.1rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-menu a:hover {
+      color: #555;
     }
 
     /* Hero Section */
@@ -145,6 +177,31 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .header-content {
+        flex-direction: column;
+      }
+
+      .name-social-container {
+        margin-bottom: 1rem;
+      }
+
+      .nav-menu {
+        position: static;
+        transform: none;
+        margin-top: 1rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
       .hero {
         flex-direction: column;
       }
@@ -164,21 +221,32 @@
 </head>
 <body>
   <div class="container">
-    <!-- Header with Back Link -->
-    <div class="header">
-      <a href="index.html" class="back-link">
-        <i class="fas fa-arrow-left"></i> Back to Portfolio
-      </a>
-      <div class="social-links">
-        <a href="https://linkedin.com/in/josh-kraft" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/joshkraft44" target="_blank"><i class="fab fa-github"></i></a>
+    <!-- Header matching index.html -->
+    <header>
+      <div class="header-content">
+        <div class="name-social-container">
+          <h1>Josh Kraft</h1>
+          <div class="social-links">
+            <a href="https://linkedin.com/in/josh-kraft" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/joshkraft44" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <nav class="nav-menu">
+          <a href="index.html">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="https://substack.com/@joshkraft1" target="_blank">Writings</a> 
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="descriptors">
+          > student > entrepreneur > programmer
+        </div>
       </div>
-    </div>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
-        <h1>Josh Kraft</h1>
+        <h1>About Me</h1>
         <p>
           Computer Science student at the University of Calgary. Entrepreneur and programmer passionate about building meaningful solutions.
         </p>
