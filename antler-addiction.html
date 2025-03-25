@@ -18,6 +18,8 @@
       font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
       line-height: 1.6;
       padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     a {
@@ -33,6 +35,9 @@
     header {
       margin-bottom: 4rem;
       position: relative;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .header-content {
@@ -57,14 +62,13 @@
       font-size: 1.2rem;
       color: #666;
       width: 100%;
+      text-align: center;
+      margin-top: 1rem;
     }
 
     .nav-menu {
       display: flex;
       gap: 1.2rem;
-      position: absolute;
-      left: 72%;
-      transform: translateX(-50%);
       margin-top: 1rem;
     }
 
@@ -82,10 +86,13 @@
       text-align: center;
       padding: 3rem 0;
       margin: 2rem 0;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero-logo {
-      max-width: 400px; /* Increased by ~60% */
+      max-width: 400px;
       width: 100%;
       border-radius: 12px;
       margin: 2rem auto;
@@ -99,139 +106,6 @@
       margin: 0 auto;
       line-height: 1.6;
     }
-
-    /* Overview Section */
-    .section-heading {
-      font-size: 1.8rem;
-      color: #333;
-      margin-bottom: 1.5rem;
-    }
-
-    .intro-section {
-      display: flex;
-      align-items: center;
-      gap: 3rem;
-      margin-bottom: 4rem;
-    }
-
-    .intro-text {
-      flex: 1.5;
-      font-size: 1.1rem;
-      line-height: 1.7;
-    }
-
-    .intro-image {
-      flex: 1;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .intro-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* Section divider */
-    .section-divider {
-      border: 0;
-      height: 1px;
-      background-color: #eee;
-      margin: 3rem 0;
-    }
-
-    /* Project Content Sections */
-    .section {
-      display: flex;
-      align-items: center;
-      gap: 3rem;
-      margin-bottom: 4rem;
-    }
-
-    .section.reverse {
-      flex-direction: row-reverse;
-    }
-
-    .section .text {
-      flex: 1;
-    }
-
-    .image-group {
-      flex: 1;
-      display: flex;
-      gap: 1rem;
-    }
-
-    .image-group.vertical {
-      flex-direction: column;
-    }
-
-    .image-group.horizontal {
-      flex-direction: row;
-    }
-
-    .image-group.horizontal img {
-      width: calc(50% - 0.5rem);
-    }
-
-    .image-group.grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-
-
-    /* Accomplishments Styles */
-    .accomplishments {
-      display: flex;
-      gap: 2rem;
-      margin-bottom: 4rem;
-    }
-
-    .accomplishments-column {
-      flex: 1;
-      background-color: #f5f5f5;
-      padding: 1.5rem;
-      border-radius: 8px;
-    }
-
-    .accomplishments-column ul {
-      list-style-type: disc;
-      padding-left: 1.5rem;
-    }
-
-    .accomplishments-column ul ul {
-      list-style-type: circle;
-      padding-left: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .header-content {
-        flex-direction: column;
-      }
-
-      .name-social-container {
-        margin-bottom: 1rem;
-      }
-
-      .nav-menu {
-        position: static;
-        transform: none;
-        margin-top: 1rem;
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .hero {
-        padding: 2rem 0;
-      }
-
-      .hero-logo {
-        max-width: 300px;
-      }
 
       .intro-section,
       .section {
@@ -262,7 +136,7 @@
       .accomplishments {
         flex-direction: column;
       }
-    }
+      
   </style>
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
