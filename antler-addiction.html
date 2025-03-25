@@ -16,11 +16,11 @@
       background-color: #fff;
       color: #111;
       font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
-      line-height: 1.8;
+      line-height: 1.6;
       padding: 2rem;
     }
 
-    /* Header Styles */
+    /* Header - Matches index.html exactly */
     header {
       margin-bottom: 4rem;
       position: relative;
@@ -42,25 +42,28 @@
     header h1 {
       font-size: 3rem;
       margin-right: 0.5rem;
-      text-align: left; /* Left-aligned title */
+      text-align: left;
     }
 
     .subtitle {
-      text-align: left; /* Left-aligned subtitle */
-      max-width: 100%;
-      margin-bottom: 3rem;
+      font-size: 1.1rem;
+      max-width: 500px;
+      margin: 0;
+      margin-right: 6.6rem;
+      text-align: left;
     }
 
     .nav-menu {
       display: flex;
       gap: 1.5rem;
       position: absolute;
-      right: 0; /* Align to right */
+      left: 72%;
+      transform: translateX(-50%);
       margin-top: 1rem;
     }
 
     .nav-menu a {
-      font-size: 1.5rem; /* Larger nav text */
+      font-size: 1rem;
       transition: color 0.2s ease;
     }
 
@@ -72,12 +75,12 @@
       max-width: 250px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      position: absolute;
-      right: 0;
-      margin-top: 4rem; /* Position below nav */
+      margin-left: 5rem;
+      margin-top: -3.5rem;
+      margin-right: 0;
     }
 
-    /* Existing Content Styles */
+    /* Rest of your existing styles */
     h2 {
       font-size: 1.8rem;
       margin-top: 3rem;
@@ -157,29 +160,6 @@
       border-radius: 8px;
     }
 
-    .accomplishments h3 {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-      color: #444;
-    }
-
-    .accomplishments ul {
-      list-style-type: none;
-    }
-
-    .accomplishments li {
-      margin-bottom: 0.8rem;
-      position: relative;
-      padding-left: 1.5rem;
-    }
-
-    .accomplishments li:before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #666;
-    }
-
     /* Responsive Design */
     @media (max-width: 768px) {
       header h1 {
@@ -192,15 +172,18 @@
 
       .nav-menu {
         position: static;
+        transform: none;
         margin-top: 1rem;
         gap: 1rem;
         flex-wrap: wrap;
+        justify-content: center;
       }
 
       .logo-image {
-        position: static;
-        margin: 2rem auto;
-        display: block;
+        max-width: 250px;
+        margin-left: 0;
+        margin-right: auto;
+        margin-top: 1.5rem;
       }
 
       .section {
@@ -228,23 +211,23 @@
 </head>
 <body>
   <div class="container">
-    <!-- Header with Navigation -->
+    <!-- Header matching index.html -->
     <header>
       <div class="header-content">
-        <div>
+        <div class="name-social-container">
           <h1>Antler Addiction</h1>
           <p class="subtitle"><b>A sustainable business born from a love for nature, "shed hunting" and entrepreneurial spirit.</b></p>
         </div>
         <nav class="nav-menu">
           <a href="index.html">Home</a>
+          <a href="index.html#projects">Projects</a>
           <a href="contact.html">Contact</a>
-          <a href="https://yourusername.substack.com" target="_blank">Writings</a>
         </nav>
         <img src="/assets/antler-logo.jpg" alt="Antler Addiction Logo" class="logo-image">
       </div>
     </header>
 
-    <!-- Summary Section -->
+    <!-- Rest of your content remains the same -->
     <section class="section">
       <div class="text">
         <p>
