@@ -109,6 +109,43 @@
       text-align: center;
     }
 
+    /* Accomplishments Styles */
+    .accomplishments {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .accomplishments-column {
+      flex: 1;
+      background-color: #f5f5f5;
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+
+    .accomplishments h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #444;
+    }
+
+    .accomplishments ul {
+      list-style-type: none;
+    }
+
+    .accomplishments li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .accomplishments li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #666;
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
       .section {
@@ -135,6 +172,10 @@
       .image-group.grid {
         grid-template-columns: 1fr; /* Stack images vertically on mobile */
       }
+
+      .accomplishments {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -142,19 +183,18 @@
   <div class="container">
     <!-- Project Title and Subtitle -->
     <h1>Antler Addiction</h1>
-    <p class="subtitle"><b>A sustainable business born from a love for nature and craftsmanship.</b></p>
+    <p class="subtitle"><b>A sustainable business born from a love for nature, "shed hunting" and entrepreneurial spirit.</b></p>
 
-    <!-- Summary Section: 2 Vertical Images -->
+    <!-- Summary Section: Now with just 1 Vertical Image -->
     <section class="section">
       <div class="text">
         <p>
-            A sustainable business born from a love for nature and entrepreneurship.
-            Antler Addiction started in 2021 as a small project, after collecting naturally shed deer antlers on our family ranch during the COVID-19 pandemic. What began as a hobby grew into a business — turning discarded antlers into meaningful, sustainable products like pet chews and home décor.            
+            Antler Addiction started in 2021 as a small project, after collecting naturally shed deer antlers on our family ranch during the COVID-19 pandemic. What began as a hobby grew into a business — utilizing unnoticed antlers for purposeful, sustainable products like pet chews and home décor.            
         </p>
       </div>
       <div class="image-group vertical">
-        <img src="/assets/antler1.JPG" alt="Row1 photos">
-        <img src="/assets/antler2.JPG" alt="Row1 photos">
+        <!-- Removed first image, keeping only the second one -->
+        <img src="/assets/antler2.JPG" alt="Antler products">
       </div>
     </section>
 
@@ -169,6 +209,43 @@
       <div class="image-group horizontal">
         <img src="/assets/antler3.JPG" alt="Challenges">
         <img src="/assets/antler4.JPG" alt="Challenges">
+      </div>
+    </section>
+
+    <!-- New Accomplishments Section -->
+    <section>
+      <h2>Accomplishments</h2>
+      <div class="accomplishments">
+        <div class="accomplishments-column">
+          <h3>🛠️ Contributions</h3>
+          <ul>
+            <li>Helped maintain Etsy's Star Seller badge every month for 4+ years</li>
+            <li>4.8+ average rating</li>
+            <li>95% of customer messages answered within 24 hours</li>
+            <li>Fewer than 3 support cases per month</li>
+            <li>Assisted with Shopify store setup</li>
+            <li>Theme and layout configuration</li>
+            <li>Product and listing import</li>
+            <li>App/extension integration</li>
+            <li>Supported trademark filing for Antler Addiction, covering antlers, apparel, and future categories</li>
+            <li>Expanded antler sourcing network across Alberta</li>
+            <li>Built relationships with sellers in Lethbridge, Edmonton, Grand Prairie, Canmore, Strathmore, and more</li>
+          </ul>
+        </div>
+        <div class="accomplishments-column">
+          <h3>🚀 Personally Led</h3>
+          <ul>
+            <li>Personally fulfilled over 200 orders</li>
+            <li>Handled packing, labeling, shipping, and all customer communication</li>
+            <li>Completed hundreds of E-declarations for U.S. wildlife compliance</li>
+            <li>Built and customized the Shopify frontend</li>
+            <li>Injected logo via Liquid code</li>
+            <li>Replaced default cart icon with custom design</li>
+            <li>Designed and implemented a custom "About" page</li>
+            <li>Designed and constructed an 8' x 4' modular photography stand</li>
+            <li>Simplified and standardized the product photography workflow</li>
+          </ul>
+        </div>
       </div>
     </section>
 
