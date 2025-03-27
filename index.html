@@ -106,7 +106,7 @@
 
     /* Typing animation styles */
     #cursor {
-      animation: blink 1s step-end 6s;
+      animation: blink 1s step-end infinite;
       color: #111;
       opacity: 0; /* Start hidden */
     }
@@ -427,7 +427,7 @@
           setTimeout(typeWriter, typingSpeed);
         } else {
           // Keep cursor blinking after typing is complete
-          cursor.style.animation = 'blink 1s step-end infinite';
+          cursor.style.animation = 'blink 1s step-end 6s';
           cursor.style.opacity = '1';
         }
       }
