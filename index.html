@@ -104,6 +104,18 @@
       color: #555;
     }
 
+    /* Typing animation styles */
+    #cursor {
+      animation: blink 1s step-end infinite;
+      color: #111;
+      opacity: 0; /* Start hidden */
+    }
+
+    @keyframes blink {
+      from, to { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
     /* Introduction Section */
     #introduction {
       margin-bottom: 4rem;
@@ -111,7 +123,7 @@
       position: relative;
     }
 
-        .intro {
+    .intro {
       display: flex;
       align-items: flex-start;
       gap: 2rem;
@@ -302,7 +314,7 @@
     <header>
       <div class="header-content">
         <div class="name-social-container">
-          <h1>Josh Kraft</h1>
+          <h1 id="typed-name"><span id="name-text"></span><span id="cursor">|</span></h1>
           <div class="social-links">
             <a href="https://linkedin.com/in/josh-kraft" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://github.com/joshkraft44" target="_blank"><i class="fab fa-github"></i></a>
@@ -320,7 +332,6 @@
       </div>
     </header>
 
-    <!-- Rest of your HTML remains the same -->
     <!-- Introduction Section -->
     <section id="introduction">
       <div class="intro">
@@ -397,5 +408,33 @@
       </p>
     </footer>
   </div>
+
+  <!-- Typing animation script -->
+  <script>
+    // Typing animation for name
+    document.addEventListener('DOMContentLoaded', function() {
+      const name = "Josh Kraft";
+      const nameElement = document.getElementById('name-text');
+      const cursor = document.getElementById('cursor');
+      
+      let i = 0;
+      const typingSpeed = 100; // milliseconds per character
+      
+      function typeWriter() {
+        if (i < name.length) {
+          nameElement.textContent += name.charAt(i);
+          i++;
+          setTimeout(typeWriter, typingSpeed);
+        } else {
+          // Keep cursor blinking after typing is complete
+          cursor.style.animation = 'blink 1s step-end infinite';
+          cursor.style.opacity = '1';
+        }
+      }
+      
+      // Start typing animation after a small delay
+      setTimeout(typeWriter, 500);
+    });
+  </script>
 </body>
 </html>
