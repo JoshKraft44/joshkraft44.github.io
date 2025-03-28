@@ -66,20 +66,6 @@
       gap: 2.5rem;
     }
 
-    #typed-name {
-      position: relative;
-      display: inline-block; 
-    }
-
-    #cursor {
-      animation: blink 1s step-end infinite;
-      color: var(--text-primary);
-      opacity: 0;
-      position: absolute; 
-      right: -0.5rem; 
-      pointer-events: none; 
-    }
-    
     header h1 {
       font-size: 3rem;
       margin-right: 0.5rem;
@@ -156,6 +142,13 @@
         display: inline-block;
         font-size: 0.95rem; 
       }
+    }
+
+
+    #cursor {
+      animation: blink 1s step-end infinite;
+      color: var(--text-primary);
+      opacity: 0;
     }
 
     @keyframes blink {
@@ -320,6 +313,7 @@
 </head>
 <body>
   <div class="container">
+    <!-- Header -->
     <header>
       <div class="header-content">
         <div class="name-social-container">
@@ -426,9 +420,6 @@
       const nameElement = document.getElementById('name-text');
       const cursor = document.getElementById('cursor');
       
-      // Make cursor visible immediately
-      cursor.style.opacity = '1';
-      
       let i = 0;
       const typingSpeed = 100;
       
@@ -439,10 +430,11 @@
           setTimeout(typeWriter, typingSpeed);
         } else {
           cursor.style.animation = 'blink 1s step-end infinite';
-          // Remove cursor immediately after typing finishes
+          cursor.style.opacity = '1';
+          
           setTimeout(function() {
             cursor.style.display = 'none';
-          }, 1000); // Reduced from 3000 to 1000
+          }, 3000);
         }
       }
       
