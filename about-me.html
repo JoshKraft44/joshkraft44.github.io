@@ -295,5 +295,21 @@
       <p>&copy; 2024 Josh Kraft</p>
     </footer>
   </div>
+  <script>
+    // Handle anchor links when coming from another page
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if URL has a hash and it matches an element
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          setTimeout(() => {
+            target.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }, 100); // Small delay to ensure page is fully loaded
+        }
+      }
+    });
+  </script>
 </body>
 </html>
