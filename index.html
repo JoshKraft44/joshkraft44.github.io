@@ -99,6 +99,46 @@
       font-size: 1.1rem;
     }
 
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        padding: 1.5rem;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      .header-content {
+        flex-direction: column;
+      }
+
+      .name-social-container {
+        margin-bottom: 1rem;
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .nav-menu {
+        position: static;
+        margin: 1rem 0;
+        justify-content: center;
+        gap: 1rem;
+        padding: 0.75rem 0;
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .nav-menu a {
+        display: inline-block;
+      }
+    }
+
+    /* Rest of your existing styles remain unchanged */
     /* Typing animation styles */
     #cursor {
       animation: blink 1s step-end infinite;
@@ -237,32 +277,7 @@
       color: var(--text-primary);
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
-      body {
-        padding: 1.5rem;
-      }
-
-      header h1 {
-        font-size: 2.5rem;
-      }
-
-      .header-content {
-        flex-direction: column;
-      }
-
-      .name-social-container {
-        margin-bottom: 1rem;
-        width: 100%;
-        justify-content: space-between;
-      }
-
-      .nav-menu {
-        position: static;
-        margin-top: 1.5rem;
-        justify-content: flex-start;
-      }
-
       .intro {
         flex-direction: column;
       }
