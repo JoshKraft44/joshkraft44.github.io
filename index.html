@@ -93,13 +93,58 @@
       right: 0;
       top: 0;
       margin-top: 1rem;
+      margin-right: 6.75rem;
     }
 
     .nav-menu a {
       font-size: 1.1rem;
     }
 
-    /* Typing animation styles */
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        padding: 1.5rem;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      header .descriptors {
+        text-align: center;
+      }
+
+      .header-content {
+        flex-direction: column;
+      }
+
+      .name-social-container {
+        margin-bottom: 1rem;
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .nav-menu {
+        position: static;
+        margin: 0.75rem 0; /* Reduced margin */
+        justify-content: center;
+        gap: 0.8rem; /* Reduced gap */
+        padding: 0.5rem 0; /* Reduced padding */
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .nav-menu a {
+        display: inline-block;
+        font-size: 0.95rem; 
+      }
+    }
+
+
     #cursor {
       animation: blink 1s step-end infinite;
       color: var(--text-primary);
@@ -145,7 +190,7 @@
       max-width: 250px;
       border-radius: 12px;
       box-shadow: var(--shadow);
-      margin-left: 5rem; 
+      margin-left: 6.25rem; 
       margin-top: -3.5rem;
       margin-right: 0;
     }
@@ -237,32 +282,7 @@
       color: var(--text-primary);
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
-      body {
-        padding: 1.5rem;
-      }
-
-      header h1 {
-        font-size: 2.5rem;
-      }
-
-      .header-content {
-        flex-direction: column;
-      }
-
-      .name-social-container {
-        margin-bottom: 1rem;
-        width: 100%;
-        justify-content: space-between;
-      }
-
-      .nav-menu {
-        position: static;
-        margin-top: 1.5rem;
-        justify-content: flex-start;
-      }
-
       .intro {
         flex-direction: column;
       }
@@ -418,7 +438,7 @@
         }
       }
       
-      setTimeout(typeWriter, 400);
+      setTimeout(typeWriter, 300);
       
       // Smooth scrolling for navigation links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
