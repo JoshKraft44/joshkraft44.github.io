@@ -410,31 +410,36 @@
   </div>
 
   <!-- Typing animation script -->
-  <script>
-    // Typing animation for name
-    document.addEventListener('DOMContentLoaded', function() {
-      const name = "Josh Kraft";
-      const nameElement = document.getElementById('name-text');
-      const cursor = document.getElementById('cursor');
-      
-      let i = 0;
-      const typingSpeed = 100; // milliseconds per character
-      
-      function typeWriter() {
-        if (i < name.length) {
-          nameElement.textContent += name.charAt(i);
-          i++;
-          setTimeout(typeWriter, typingSpeed);
-        } else {
-          // Keep cursor blinking after typing is complete
-          cursor.style.animation = 'blink 1s step-end 6s';
-          cursor.style.opacity = '1';
-        }
+<script>
+  // Typing animation for name
+  document.addEventListener('DOMContentLoaded', function() {
+    const name = "Josh Kraft";
+    const nameElement = document.getElementById('name-text');
+    const cursor = document.getElementById('cursor');
+    
+    let i = 0;
+    const typingSpeed = 100; // milliseconds per character
+    
+    function typeWriter() {
+      if (i < name.length) {
+        nameElement.textContent += name.charAt(i);
+        i++;
+        setTimeout(typeWriter, typingSpeed);
+      } else {
+        // Keep cursor blinking after typing is complete
+        cursor.style.animation = 'blink 1s step-end infinite';
+        cursor.style.opacity = '1';
+        
+        // Make cursor disappear after 5 seconds
+        setTimeout(function() {
+          cursor.style.display = 'none';
+        }, 5000);
       }
-      
-      // Start typing animation after a small delay
-      setTimeout(typeWriter, 500);
-    });
-  </script>
+    }
+    
+    // Start typing animation after a small delay
+    setTimeout(typeWriter, 500);
+  });
+</script>
 </body>
 </html>
