@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Josh Kraft - Portfolio</title>
   <style>
+    :root {
+      --text-primary: #111;
+      --text-secondary: #666;
+      --text-muted: #888;
+      --bg-primary: #fff;
+      --bg-secondary: #f5f5f5;
+      --border-color: #e0e0e0;
+      --hover-color: #555;
+      --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -12,8 +24,8 @@
     }
 
     body {
-      background-color: #fff;
-      color: #111;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
       font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
       line-height: 1.6;
       padding: 2rem;
@@ -22,93 +34,67 @@
     a {
       color: inherit;
       text-decoration: none;
+      transition: var(--transition);
     }
 
     a:hover {
-      color: #555;
+      color: var(--hover-color);
     }
 
-    /* Utility Classes */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 1rem;
     }
 
-    .text-center {
-      text-align: center;
-    }
-
-    .text-muted {
-      color: #666;
-    }
-
-    .hover-glow:hover {
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Header - Updated */
+    /* Header */
     header {
       margin-bottom: 4rem;
-      position: relative;
     }
 
     .header-content {
       display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 1rem;
     }
 
     .name-social-container {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
       align-items: center;
-      gap: 2.5rem;
+      gap: 1.5rem;
     }
 
     header h1 {
-      font-size: 3rem;
-      margin-right: 0.5rem;
+      font-size: clamp(2rem, 5vw, 3rem);
     }
 
-    header .descriptors {
+    .descriptors {
       font-size: 1.2rem;
-      color: #666;
-      width: 100%;
+      color: var(--text-secondary);
     }
 
-    header .social-links {
+    .social-links {
       display: flex;
       gap: 1rem;
     }
 
-    header .social-links i {
+    .social-links i {
       font-size: 1.5rem;
     }
 
     .nav-menu {
       display: flex;
       gap: 1.5rem;
-      position: absolute;
-      left: 72%; /* Positions nav about 2/3 across */
-      transform: translateX(-50%);
       margin-top: 1rem;
+      flex-wrap: wrap;
     }
 
-    .nav-menu a {
-      font-size: 1.1rem;
-      transition: color 0.2s ease;
-    }
-
-    .nav-menu a:hover {
-      color: #555;
-    }
-
-    /* Typing animation styles */
+    /* Typing animation */
     #cursor {
       animation: blink 1s step-end infinite;
-      color: #111;
-      opacity: 0; /* Start hidden */
+      opacity: 0;
     }
 
     @keyframes blink {
@@ -119,40 +105,42 @@
     /* Introduction Section */
     #introduction {
       margin-bottom: 4rem;
-      text-align: left;
-      position: relative;
     }
 
     .intro {
       display: flex;
-      align-items: flex-start;
+      flex-direction: column;
       gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .intro {
+        flex-direction: row;
+        align-items: flex-start;
+      }
     }
 
     .intro p {
       font-size: 1.1rem;
       max-width: 500px;
-      margin: 0;
-      margin-right: 6.6rem;
     }
 
     .intro em {
       font-style: normal;
-      color: #555;
-    }
-
-    .intro strong {
-      font-weight: normal;
-      color: #111;
+      color: var(--text-secondary);
     }
 
     .profile-image {
       max-width: 250px;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      margin-left: 5rem; 
-      margin-top: -3.5rem;
-      margin-right: 0;
+      box-shadow: var(--shadow);
+      align-self: center;
+    }
+
+    @media (min-width: 768px) {
+      .profile-image {
+        margin-top: -3.5rem;
+      }
     }
 
     /* Projects Section */
@@ -163,7 +151,7 @@
     #projects h2 {
       font-size: 1.5rem;
       margin-bottom: 2rem;
-      color: #666;
+      color: var(--text-secondary);
     }
 
     .project-list {
@@ -173,12 +161,11 @@
     }
 
     .project-card {
-      background-color: #f5f5f5;
-      border: 1px solid #e0e0e0;
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
       border-radius: 8px;
       padding: 2rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      width: 100%;
+      transition: var(--transition);
     }
 
     .project-card:hover {
@@ -188,8 +175,15 @@
 
     .project-content {
       display: flex;
+      flex-direction: column;
       gap: 2rem;
-      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .project-content {
+        flex-direction: row;
+        align-items: center;
+      }
     }
 
     .project-text {
@@ -207,7 +201,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.3s ease;
+      transition: var(--transition);
     }
 
     .project-card:hover .project-image img {
@@ -217,17 +211,24 @@
     .project-card h3 {
       font-size: 1.5rem;
       margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .project-card h3 i {
+      font-size: 1rem;
     }
 
     .project-card p {
       font-size: 1rem;
-      color: #666;
+      color: var(--text-secondary);
       margin-bottom: 1.5rem;
     }
 
-    .project-card .tech-stack {
+    .tech-stack {
       font-size: 0.9rem;
-      color: #888;
+      color: var(--text-muted);
       font-style: italic;
     }
 
@@ -235,78 +236,19 @@
     footer {
       margin-top: 4rem;
       text-align: center;
-      color: #666;
+      color: var(--text-secondary);
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
     }
 
     footer a {
-      color: #111;
-    }
-
-    footer a:hover {
-      color: #555;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .header-content {
-        flex-direction: column;
-      }
-
-      .name-social-container {
-        margin-bottom: 1rem;
-      }
-
-      .nav-menu {
-        position: static;
-        transform: none;
-        margin-top: 1rem;
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .intro {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
-      }
-
-      .profile-image {
-        max-width: 250px;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        margin-left: 6; 
-        margin-right: auto; 
-      }
-
-      .project-content {
-        flex-direction: column;
-      }
-
-      .project-image {
-        width: 100%;
-        max-height: 200px;
-        order: -1;
-      }
+      color: var(--text-primary);
     }
   </style>
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <script>
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
 </head>
 <body>
   <div class="container">
@@ -316,8 +258,8 @@
         <div class="name-social-container">
           <h1 id="typed-name"><span id="name-text"></span><span id="cursor">|</span></h1>
           <div class="social-links">
-            <a href="https://linkedin.com/in/josh-kraft" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/joshkraft44" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/josh-kraft" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/joshkraft44" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
           </div>
         </div>
         <nav class="nav-menu">
@@ -340,7 +282,7 @@
             I'm a <em>Computer Science</em> student at the <strong>University of Calgary</strong>. I care deeply about <em>self-improvement</em> and <em>entrepreneurship</em>, and I enjoy tackling meaningful, difficult, and nuanced problems.
           </p>
         </div>
-        <img src="assets/profile.JPG" alt="Photo of Me" class="profile-image" />
+        <img src="assets/profile.JPG" alt="Photo of Josh Kraft" class="profile-image" loading="lazy">
       </div>
     </section>
 
@@ -349,49 +291,49 @@
       <h2>Main Projects</h2>
       <div class="project-list">
         <!-- Project 1: Antler Addiction -->
-        <a href="antler-addiction.html" class="project-card hover-glow">
+        <a href="antler-addiction.html" class="project-card">
           <div class="project-content">
             <div class="project-text">
-              <h3>Antler Addiction <i class="fas fa-arrow-right" style="margin-left: 0.5rem; font-size: 1rem;"></i></h3>
+              <h3>Antler Addiction <i class="fas fa-arrow-right"></i></h3>
               <p>
                 A sustainable business I cofounded selling naturally shed deer antlers for home décor and pet chews, with hundreds of orders shipped worldwide and a 5.0-star rating from over 200 customers.
               </p>
-              <div class="tech-stack">E-Commerce · Business Operations · Web Design </div>
+              <div class="tech-stack">E-Commerce · Business Operations · Web Design</div>
             </div>
             <div class="project-image">
-              <img src="assets/website1.JPG" alt="Antler Addiction Project">
+              <img src="assets/website1.JPG" alt="Antler Addiction Project" loading="lazy">
             </div>
           </div>
         </a>
 
         <!-- Project 2: Cancel Culture -->
-        <a href="#" class="project-card hover-glow">
+        <a href="#" class="project-card">
           <div class="project-content">
             <div class="project-text">
               <h3>Cancel Culture</h3>
               <p>
                 An iOS app in progress designed to keep friends accountable to making plans and not canceling them, with additional features like local attraction discovery and bill splitting requests.
               </p>
-              <div class="tech-stack"> iOS · Dart · FFIgen</div>
+              <div class="tech-stack">iOS · Dart · FFIgen</div>
             </div>
             <div class="project-image"> 
-              <img src="assets/cancel-culture.png" alt="Cancel Culture App">
+              <img src="assets/cancel-culture.png" alt="Cancel Culture App" loading="lazy">
             </div>
           </div>
         </a>
 
         <!-- Project 3: Portfolio Website -->
-        <a href="index.html" class="project-card hover-glow">
+        <a href="index.html" class="project-card">
           <div class="project-content">
             <div class="project-text">
               <h3>Portfolio Website</h3>
               <p>
                 This website itself, built with HTML, CSS, and JavaScript. A clean, minimalist showcase of my work and skills.
               </p>
-              <div class="tech-stack">HTML · CSS ·  JavaScript</div>
+              <div class="tech-stack">HTML · CSS · JavaScript</div>
             </div>
             <div class="project-image">
-              <img src="assets/website12.JPG" alt="Portfolio Website">
+              <img src="assets/website12.JPG" alt="Portfolio Website" loading="lazy">
             </div>
           </div>
         </a>
@@ -399,7 +341,7 @@
     </section>
 
     <!-- Footer -->
-    <footer id="footer">
+    <footer>
       <p>&copy; 2024 Josh Kraft</p>
       <p>
         <a href="mailto:joshua.kraft@ucalgary.ca">joshua.kraft@ucalgary.ca</a> | 
@@ -409,37 +351,43 @@
     </footer>
   </div>
 
-  <!-- Typing animation script -->
-<script>
-  // Typing animation for name
-  document.addEventListener('DOMContentLoaded', function() {
-    const name = "Josh Kraft";
-    const nameElement = document.getElementById('name-text');
-    const cursor = document.getElementById('cursor');
-    
-    let i = 0;
-    const typingSpeed = 100; // milliseconds per character
-    
-    function typeWriter() {
-      if (i < name.length) {
-        nameElement.textContent += name.charAt(i);
-        i++;
-        setTimeout(typeWriter, typingSpeed);
-      } else {
-        // Keep cursor blinking after typing is complete
-        cursor.style.animation = 'blink 1s step-end infinite';
-        cursor.style.opacity = '1';
-        
-        // Make cursor disappear after 5 seconds
-        setTimeout(function() {
-          cursor.style.display = 'none';
-        }, 5000);
+  <script>
+    // Typing animation for name
+    document.addEventListener('DOMContentLoaded', function() {
+      const name = "Josh Kraft";
+      const nameElement = document.getElementById('name-text');
+      const cursor = document.getElementById('cursor');
+      
+      let i = 0;
+      const typingSpeed = 100;
+      
+      function typeWriter() {
+        if (i < name.length) {
+          nameElement.textContent += name.charAt(i);
+          i++;
+          setTimeout(typeWriter, typingSpeed);
+        } else {
+          cursor.style.animation = 'blink 1s step-end infinite';
+          cursor.style.opacity = '1';
+          
+          setTimeout(() => {
+            cursor.style.display = 'none';
+          }, 5000);
+        }
       }
-    }
-    
-    // Start typing animation after a small delay
-    setTimeout(typeWriter, 400);
-  });
-</script>
+      
+      setTimeout(typeWriter, 400);
+      
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
