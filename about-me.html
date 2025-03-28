@@ -295,5 +295,19 @@
       <p>&copy; 2024 Josh Kraft</p>
     </footer>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          setTimeout(() => {
+            target.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }, 100);
+        }
+      }
+    });
+  </script>
 </body>
 </html>
