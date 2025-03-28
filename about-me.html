@@ -96,8 +96,7 @@
       margin-top: 1rem;
     }
 
-    /* Rest of your CSS remains the same */
-    /* About Me Section */
+
     .about-me-section {
       display: flex;
       flex-direction: column;
@@ -196,8 +195,7 @@
       margin-bottom: 0.5rem;
     }
 
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
+     @media (max-width: 768px) {
       body {
         padding: 1.5rem;
       }
@@ -211,15 +209,29 @@
       }
 
       .name-social-container {
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
         width: 100%;
         justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .descriptors {
+        order: 1; /* Moves below navigation */
+        width: 100%;
+        margin-top: 0.5rem;
+        text-align: center;
       }
 
       .nav-menu {
         position: static;
-        margin-top: 1.5rem;
-        justify-content: flex-start;
+        margin: 1rem 0;
+        justify-content: center;
+        gap: 1rem;
+        padding: 0.5rem 0;
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
       }
 
       .profile-img {
