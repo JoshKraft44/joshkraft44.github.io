@@ -315,7 +315,6 @@
 </head>
 <body>
   <div class="container">
-    <!-- Header -->
     <header>
       <div class="header-content">
         <div class="name-social-container">
@@ -422,6 +421,9 @@
       const nameElement = document.getElementById('name-text');
       const cursor = document.getElementById('cursor');
       
+      // Make cursor visible immediately
+      cursor.style.opacity = '1';
+      
       let i = 0;
       const typingSpeed = 100;
       
@@ -432,11 +434,10 @@
           setTimeout(typeWriter, typingSpeed);
         } else {
           cursor.style.animation = 'blink 1s step-end infinite';
-          cursor.style.opacity = '1';
-          
+          // Remove cursor immediately after typing finishes
           setTimeout(function() {
             cursor.style.display = 'none';
-          }, 3000);
+          }, 1000); // Reduced from 3000 to 1000
         }
       }
       
