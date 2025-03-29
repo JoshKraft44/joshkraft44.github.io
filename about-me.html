@@ -48,9 +48,8 @@
       padding: 0 1rem;
     }
 
-    /* Header */
     header {
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
       position: relative;
     }
 
@@ -94,6 +93,8 @@
       right: 0;
       top: 0;
       margin-top: 1rem;
+      margin-right: 6.75rem;
+      font-size: 1.1rem;
     }
 
     #cursor {
@@ -107,32 +108,16 @@
       50% { opacity: 0; }
     }
 
-    /* About Me Section */
     .about-me-section {
       display: flex;
-      flex-direction: column;
+      align-items: flex-start;
+      flex-direction: row;
       gap: 2rem;
       margin-bottom: 4rem;
-      margin-right: 2rem;
-    }
-
-    @media (min-width: 768px) {
-      .about-me-section {
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 3rem;
-      }
-      .about-text p {
-        margin-top: 4rem;
-      }
-    }
-
-    .about-text {
-      flex: 1;
     }
 
     .about-text h1 {
-      font-size: 2.5rem;
+      font-size: 2.1rem;
       margin-bottom: 1.5rem;
       line-height: 1.2;
     }
@@ -142,18 +127,22 @@
       color: var(--text-secondary);
       line-height: 1.7;
       margin-top: 2rem;
+      max-width: 500px;
+      margin-right: 6.6rem;
     }
 
     .profile-img {
-      flex: 0 0 30%;
-      max-width: 280px;
+      max-width: 250px;
       width: 100%;
       border-radius: 12px;
       box-shadow: var(--shadow);
-      align-self: center;
+      margin-left: 2rem;
+      margin-left: 6.9rem; 
+      margin-top: -3.5rem;
+      margin-right: 0;
+      margin-right: 10.75rem;
     }
 
-    /* Content Sections */
     .content-section {
       margin-bottom: 3.5rem;
       padding-bottom: 2.5rem;
@@ -205,7 +194,6 @@
       margin-bottom: 0.5rem;
     }
 
-    /* Responsive Adjustments */
     @media (max-width: 768px) {
       body {
         padding: 1.5rem;
@@ -253,7 +241,7 @@
       .profile-img {
         max-width: 280px;
         width: 80%;
-        margin: 0 auto;
+        margin: 2rem auto 0;
       }
     }
 
@@ -397,7 +385,6 @@
         
         setTimeout(typeWriter, 100);
         
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           anchor.addEventListener('click', function(e) {
             e.preventDefault();
