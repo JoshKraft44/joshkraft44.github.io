@@ -16,6 +16,7 @@
       background-color: #fff;
       color: #111;
       font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+      --border-color: #e0e0e0;
       line-height: 1.6;
       padding: 1.5rem;
       max-width: 1200px;
@@ -189,7 +190,6 @@
       padding: 1.5rem 0;
     }
 
-    /* Desktop Styles */
     @media (min-width: 768px) {
       body {
         padding: 2rem;
@@ -284,6 +284,36 @@
         flex-direction: row;
         gap: 2rem;
       }
+    }
+
+    @media (max-width: 768px) {
+
+      .header-content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-menu {
+        align-items: center;
+        text-align: center;
+        position: static;
+        margin: 0.75rem 0; 
+        justify-content: center;
+        gap: 0.8rem; 
+        padding: 0.5rem 0;
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .store-links-container {
+        align-items: center;
+      }
+
+
     }
 
     #cursor {
