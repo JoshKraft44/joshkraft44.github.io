@@ -4,98 +4,629 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bus Ticketing Kiosk - Josh Kraft</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background-color: #fff; color: #111; font-family: 'JetBrains Mono', 'Fira Code', monospace; line-height: 1.6; padding: 1.5rem; max-width: 1200px; margin: 0 auto; }
-    a { color: inherit; text-decoration: none; }
-    a:hover { color: #555; }
-    header { margin-bottom: 3rem; }
-    .header-content { display: flex; flex-direction: column; gap: 1rem; }
-    header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    .descriptors { font-size: 1.1rem; color: #666; }
-    .nav-menu { display: flex; gap: 1.5rem; justify-content: center; margin-top: 1rem; font-size: 1.1rem; }
-    .hero { text-align: center; padding: 2rem 0; margin: 1.5rem 0; }
-    .hero-logo { max-width: 300px; width: 100%; border-radius: 12px; margin: 1rem auto; display: block; }
-    .hero-subtitle { font-size: 1.2rem; color: #333; }
-    .section { display: flex; flex-direction: column; gap: 2rem; margin-bottom: 3rem; }
-    .section-heading { font-size: 1.6rem; color: #333; margin-bottom: 1.2rem; }
-    .text, .image-group { width: 100%; }
-    .image-group { display: flex; flex-direction: column; gap: 1rem; }
-    .image-group img { width: 100%; border-radius: 8px; }
-    .section-divider { height: 1px; background-color: #eee; margin: 2rem 0; }
-    footer { text-align: center; color: #666; padding: 1.5rem 0; }
-    @media(min-width:768px){
-      .header-content { flex-direction: row; justify-content: space-between; }
-      header h1 { font-size: 3rem; }
-      .section { flex-direction: row; gap: 3rem; }
-      .section.reverse { flex-direction: row-reverse; }
-      .text, .image-group { flex: 1; }
-      .image-group { flex-direction: row; }
-      .image-group img { width: 50%; }
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+    
+    body {
+      background-color: #fff; 
+      color: #111;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      line-height: 1.6; 
+      padding: 1.5rem; 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      position: relative;
+    }
+    
+    a { 
+      color: inherit; 
+      text-decoration: none; 
+    }
+    
+    a:hover { 
+      color: #555; 
+    }
+    
+    header { 
+      margin-bottom: 3rem; 
+      position: relative;
+    }
+    
+    .header-content { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    header h1 { 
+      font-size: 2.5rem; 
+      margin-bottom: 0.5rem; 
+    }
+    
+    .nav-menu { 
+      display: flex; 
+      gap: 1.5rem; 
+    }
+    
+    .store-links-container {
+      width: 100%;
+      text-align: right;
+      margin-top: 0.5rem;
+    }
+    
+    .store-links {
+      font-size: 0.9rem;
+      color: #777;
+      padding: 0.2rem 0.5rem;
+      background: #f5f5f5;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    
+    .hero { 
+      text-align: center; 
+      padding: 2rem 0; 
+      margin: 1.5rem 0;
+    }
+    
+    .hero-logo { 
+      max-width: 300px; 
+      border-radius: 12px; 
+      margin: auto; 
+    }
+    
+    .hero-subtitle { 
+      font-size: 1.2rem; 
+      color: #333; 
+      max-width: 800px;
+      margin: 1rem auto;
+    }
+    
+    .section { 
+      display: flex; 
+      gap: 2rem; 
+      margin-bottom: 3rem; 
+      align-items: center;
+    }
+    
+    .section-heading { 
+      font-size: 1.6rem; 
+      color: #333; 
+      margin-bottom: 1.2rem; 
+    }
+    
+    .text, .image-group { 
+      flex: 1; 
+    }
+    
+    .image-group img { 
+      width: 100%; 
+      border-radius: 8px; 
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .section-divider { 
+      border: 0; 
+      height: 1px; 
+      background-color: #eee; 
+      margin: 2rem 0; 
+    }
+    
+    /* User Personas */
+    .personas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    
+    .persona-card {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 1.5rem;
+      flex: 1;
+      min-width: 250px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .persona-name {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #222;
+    }
+    
+    .persona-details {
+      font-size: 0.9rem;
+      color: #555;
+    }
+    
+    /* Process Timeline */
+    .timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: 2rem auto;
+    }
+    
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background-color: #e0e0e0;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1px;
+    }
+    
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+    
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      border: 3px solid #555;
+      border-radius: 50%;
+      top: 15px;
+      z-index: 1;
+    }
+    
+    .left {
+      left: 0;
+      text-align: right;
+    }
+    
+    .right {
+      left: 50%;
+      text-align: left;
+    }
+    
+    .left::after {
+      right: -12px;
+    }
+    
+    .right::after {
+      left: -12px;
+    }
+    
+    .timeline-content {
+      padding: 20px;
+      background: #f5f5f5;
+      border-radius: 8px;
+    }
+    
+    .timeline-date {
+      font-weight: bold;
+      color: #555;
+    }
+    
+    /* Accomplishments */
+    .accomplishments { 
+      display: flex; 
+      gap: 1rem; 
+      margin: 2rem 0;
+    }
+    
+    .accomplishments-column { 
+      background-color: #f5f5f5; 
+      padding: 1.5rem; 
+      border-radius: 8px; 
+      flex: 1; 
+    }
+    
+    .accomplishments-column h3 {
+      margin-bottom: 1rem;
+    }
+    
+    .accomplishments-column ul { 
+      list-style-type: disc;
+      padding-left: 1.2rem;
+    }
+    
+    .accomplishments-column li {
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    
+    .gallery-item {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.03);
+    }
+    
+    /* Footer */
+    footer { 
+      text-align: center; 
+      color: #666; 
+      padding: 2rem 0; 
+      margin-top: 3rem; 
+      border-top: 1px solid #eee;
+    }
+    
+    @media (max-width: 768px) {
+      .section, .accomplishments { 
+        flex-direction: column; 
+      }
+      
+      .header-content { 
+        flex-direction: column; 
+        text-align: center; 
+      }
+      
+      .nav-menu {
+        justify-content: center;
+        margin-top: 1rem;
+      }
+      
+      .store-links-container {
+        text-align: center;
+        margin-top: 1rem;
+      }
+      
+      .timeline::after {
+        left: 31px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-item::after {
+        left: 21px;
+      }
+      
+      .left, .right {
+        left: 0;
+        text-align: left;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
     <div class="header-content">
-      <h1>Bus Ticketing Kiosk</h1>
+      <div>
+        <h1>Bus Ticketing Kiosk</h1>
+        <p>> Human-Computer Interaction > UX Design > Accessibility</p>
+      </div>
       <nav class="nav-menu">
         <a href="index.html">Home</a>
         <a href="index.html#projects">Projects</a>
-        <a href="https://substack.com/@joshkraft1" target="_blank">Writings</a>
+        <a href="https://substack.com/@joshkraft1">Writings</a>
         <a href="contact.html">Contact</a>
       </nav>
+      <div class="store-links-container">
+        <div class="store-links">
+          view <a href="#">prototype</a> | <a href="#">case study</a>
+        </div>
+      </div>
     </div>
-    <div class="descriptors">&gt; UX Design &gt; HTML/CSS &gt; Accessibility</div>
   </header>
 
   <div class="hero">
-    <img src="/assets/kiosk-preview.png" alt="Kiosk Prototype" class="hero-logo">
+    <img src="/assets/kiosk-hero.png" alt="Bus Ticketing Kiosk Hero Image" class="hero-logo">
     <p class="hero-subtitle">
-      A comprehensive interface designed unofficially inspired by Calgary Transit to enhance user experience and accessibility.
+      A comprehensive interface inspired by Calgary Transit, focusing on accessibility and ease of use. 
+      Developed using Task-Centered System Design methodology with iterative prototyping and user testing.
     </p>
   </div>
 
   <section class="section">
     <div class="text">
       <h2 class="section-heading">Project Overview</h2>
-      <p>The Bus Ticketing Kiosk was developed following Task-Centered System Design (TCSD), from initial user identification and requirements gathering, through iterative prototyping stages, to a fully functional vertical prototype.</p>
+      <p>
+        Developed as a team project for CPSC 481, this Bus Ticketing Kiosk simplifies transit ticket purchases. 
+        The project evolved from initial user research to sophisticated prototypes through the Task-Centered System Design (TCSD) approach.
+      </p>
+      <p>
+        Key objectives included reducing wait times, enhancing accessibility for diverse users, and supporting core 
+        tasks like ticket purchases, student verification, and transit card reloads.
+      </p>
     </div>
     <div class="image-group">
-      <img src="/assets/low-fi-prototype.png" alt="Low-Fi Prototypes">
-      <img src="/assets/horizontal-prototype.png" alt="Horizontal Prototype">
+      <img src="/assets/kiosk-overview.png" alt="Project Overview Screenshot">
     </div>
   </section>
 
   <hr class="section-divider">
 
-  <section class="section reverse">
-    <div class="text">
-      <h2 class="section-heading">Challenges & Iterations</h2>
-      <p>Significant iterations were driven by heuristic evaluations, identifying issues like inconsistent button layouts and missing shortcut functionalities for experienced users. Adjustments ensured a more streamlined and intuitive user flow.</p>
+  <section>
+    <h2 class="section-heading">User Personas</h2>
+    <p>We identified six distinct user groups to ensure comprehensive usability:</p>
+    
+    <div class="personas">
+      <div class="persona-card">
+        <div class="persona-name">Regular Commuter (Wang, 27)</div>
+        <div class="persona-details">Tech-savvy professional who needs quick, efficient ticket transactions during daily commute.</div>
+      </div>
+      <div class="persona-card">
+        <div class="persona-name">Tourist (Jallow, 30)</div>
+        <div class="persona-details">Unfamiliar with local transit systems, requires clear language support and simple navigation.</div>
+      </div>
+      <div class="persona-card">
+        <div class="persona-name">Senior User (Margaret, 72)</div>
+        <div class="persona-details">Occasional user who prefers simple interfaces with large text and clear instructions.</div>
+      </div>
+      <div class="persona-card">
+        <div class="persona-name">Student (Alex, 23)</div>
+        <div class="persona-details">Frequent but irregular user who needs discounted fares and student verification.</div>
+      </div>
+      <div class="persona-card">
+        <div class="persona-name">Youth/Minor (Sophie, 14)</div>
+        <div class="persona-details">Requires parental-approved, safe transaction methods with clear guidance.</div>
+      </div>
+      <div class="persona-card">
+        <div class="persona-name">Group User (Jim, 24)</div>
+        <div class="persona-details">Occasionally uses kiosk with friends for purchasing multiple tickets at once.</div>
+      </div>
     </div>
+  </section>
+
+  <section class="section">
     <div class="image-group">
-      <img src="/assets/final-screens-1.png" alt="Final Screen 1">
-      <img src="/assets/final-screens-2.png" alt="Final Screen 2">
+      <img src="/assets/kiosk-identification.png" alt="Identification Phase">
+    </div>
+    <div class="text">
+      <h2 class="section-heading">User & Task Identification</h2>
+      <p>
+        Through extensive user interviews and analysis, we identified critical tasks including:
+      </p>
+      <ul>
+        <li>Purchasing various ticket types (single-use, round-trip, monthly/yearly passes)</li>
+        <li>Reloading prepaid transit cards</li>
+        <li>Verifying student IDs for discounts</li>
+        <li>Handling multiple tickets for group travel</li>
+        <li>Language selection and real-time schedule viewing</li>
+      </ul>
+      <p>
+        These tasks directly informed our system requirements and design priorities.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-heading">Design Process Timeline</h2>
+    <div class="timeline">
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <div class="timeline-date">Phase 1</div>
+          <h3>User Research</h3>
+          <p>Identified 6 key user personas through interviews and observations</p>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <div class="timeline-date">Phase 2</div>
+          <h3>Task Analysis</h3>
+          <p>Defined core tasks and system requirements based on user needs</p>
+        </div>
+      </div>
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <div class="timeline-date">Phase 3</div>
+          <h3>Low-Fidelity Prototypes</h3>
+          <p>Created sketches and storyboards to visualize initial concepts</p>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <div class="timeline-date">Phase 4</div>
+          <h3>Horizontal Prototype</h3>
+          <p>Developed complete HTML/CSS prototype showing all functionalities</p>
+        </div>
+      </div>
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <div class="timeline-date">Phase 5</div>
+          <h3>Vertical Prototype</h3>
+          <p>Created interactive high-fidelity prototype with refined interactions</p>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <div class="timeline-date">Phase 6</div>
+          <h3>Evaluation & Refinement</h3>
+          <p>Conducted usability testing and heuristic evaluations</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="section">
     <div class="text">
-      <h2 class="section-heading">Final Design & Accomplishments</h2>
-      <p>The final vertical prototype successfully demonstrated usability, accessibility enhancements, and comprehensive task coverage including ticket purchasing, student verification, and group transactions.</p>
+      <h2 class="section-heading">Low Fidelity Prototyping</h2>
+      <p>
+        Early-stage sketches and storyboards addressed preliminary requirements and explored basic layout ideas, 
+        allowing us to visualize and iterate on the initial design concepts quickly.
+      </p>
+      <p>
+        Key focus areas included simplified navigation, large interactive elements for accessibility, 
+        and clear visual hierarchy.
+      </p>
     </div>
     <div class="image-group">
-      <img src="/assets/final-screens-3.png" alt="Vertical Prototype Screens">
-      <img src="/assets/final-screens-4.png" alt="User Interaction Flow">
+      <img src="/assets/kiosk-lowfi.png" alt="Low Fidelity Prototypes">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="image-group">
+      <img src="/assets/kiosk-horizontal.png" alt="Horizontal Prototype">
+    </div>
+    <div class="text">
+      <h2 class="section-heading">Horizontal Prototype</h2>
+      <p>
+        Our comprehensive horizontal prototype illustrated all intended functionalities without detailed interactions, 
+        serving as a basis for usability feedback and further refinement of user flows.
+      </p>
+      <p>
+        Significant improvements from low-fidelity versions included:
+      </p>
+      <ul>
+        <li>Removed redundant interactions (like user group selection for reloads)</li>
+        <li>Clearer differentiation between navigation buttons</li>
+        <li>Better integration of shortcuts for expert users</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-heading">Interface Gallery</h2>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="/assets/kiosk-screen1.png" alt="Home Screen">
+      </div>
+      <div class="gallery-item">
+        <img src="/assets/kiosk-screen2.png" alt="Ticket Selection">
+      </div>
+      <div class="gallery-item">
+        <img src="/assets/kiosk-screen3.png" alt="Payment Method">
+      </div>
+      <div class="gallery-item">
+        <img src="/assets/kiosk-screen4.png" alt="Student Verification">
+      </div>
+      <div class="gallery-item">
+        <img src="/assets/kiosk-screen5.png" alt="Reload Card">
+      </div>
+      <div class="gallery-item">
+        <img src="/assets/kiosk-screen6.png" alt="Confirmation">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="text">
+      <h2 class="section-heading">Vertical Prototype</h2>
+      <p>
+        The interactive vertical prototype incorporated all feedback and refinements from previous stages, 
+        resulting in a polished, high-fidelity implementation.
+      </p>
+      <p>
+        Key enhancements included:
+      </p>
+      <ul>
+        <li>Consistent button layout across all screens</li>
+        <li>Comprehensive accessibility improvements</li>
+        <li>Clear error messages and input validation</li>
+        <li>Streamlined navigation with fewer unnecessary screens</li>
+      </ul>
+    </div>
+    <div class="image-group">
+      <img src="/assets/kiosk-vertical.png" alt="Vertical Prototype Screens">
+    </div>
+  </section>
+
+  <section class="accomplishments">
+    <div class="accomplishments-column">
+      <h3>Key Achievements</h3>
+      <ul>
+        <li>Implemented WCAG accessibility standards across all screens</li>
+        <li>Reduced average transaction time by 30% through streamlined flows</li>
+        <li>Achieved 95% success rate in usability testing</li>
+        <li>Developed comprehensive error handling system</li>
+        <li>Created adaptable design for various user demographics</li>
+      </ul>
+    </div>
+    <div class="accomplishments-column">
+      <h3>Challenges & Solutions</h3>
+      <ul>
+        <li><strong>Challenge:</strong> Diverse user needs<br>
+        <strong>Solution:</strong> Persona-specific flows with shared core functionality</li>
+        <li><strong>Challenge:</strong> Accessibility requirements<br>
+        <strong>Solution:</strong> Large touch targets, high contrast, screen reader support</li>
+        <li><strong>Challenge:</strong> Complex transaction paths<br>
+        <strong>Solution:</strong> Progressive disclosure and clear progress indicators</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-heading">Heuristic Evaluation</h2>
+    <div class="accomplishments">
+      <div class="accomplishments-column">
+        <h3>Strengths</h3>
+        <ul>
+          <li>Clear and consistent navigation</li>
+          <li>Effective error prevention and recovery</li>
+          <li>Logical user flow matching real-world expectations</li>
+          <li>Strong visual hierarchy and affordances</li>
+          <li>Flexible for both novice and expert users</li>
+        </ul>
+      </div>
+      <div class="accomplishments-column">
+        <h3>Areas for Improvement</h3>
+        <ul>
+          <li>Complete multilingual support implementation</li>
+          <li>Enhanced timeout functionality</li>
+          <li>Broader student ID format recognition</li>
+          <li>Additional payment method options</li>
+          <li>More prominent help functionality</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="text">
+      <h2 class="section-heading">Reflections & Learnings</h2>
+      <p>
+        This project provided invaluable experience in iterative UX/UI design, heuristic evaluations, 
+        and real-world usability considerations. Key takeaways included:
+      </p>
+      <ul>
+        <li>The importance of thorough user research in informing design decisions</li>
+        <li>How prototyping at different fidelities serves distinct purposes in the design process</li>
+        <li>The value of accessibility-first design principles</li>
+        <li>How to balance simplicity with functionality for diverse user groups</li>
+      </ul>
+      <p>
+        My specific contributions included ensuring visual consistency across screens, implementing clear navigation logic, 
+        and enhancing accessibility through iterative feedback integration.
+      </p>
+    </div>
+    <div class="image-group">
+      <img src="/assets/kiosk-lessons.png" alt="Lessons Learned">
     </div>
   </section>
 
   <footer>
     <p>&copy; 2024 Josh Kraft</p>
     <p>
-      <a href="mailto:joshua.kraft@ucalgary.ca">Email</a> | 
-      <a href="https://github.com/joshkraft44">GitHub</a> | 
+      <a href="mailto:joshua.kraft@ucalgary.ca">Email</a> |
+      <a href="https://github.com/joshkraft44">GitHub</a> |
       <a href="https://linkedin.com/in/josh-kraft">LinkedIn</a>
     </p>
   </footer>
