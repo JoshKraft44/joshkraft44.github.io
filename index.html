@@ -23,12 +23,29 @@
       box-sizing: border-box;
     }
 
+    /* Hide scrollbar */
+    html {
+      scrollbar-width: none; 
+      -ms-overflow-style: none; 
+    }
+
+    html::-webkit-scrollbar {
+      display: none; /* Safari and Chrome */
+    }
+
     body {
       background-color: var(--bg-primary);
       color: var(--text-primary);
       font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
       line-height: 1.6;
       padding: 2rem;
+      scrollbar-width: none; 
+      -ms-overflow-style: none; 
+      zoom: 0.67;
+    }
+
+    body::-webkit-scrollbar {
+      display: none; 
     }
 
     a {
@@ -329,7 +346,7 @@
           <a href="contact.html">Contact</a>
         </nav>
         <div class="descriptors">
-          > student > entrepreneur > programmer
+          > programmer > entrepeneur > student
         </div>
       </div>
     </header>
@@ -339,7 +356,7 @@
       <div class="intro">
         <div>
           <p>
-            I'm a <em>Computer Science</em> student at the <strong>University of Calgary</strong>. I care deeply about <em>self-improvement</em> and <em>entrepreneurship</em>, and I enjoy tackling meaningful, difficult, and nuanced problems.
+            Currently studying computer science at the University of Calgary. I care deeply about self-improvement and entrepreneurship, and I enjoy tackling meaningful, difficult, and nuanced problems.
           </p>
         </div>
         <img src="assets/profile.JPG" alt="Photo of Me" class="profile-image" loading="lazy">
@@ -350,6 +367,7 @@
     <section id="projects">
       <h2>Main Projects</h2>
       <div class="project-list">
+
         <!-- Project 1: Antler Addiction -->
         <a href="antler-addiction.html" class="project-card">
           <div class="project-content">
@@ -358,7 +376,7 @@
               <p>
                 A sustainable business I cofounded selling naturally shed deer antlers for home décor and pet chews, with hundreds of orders shipped worldwide and a 5.0-star rating from over 200 customer reviews.
               </p>
-              <div class="tech-stack">E-Commerce · Business Operations · Web Design </div>
+              <div class="tech-stack">E-Commerce · Web Design · Shipping & Logistics </div>
             </div>
             <div class="project-image">
               <img src="assets/website1.JPG" alt="Antler Addiction Project" loading="lazy">
@@ -366,38 +384,38 @@
           </div>
         </a>
 
-        <!-- Project 2: Bus Ticketing Kiosk -->
+                <!-- Project 2: Fenify -->
+        <a href="fenify.html" class="project-card">
+          <div class="project-content">
+            <div class="project-text">
+              <h3>Fenify <i class="fas fa-arrow-right" style="margin-left: 0.5rem; font-size: 1rem;"></i></h3>
+              <p>
+                An offline mobile chess analysis app that uses computer vision to convert chess board photos into interactive positions for analysis with the Stockfish engine.
+              </p>
+              <div class="tech-stack">Flutter · Dart · TensorFlow Lite · Swift</div>
+            </div>
+            <div class="project-image">
+              <img src="assets/Fenify5.png" alt="Fenify Chess Analysis App" loading="lazy">
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 3: Bus Ticketing Kiosk -->
         <a href="bus-ticketing-kiosk.html" class="project-card">
           <div class="project-content">
             <div class="project-text">
               <h3>Bus Ticketing Kiosk <i class="fas fa-arrow-right" style="margin-left: 0.5rem; font-size: 1rem;"></i></h3>
               <p>
-                A user-friendly kiosk interface inspired by Calgary Transit, enabling users to buy tickets or passes, reload transit cards, and view real-time bus schedules. Built with accessibility and user flow clarity in mind, this project was developed for a Human-Computer Interaction course.
+                A kiosk interface inspired by Calgary Transit, enabling users to buy tickets or passes, reload transit cards, and view real-time bus schedules. This project was developed for a Human-Computer Interaction course, prioritizing UX and UI design.
               </p>
-              <div class="tech-stack">HTML · CSS · UX Design · HCI</div>
+              <div class="tech-stack">HTML · CSS · JavaScript · UX Design · HCI</div>
             </div>
             <div class="project-image">
               <img src="assets/kiosk.jpg" alt="Bus Ticketing Kiosk Project" loading="lazy">
             </div>
           </div>
         </a>
-        
-
-        <!-- Project 3: Cancel Culture -->
-        <a href="#" class="project-card">
-          <div class="project-content">
-            <div class="project-text">
-              <h3>Cancel Culture</h3>
-              <p>
-                An iOS app in progress designed to keep friends accountable to making plans and not canceling them, with additional features like local attraction discovery and bill splitting requests.
-              </p>
-              <div class="tech-stack"> iOS · Dart · FFIgen</div>
-            </div>
-            <div class="project-image"> 
-              <img src="assets/cancel-culture.png" alt="Cancel Culture App" loading="lazy">
-            </div>
-          </div>
-        </a>
+      
 
         <!-- Project 4: Portfolio Website -->
         <a href="index.html" class="project-card">
