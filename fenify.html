@@ -606,8 +606,8 @@
     <div class="intro-text">
       <h2 class="section-heading">Project Overview</h2>
       <p>
-        Fenify is a mobile chess analysis app that uses computer vision to convert 2D chess board photos into interactive positions for analysis with the Stockfish engine.
-        The app works completely offline and allows users to screenshot chess positions and analyze them in real-time.
+        Fenify is a mobile chess analysis app that uses computer vision to convert 2D & 3D chess board photos into interactive positions for analysis with the Stockfish engine.
+        The app works offline and allows users to screenshot chess positions and analyze them in real-time.
       </p>
       <p>
         I created Fenify after finding myself frequently hoping to analyze chess positions from youtube videos, instagram posts, and primarily, my own online games.
@@ -642,7 +642,7 @@
         <span class="workflow-number-display" id="stepNumber">1</span>
         <div class="workflow-text-display">
           <h3 id="stepTitle">Capture</h3>
-          <p id="stepDescription">Upload any 2D chess board image from videos, streams, or online games.</p>
+          <p id="stepDescription">Upload any 2D or 3D chess board image from videos, streams, or online games.</p>
         </div>
       </div>
     </div>
@@ -735,7 +735,7 @@
     <div class="accomplishments-column">
       <h3>Technical Challenges & Solutions</h3>
       <ul>
-        <li><strong>Stockfish Crashes:</strong> Since the engine lacks any inherent FEN validation, and Dart isolates can't catch native C++ assertions, I encountered Stockfish crashes on any invalid FEN inputs. I had to fix this by implementing comprehensive FEN validation before intializing the engine. As I failed to find a package that provided an exhaustive solution without API calls, I integrated the dartchess library and built a custom FEN validation layer to prevent crashes.</li>
+        <li><strong>Stockfish Crashes:</strong> Since the engine lacks any inherent FEN validation, and Dart isolates can't catch native C++ assertions, I encountered Stockfish crashes on any invalid FEN inputs. I had to fix this by implementing comprehensive FEN validation before intializing the engine. As I failed to find a package that provided an exhaustive solution without API calls, I used the dartchess library clases and built a custom FEN validation layer to prevent crashes.</li>
         <li><strong>Board Detection Issues:</strong> Image borders were causing the model to cut board squares incorrectly. I solved this issue by improving edge detection and square extraction in openCV.</li>
         <li><strong>Piece Orientation:</strong> Mapping pieces arbitrarily from photo to board, the tflite model often initialized each color moving the wrong way.  While there is no guaranteed way to determine the correct direction pieces are moving from just a photo, some ad-hoc Coordinate mapping and board orientation logic improvements have drastically reduced mismaps.</li>
         <li><strong>Real-time Analysis:</strong> If the move navigation or position updates happened too quickly, the stockfish engine would lose synchronization with the board state. Adding debouncing with timer-based rate limiting fixed this. </li>
