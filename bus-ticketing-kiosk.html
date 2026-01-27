@@ -5,31 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bus Ticketing Kiosk - Josh Kraft</title>
   <style>
-    * { 
-      margin: 0; 
-      padding: 0; 
-      box-sizing: border-box; 
+    :root {
+      --text-primary: #111;
+      --text-secondary: #666;
+      --text-muted: #888;
+      --bg-primary: #fff;
+      --bg-secondary: #f5f5f5;
+      --border-color: #e0e0e0;
+      --hover-color: #555;
+      --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
     }
-    
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background-color: #fff; 
-      color: #111;
-      font-family: 'JetBrains Mono', 'Fira Code', monospace;
-      line-height: 1.6; 
-      padding: 1.5rem; 
-      max-width: 1200px; 
-      margin: 0 auto; 
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+      line-height: 1.6;
+      padding: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
       position: relative;
       zoom: 0.67;
     }
-    
-    a { 
-      color: inherit; 
-      text-decoration: none; 
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
     }
-    
-    a:hover { 
-      color: #555; 
+
+    a:hover {
+      color: var(--hover-color);
     }
     
     header { 
@@ -55,7 +68,7 @@
 
     header .descriptors {
       font-size: 1.1rem;
-      color: #666;
+      color: var(--text-secondary);
       white-space: normal;
     }
     
@@ -78,9 +91,9 @@
     
     .project-links {
       font-size: 0.9rem;
-      color: #777;
+      color: var(--text-muted);
       padding: 0.2rem 0.5rem;
-      background: #f5f5f5;
+      background: var(--bg-secondary);
       border-radius: 4px;
       display: inline-block;
     }
@@ -104,13 +117,13 @@
     
     .hero-subtitle {
       font-size: 1.2rem;
-      color: #333;
+      color: var(--text-primary);
       line-height: 1.6;
     }
-    
+
     .section-heading {
       font-size: 1.6rem;
-      color: #333;
+      color: var(--text-primary);
       margin-bottom: 1.2rem;
     }
 
@@ -154,7 +167,7 @@
     .section-divider {
       border: 0;
       height: 1px;
-      background-color: #eee;
+      background-color: var(--border-color);
       margin: 2rem 0;
     }
 
@@ -166,7 +179,7 @@
     }
 
     .accomplishments-column {
-      background-color: #f5f5f5;
+      background-color: var(--bg-secondary);
       padding: 1.2rem;
       border-radius: 8px;
     }
@@ -187,7 +200,7 @@
     footer {
       margin-top: 3rem;
       text-align: center;
-      color: #666;
+      color: var(--text-secondary);
       padding: 1.5rem 0;
     }
 
@@ -339,7 +352,7 @@
     .section-divider { 
       border: 0; 
       height: 1px; 
-      background-color: #eee; 
+      background-color: var(--border-color); 
       margin: 2rem 0; 
     }
     
@@ -442,7 +455,7 @@
     }
     
     .accomplishments-column { 
-      background-color: #f5f5f5; 
+      background-color: var(--bg-secondary); 
       padding: 1.5rem; 
       border-radius: 8px; 
       flex: 1; 
@@ -535,7 +548,7 @@
         <div class="title-container">
         <h1 id="typed-name"><span id="name-text"></span><span id="cursor">|</span></h1>
         <div class="descriptors">
-        > Human-Computer Interaction > UX Design > Accessibility
+        Joshua Kraft, Chuanheng Bu, Danny Ly, Dyenaan Dapoet, Nisarg Bhalani
         </div>
       </div>
       <nav class="nav-menu">
@@ -544,18 +557,16 @@
         <a href="https://substack.com/@joshkraft1">Writings</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <div class="project-links-container">
-        <div class="project-links">
-        <a href="https://cpsc-481.vercel.app">View our prototype</a>
-        </div>
-      </div>
     </div>
   </header>
 
   <div class="hero">
     <img src="/assets/BusTicketingKiosk.gif" alt="Bus Ticketing Kiosk Gif" class="hero-logo">
+    <div style="text-align: center; margin-top: 1.5rem; margin-bottom: 1.5rem;">
+      <a href="https://cpsc-481.vercel.app" class="project-links" style="display: inline-block;">View our prototype</a>
+    </div>
     <p class="hero-subtitle">
-      A comprehensive interface inspired by Calgary Transit, focusing on accessibility and ease of use. 
+      A comprehensive interface inspired by Calgary Transit, focusing on accessibility and ease of use.
       Developed using Task-Centered System Design methodology with iterative prototyping and user testing.
     </p>
   </div>
@@ -692,6 +703,7 @@
         Key focus areas included simplified navigation, large interactive elements for accessibility, 
         and clear visual hierarchy.
       </p>
+        I completed the drawing on the right as a final and more thorough low-fidelity prototype after iterating on feedback and consideration of initial sketches.
     </div>
     <div class="image-group">
       <img src="/assets/kiosk2.jpg" alt="Low Fidelity Prototypes">
@@ -840,7 +852,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2024 Josh Kraft</p>
+    <p>&copy; 2026 Josh Kraft</p>
     <p>
       <a href="mailto:joshua.kraft@ucalgary.ca">joshua.kraft@ucalgary.ca</a> | 
       <a href="https://github.com/joshkraft44" target="_blank">GitHub</a> | 
