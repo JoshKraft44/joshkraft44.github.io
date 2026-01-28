@@ -458,7 +458,7 @@
   </header>
 
   <div class="hero">
-    <img src="/assets/lindsay1.png" alt="Lindsay Atrium Apple Vision Pro" class="hero-logo">
+    <img src="/assets/Lindsay6.png" alt="Lindsay Atrium Pic 1" class="hero-logo">
     <p class="hero-subtitle">
       A research initiative to port the Lindsay Virtual Human's Atrium component to Apple Vision Pro, creating an immersive spatial experience for exploring human anatomy.
     </p>
@@ -468,26 +468,29 @@
     <div class="intro-text">
       <h2 class="section-heading">Project Overview</h2>
       <p>
-        Led by Dr. Christian Jacob, this project aimed to bring the Lindsay Atrium from Twinmotion into Apple Vision Pro using Unreal Engine. The goal was to leverage the AVP's spatial computing and high-fidelity visuals to create an immersive, educational experience showcasing detailed anatomical models of the human body.
+        Led by Dr. Christian Jacob, this project aimed to bring the Lindsay Atrium from Twinmotion into Apple Vision Pro using Unreal Engine. The goal was to leverage the AVP's spatial computing and high-fidelity visuals to create an immersive, educational experience showcasing detailed anatomical models of the human body and other biological structures.
       </p>
       <p>
-        The Lindsay Virtual Human project provides an interactive platform for studying human anatomy in unprecedented detail, and porting it to Vision Pro opens new possibilities for spatial learning and medical education.
-      </p>
-      <p>
-        We had to overcome many challenges, but ultimately, we were able to create a functional prototype that allows users to explore and interact with anatomical models in a mixed reality environment.
+        <br> We had to overcome many challenges, but ultimately, we were able to create a functional prototype that allows users to explore and interact with anatomical models on the apple vision pro.
       </p>
     </div>
+  </section>
+
+  <section> 
+    <img src="assets/Lindsay5.png" alt = "Presentation photo" style="width: 100%; margin-bottom: 2rem;">
   </section>
 
   <section>
     <h2 class="section-heading">Technologies & Tools</h2>
     <div class="tech-stack">
-      <div class="tech-item">Apple Vision Pro</div>
-      <div class="tech-item">Unreal Engine 5.6</div>
-      <div class="tech-item">Blueprint</div>
       <div class="tech-item">Swift</div>
       <div class="tech-item">C++</div>
+      <div class="tech-item">Blueprint</div>
       <div class="tech-item">OpenXR</div>
+      <div class="tech-item">Unreal Engine 5.6</div>
+      <div class="tech-item">Apple Vision Pro</div>
+      <div class="tech-item">Twinmotion</div>
+
     </div>
   </section>
 
@@ -506,12 +509,18 @@
 
     <div class="feature-section">
       <h3>High-Fidelity Models</h3>
-      <p>Anatomical models in immersive spatial viewing (getting these to render properly was potentially the most difficult part!)</p>
+      <p>Anatomical models in immersive spatial viewing (getting these to render properly and without dissapearing or crashing the entire app was potentially the most difficult part!)</p>
     </div>
 
     <div class="feature-section">
       <h3>Spatial Interaction</h3>
-      <p>The ability to walk around, scale, grab, and manipulate anatomical models in 3D space for comprehensive study.</p>
+      <p>The ability to walk around, reach through, and view anatomical models in 3D space for comprehensive study.</p>
+    </div>
+
+        <div class="feature-section">
+      <h3>Unreal Engine to Vision Pro Development Pipeline</h3>
+      <p>Perhaps most compelling, we were among the first people at this time to develop a full pipeline for bringing Unreal Engine 5.3 
+        projects into the Apple Vision Pro while integrating spacial interaction and computing features. </p>
     </div>
   </section>
 
@@ -523,7 +532,6 @@
         <li><strong>Documentation Gaps:</strong> There is (or was at the time) a severe lack of documentation on macOS, VisionOS, and Unreal Engine interaction which necessitated extensive trial-and-error debugging.</li>
         <li><strong>Development Suite Configuration Issues:</strong> Mismatches and incompatibilities between XCode, MacOS, Unreal Engine, and VisionOS exacerbated these issues, not to mention smaller issues such as Apple Developer Team ID and provisioning bugs.</li>
         <li><strong>Model Compatibility:</strong> The entire Twinmotion Atrium crashed on AVP even when stripped to simple assets. We had to abandon Twinmotion models and use USDZ models instead, likely due to a disconnect between Unreal's RHI to Apple's Metal API.</li>
-        <li><strong>Passthrough Implementation:</strong> Achieving proper mixed immersion required extensive config file adjustments. Translucent models disappeared against passthrough, requiring material changes from translucent to masked settings.</li>
         <li><strong>Platform Instability:</strong> Frequent unexplained launch failures and crashes with no logs necessitated multiple project rebuilds and constant reinstallation cycles.</li>
         <li><strong>Hand Tracking:</strong> We had to build custom gesture controls from scratch as Unreal lacks native access to the AVP gesture controls and OpenXR VisionOS plugin capabilities were primitive. This required a lot of fine tuning to make the feature intuitive.</li>
       </ul>
