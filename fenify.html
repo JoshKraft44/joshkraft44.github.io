@@ -70,6 +70,24 @@
       flex-direction: column;
     }
 
+    .title-row {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+    }
+
+    .title-row .github-link {
+      font-size: 2rem;
+      color: var(--text-primary);
+      transition: var(--transition);
+      position: relative;
+      top: -0.15rem;
+    }
+
+    .title-row .github-link:hover {
+      color: var(--text-secondary);
+    }
+
     header h1 {
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
@@ -592,7 +610,10 @@
   <header>
     <div class="header-content">
         <div class="title-container">
-        <h1 id="typed-name"><span id="name-text"></span><span id="cursor">|</span></h1>
+        <div class="title-row">
+          <h1 id="typed-name"><span id="name-text"></span><span id="cursor">|</span></h1>
+          <a href="https://github.com/JoshKraft44/FenifyiOS" target="_blank" aria-label="GitHub Repository" class="github-link"><i class="fab fa-github"></i></a>
+        </div>
       </div>
       <nav class="nav-menu">
         <a href="index.html">Home</a>

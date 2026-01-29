@@ -60,6 +60,24 @@
       display: flex;
       flex-direction: column;
     }
+
+    .title-row {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+    }
+
+    .title-row .github-link {
+      font-size: 2rem;
+      color: var(--text-primary);
+      transition: var(--transition);
+      position: relative;
+      top: -0.15rem;
+    }
+
+    .title-row .github-link:hover {
+      color: var(--text-secondary);
+    }
     
     header h1 { 
       font-size: 2.5rem; 
@@ -546,7 +564,10 @@
   <header>
     <div class="header-content">
         <div class="title-container">
-        <h1 id="typed-name"><span id="name-text"></span><span id="cursor">|</span></h1>
+        <div class="title-row">
+          <h1 id="typed-name"><span id="name-text"></span><span id="cursor">|</span></h1>
+          <a href="https://github.com/JoshKraft44/Bus-Ticketing-Kiosk" target="_blank" aria-label="GitHub Repository" class="github-link"><i class="fab fa-github"></i></a>
+        </div>
         <div class="descriptors">
         Joshua Kraft, Chuanheng Bu, Danny Ly, Dyenaan Dapoet, Nisarg Bhalani
         </div>
@@ -575,7 +596,7 @@
     <div class="into-text">
       <h2 class="section-heading">Project Overview</h2>
       <p>
-        Developed as a team project for CPSC 481, this Bus Ticketing Kiosk simplifies transit ticket purchases. 
+        Developed as a team project for CPSC 481 - Human-Computer Ineraction, this Bus Ticketing Kiosk simplifies transit ticket purchases. 
         The project evolved from initial user research to sophisticated prototypes through the Task-Centered System Design (TCSD) approach.
       </p>
       <p>
