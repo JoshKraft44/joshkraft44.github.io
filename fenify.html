@@ -104,6 +104,7 @@
       gap: 1.5rem;
       position: absolute;
       right: 0;
+      top: 0;
       margin-top: 1rem;
       margin-right: 6.75rem;
       font-size: 1.1rem;
@@ -618,14 +619,13 @@
       <nav class="nav-menu">
         <a href="index.html">Home</a>
         <a href="index.html#projects">Projects</a>
-        <a href="https://substack.com/@joshkraft1">Writings</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
   <div class="hero">
-    <div class="image-group horizontal">
+    <div class="image-group horizontal" style="margin-top: -2rem;">
       <img src="/assets/Fenify1.png" alt="Fenify App Overview">
       <img src="/assets/Fenify2.png" alt="Fenify App Interface">
       <img src="/assets/Fenify3.png" alt="Fenify Analysis Screen">
@@ -825,7 +825,7 @@
 
           setTimeout(function() {
             cursor.style.display = 'none';
-          }, 0);
+          }, 5000);
         }
       }
 

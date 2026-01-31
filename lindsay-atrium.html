@@ -86,6 +86,7 @@
       gap: 1.5rem;
       position: absolute;
       right: 0;
+      top: 0;
       margin-top: 1rem;
       margin-right: 6.75rem;
       font-size: 1.1rem;
@@ -451,14 +452,13 @@
       <nav class="nav-menu">
         <a href="index.html">Home</a>
         <a href="index.html#projects">Projects</a>
-        <a href="https://substack.com/@joshkraft1">Writings</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
   <div class="hero">
-    <img src="/assets/Lindsay6.png" alt="Lindsay Atrium Pic 1" class="hero-logo">
+    <img src="assets/Lindsay6.png" alt="Lindsay Atrium Pic 1" class="hero-logo">
     <p class="hero-subtitle">
       A research initiative to port the Lindsay Virtual Human's Atrium component to Apple Vision Pro, creating an immersive spatial experience for exploring human anatomy.
     </p>
@@ -551,18 +551,18 @@
   <section>
     <h2 class="section-heading">Project Gallery</h2>
     <div class="gallery">
-      <div class="gallery-item" onclick="openLightbox('/assets/Lindsay2.png')">
-        <img src="/assets/lindsay2.png" alt="Lindsay Atrium Screenshot 1">
+      <div class="gallery-item" onclick="openLightbox('assets/Lindsay2.png')">
+        <img src="assets/Lindsay2.png" alt="Lindsay Atrium Screenshot 1">
       </div>
-      <div class="gallery-item" onclick="openLightbox('/assets/Lindsay3.png')">
-        <img src="/assets/lindsay3.png" alt="Lindsay Atrium Screenshot 2">
+      <div class="gallery-item" onclick="openLightbox('assets/Lindsay3.png')">
+        <img src="assets/Lindsay3.png" alt="Lindsay Atrium Screenshot 2">
       </div>
-      <div class="gallery-item" onclick="openLightbox('/assets/Lindsay4.png')">
-        <img src="/assets/lindsay4.png" alt="Lindsay Atrium Screenshot 3">
+      <div class="gallery-item" onclick="openLightbox('assets/Lindsay4.png')">
+        <img src="assets/Lindsay4.png" alt="Lindsay Atrium Screenshot 3">
       </div>
       <div class="gallery-item">
-        <video controls>
-          <source src="/assets/lindsaydemo.mp4" type="video/mp4">
+        <video controls preload="metadata" poster="assets/Lindsay2.png">
+          <source src="assets/lindsaydemo.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
@@ -610,7 +610,7 @@
 
           setTimeout(function() {
             cursor.style.display = 'none';
-          }, 0);
+          }, 5000);
         }
       }
 

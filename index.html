@@ -97,6 +97,7 @@
       display: flex;
       gap: 1.1rem;
       font-size: 1.5rem;
+      margin-left: -1.2rem;
     }
 
     .nav-menu {
@@ -104,6 +105,7 @@
       gap: 1.5rem;
       position: absolute;
       right: 0;
+      top: 0;
       margin-top: 1rem;
       margin-right: 6.75rem;
       font-size: 1.1rem;
@@ -154,7 +156,7 @@
       max-width: 250px;
       border-radius: 12px;
       box-shadow: var(--shadow);
-      margin-left: 5.51rem;
+      margin-left: 8.5rem;
       margin-top: -2rem;
       margin-right: 0;
     }
@@ -342,12 +344,8 @@
         <nav class="nav-menu">
           <a href="about-me.html">About</a>
           <a href="#projects">Projects</a>
-          <a href="https://substack.com/@joshkraft1" target="_blank">Writings</a> 
           <a href="contact.html">Contact</a>
         </nav>
-        <div class="descriptors">
-          > programmer > entrepeneur > student
-        </div>
       </div>
     </header>
 
@@ -356,7 +354,7 @@
       <div class="intro">
         <div>
           <p>
-            Currently studying computer science at the University of Calgary. I care deeply about self-improvement and hard work, and I enjoy tackling meaningful, difficult, and nuanced problems.
+            Currently studying computer science at the University of Calgary. I've had a passion for mathematics & technology since I was young, and I enjoy tackling meaningful, difficult, and nuanced problems.
           </p>
         </div>
         <img src="assets/profile.JPG" alt="Photo of Me" class="profile-image" loading="lazy">
@@ -368,7 +366,23 @@
       <h2>Main Projects</h2>
       <div class="project-list">
 
-        <!-- Project 1: Antler Addiction -->
+                        <!-- Project 1: Fenify -->
+        <a href="fenify.html" class="project-card">
+          <div class="project-content">
+            <div class="project-text">
+              <h3>Fenify <i class="fas fa-arrow-right" style="margin-left: 0.5rem; font-size: 1rem;"></i></h3>
+              <p>
+                An offline mobile chess analysis app that uses computer vision to convert chess board photos into interactive positions for analysis with the Stockfish engine.
+              </p>
+              <div class="tech-stack">Flutter · Dart · Swift · TensorFlow Lite · OpenCV </div>
+            </div>
+            <div class="project-image">
+              <img src="assets/Fenify5.png" alt="Fenify Chess Analysis App" loading="lazy">
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 2: Antler Addiction -->
         <a href="antler-addiction.html" class="project-card">
           <div class="project-content">
             <div class="project-text">
@@ -384,21 +398,7 @@
           </div>
         </a>
 
-                <!-- Project 2: Fenify -->
-        <a href="fenify.html" class="project-card">
-          <div class="project-content">
-            <div class="project-text">
-              <h3>Fenify <i class="fas fa-arrow-right" style="margin-left: 0.5rem; font-size: 1rem;"></i></h3>
-              <p>
-                An offline mobile chess analysis app that uses computer vision to convert chess board photos into interactive positions for analysis with the Stockfish engine.
-              </p>
-              <div class="tech-stack">Flutter · Dart · Swift · TensorFlow Lite · OpenCV </div>
-            </div>
-            <div class="project-image">
-              <img src="assets/Fenify5.png" alt="Fenify Chess Analysis App" loading="lazy">
-            </div>
-          </div>
-        </a>
+
 
         <!-- Project 3: Lindsay Atrium & Apple Vision Pro -->
         <a href="lindsay-atrium.html" class="project-card">
@@ -416,7 +416,23 @@
           </div>
         </a>
 
-        <!-- Project 4: Bus Ticketing Kiosk -->
+        <!-- Project 4: Recompiled -->
+        <a href="recompiled.html" class="project-card">
+          <div class="project-content">
+            <div class="project-text">
+              <h3>Recompiled <i class="fas fa-arrow-right" style="margin-left: 0.5rem; font-size: 1rem;"></i></h3>
+              <p>
+                A first-person PvE rogue-lite built in Unreal Engine 5, featuring a custom AI Director that dynamically adapts enemy encounters, rewards, and pacing based on player behavior and performance.
+              </p>
+              <div class="tech-stack">Unreal Engine 5 · Blueprints · Game AI · Player Modeling</div>
+            </div>
+            <div class="project-image">
+              <img src="assets/recompiled-hero.png" alt="Recompiled Game" loading="lazy">
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 5: Bus Ticketing Kiosk -->
         <a href="bus-ticketing-kiosk.html" class="project-card">
           <div class="project-content">
             <div class="project-text">
@@ -483,7 +499,7 @@
           
           setTimeout(function() {
             cursor.style.display = 'none';
-          }, 0);
+          }, 5000);
         }
       }
       
