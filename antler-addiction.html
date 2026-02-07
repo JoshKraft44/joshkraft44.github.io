@@ -46,7 +46,7 @@
     }
 
     header {
-      margin-bottom: 3rem;
+      margin-bottom: 1rem;
       position: relative;
     }
 
@@ -62,15 +62,27 @@
       flex-direction: column;
     }
 
+    .title-row {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+    }
+
+    .title-row .github-link {
+      font-size: 2rem;
+      color: var(--text-primary);
+      transition: var(--transition);
+      position: relative;
+      top: -0.15rem;
+    }
+
+    .title-row .github-link:hover {
+      color: var(--text-secondary);
+    }
+
     header h1 {
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
-    }
-
-    header .descriptors {
-      font-size: 1.1rem;
-      color: var(--text-secondary);
-      white-space: normal;
     }
 
     .nav-menu {
@@ -83,11 +95,24 @@
       font-size: 1.1rem;
     }
 
-    .store-links-container {
-      position: absolute;
-      margin-top: 2.45rem;
-      margin-left: 27.5rem;
-      top: 0;
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 0.5rem 0 1rem;
+    }
+
+    .hero-logo {
+      max-width: 280px;
+      width: 100%;
+      height: auto;
+      margin: 0 auto 0.75rem;
+      display: block;
+    }
+
+    .hero-role {
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      letter-spacing: 0.03em;
     }
 
     .store-links {
@@ -97,72 +122,14 @@
       background: var(--bg-secondary);
       border-radius: 4px;
       display: inline-block;
-    }
-    
-    .hero {
-      text-align: center;
-      padding: 2rem 0;
-      margin: 1.5rem 0;
-      overflow: hidden; 
+      margin-top: 1rem;
     }
 
-    .hero-logo {
-      max-width: 300px;
-      width: 100%;
-      height: auto; 
-      border-radius: 12px;
-      margin: 1rem auto;
-      display: block;
-      object-fit: contain;
-    }
-
-    .hero-subtitle {
-      font-size: 1.2rem;
-      color: var(--text-primary);
-      line-height: 1.6;
-    }
-
+    /* Section basics */
     .section-heading {
       font-size: 1.6rem;
       color: var(--text-primary);
       margin-bottom: 1.2rem;
-    }
-
-    .intro-section,
-    .section {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .intro-text,
-    .section .text {
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-
-    .intro-image,
-    .image-group {
-      width: 100%;
-    }
-
-    .image-group {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    .image-group img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 8px;
     }
 
     .section-divider {
@@ -172,30 +139,320 @@
       margin: 2rem 0;
     }
 
-    /* Accomplishments */
-    .accomplishments {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin-bottom: 3rem;
+    img {
+      max-width: 100%;
+      height: auto;
     }
 
-    .accomplishments-column {
-      background-color: var(--bg-secondary);
-      padding: 1.2rem;
+    /* Overview */
+    .overview {
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+    }
+
+    .overview p {
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 1200px;
+    }
+
+    /* Tech stack pills */
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .tech-item {
+      background: #e9e9e9;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* Feature cards */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .feature-card {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 1.5rem;
+      flex: 1;
+      min-width: 250px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .feature-title {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #222;
+    }
+
+    .feature-details {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Carousel */
+    .workflow-header {
+      margin: 2rem 0 1rem;
+    }
+
+    .workflow-step-info {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .workflow-number-display {
+      width: 60px;
+      height: 60px;
+      background: #111;
+      color: white;
+      font-size: 1.8rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .workflow-text-display h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0rem;
+      color: #222;
+    }
+
+    .workflow-text-display p {
+      color: #555;
+      line-height: 1.7;
+      min-height: 5.1rem;
+    }
+
+    .workflow-carousel-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .workflow-carousel {
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 16 / 9;
       border-radius: 8px;
     }
 
-    .accomplishments-column ul {
-      list-style-type: disc;
-      padding-left: 1.2rem;
-      margin-top: 0.5rem;
+    .workflow-carousel-inner {
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+      height: 100%;
     }
 
-    .accomplishments-column ul ul {
-      list-style-type: circle;
-      padding-left: 1.2rem;
-      margin: 0.3rem 0;
+    .carousel-slide {
+      min-width: 100%;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .carousel-slide.active {
+      opacity: 1;
+    }
+
+    .carousel-slide img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.2s;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .carousel-btn-prev {
+      left: -60px;
+    }
+
+    .carousel-btn-next {
+      right: -60px;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      background: #ccc;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .carousel-dot.active {
+      background: #111;
+    }
+
+    /* Gallery thumbnails*/
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .gallery-item {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      cursor: pointer;
+      position: relative;
+      height: 140px;
+    }
+
+    .gallery-item.hidden-thumb {
+      display: none;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.03);
+    }
+
+    .gallery-more-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.4rem;
+      font-weight: bold;
+      pointer-events: none;
+    }
+
+    .gallery-caption {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    /* Lightbox overlay */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 85%;
+      max-height: 80vh;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .lightbox-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      border: none;
+      font-size: 2.5rem;
+      width: 56px;
+      height: 56px;
+      cursor: pointer;
+      transition: background 0.2s;
+      border-radius: 4px;
+    }
+
+    .lightbox-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .lightbox-prev {
+      left: 2rem;
+    }
+
+    .lightbox-next {
+      right: 2rem;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2.5rem;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      line-height: 1;
+    }
+
+    .lightbox-close:hover {
+      opacity: 0.7;
+    }
+
+    .lightbox-counter {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
     }
 
     /* Footer */
@@ -206,6 +463,7 @@
       padding: 1.5rem 0;
     }
 
+    /* Desktop */
     @media (min-width: 768px) {
       body {
         padding: 2rem;
@@ -222,11 +480,6 @@
         font-size: 3rem;
       }
 
-      header .descriptors {
-        font-size: 1.2rem;
-        white-space: nowrap;
-      }
-
       .nav-menu {
         flex-wrap: nowrap;
         border: none;
@@ -236,64 +489,19 @@
       }
 
       .hero {
-        padding: 3rem 0;
-        margin: 2rem 0;
+        padding: 0.5rem 0 1.5rem;
       }
 
       .hero-logo {
-        max-width: 400px;
-        margin: 2rem auto;
-      }
-
-      .hero-subtitle {
-        font-size: 1.4rem;
-      }
-
-      .intro-section,
-      .section {
-        flex-direction: row;
-        gap: 3rem;
-        margin-bottom: 4rem;
-      }
-
-      .section.reverse {
-        flex-direction: row-reverse;
-      }
-
-      .intro-text,
-      .section .text {
-        flex: 1.5;
-        font-size: 1.1rem;
-      }
-
-      .intro-image,
-      .image-group {
-        flex: 1;
-      }
-
-      .image-group.horizontal {
-        flex-direction: row;
-      }
-
-      .image-group.horizontal img {
-        width: calc(50% - 0.5rem);
-      }
-
-      .image-group.grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        max-width: 350px;
       }
 
       .section-divider {
         margin: 3rem 0;
       }
-
-      .accomplishments {
-        flex-direction: row;
-        gap: 2rem;
-      }
     }
 
+    /* Mobile */
     @media (max-width: 768px) {
       .header-content {
         flex-direction: column;
@@ -305,9 +513,9 @@
         align-items: center;
         text-align: center;
         position: static;
-        margin: 0.75rem 0; 
+        margin: 0.75rem 0;
         justify-content: center;
-        gap: 0.8rem; 
+        gap: 0.8rem;
         padding: 0.5rem 0;
         border-top: 1px solid var(--border-color);
         border-bottom: 1px solid var(--border-color);
@@ -315,18 +523,43 @@
         overflow-x: auto;
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
-      }
-
-      .nav-menu {
         font-size: 0.95rem;
       }
 
-      .store-links-container {
-        position: static;
-        margin-top: 1rem;
-        text-align: center;
-        display: flex;
-        justify-content: center;
+      .workflow-carousel-container {
+        max-width: 100%;
+      }
+
+      .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+      }
+
+      .carousel-btn-prev {
+        left: 10px;
+      }
+
+      .carousel-btn-next {
+        right: 10px;
+      }
+
+      .workflow-number-display {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+      }
+
+      .features {
+        flex-direction: column;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .gallery-item {
+        height: 110px;
       }
     }
 
@@ -349,151 +582,196 @@
     <header>
       <div class="header-content">
         <div class="title-container">
-          <h1 id="typed-name"><span id="name-text"></span><span id="cursor">|</span></h1>
+          <div class="title-row">
+            <h1 id="typed-name"><span id="name-text"></span><span id="cursor">|</span></h1>
+            <a href="https://github.com/JoshKraft44/AntlerAddiction" target="_blank" aria-label="GitHub Repository" class="github-link"><i class="fab fa-github"></i></a>
+          </div>
         </div>
         <nav class="nav-menu">
           <a href="index.html">Home</a>
           <a href="index.html#projects">Projects</a>
           <a href="contact.html">Contact</a>
         </nav>
-        <div class="store-links-container">
-          <div class="store-links">
-            visit our <a href="https://antleraddictionab.etsy.com">Etsy</a> | <a href="https://antleraddiction.ca">Shopify</a>
-          </div>
-        </div>
       </div>
     </header>
 
-    <!-- Hero Section -->
-    <div class="hero">
-      <img src="/assets/antler-addiction.JPG" alt="Antler Addiction Logo" class="hero-logo">
-      <p class="hero-subtitle">
-        A sustainable business born from a love for nature, shed hunting and entrepreneurial spirit.
-      </p>
-    </div>
-
-    <!-- Overview Section -->
-    <section class="intro-section">
-      <div class="intro-text">
-        <h2 class="section-heading">Overview</h2>
-        <p>
-          Antler Addiction started in 2021 as a small project, after collecting naturally shed deer antlers on our family ranch during the COVID-19 pandemic. What began as a hobby grew into a business — utilizing unnoticed antlers for purposeful, sustainable products like pet chews and home décor.
-        </p>
+    <!-- Hero -->
+    <section class="hero">
+      <img class="hero-logo" src="/assets/antler-addiction.JPG" alt="Antler Addiction logo">
+      <div class="hero-role">Lead Developer & Co-Founder</div>
+      <div class="store-links">
+        visit our <a href="https://antleraddictionab.etsy.com">Etsy</a> | <a href="https://antleraddiction.ca">Shopify</a>
       </div>
-      <div class="intro-image">
-        <img src="/assets/antler2.JPG" alt="Antler products">
+    </section>
+
+    <!-- Overview -->
+    <section class="overview">
+      <h2 class="section-heading">Project Overview</h2>
+      <p>
+        Antler Addiction is a live, revenue-generating e-commerce business I co-founded in 2021 and continue to operate. We have made over 1000 sales to customers on 4 continents while maintaining a 5.0 star customer rating. I am responsible for the storefront's technical architecture & frontend development, alongside numerous other parts of the business. 
+      </p>
+    </section>
+
+    <!-- Tech Stack -->
+    <section>
+      <h2 class="section-heading">Technologies & Tools</h2>
+      <div class="tech-stack">
+        <div class="tech-item">HTML</div>
+        <div class="tech-item">CSS</div>
+        <div class="tech-item">JavaScript</div>
+        <div class="tech-item">Liquid</div>
+        <div class="tech-item">Shopify CLI</div>
+        <div class="tech-item">Git / GitHub</div>
+      </div>
+      <h2 class="section-heading">Other Skills</h2>
+          <div class="tech-stack">
+        <div class="tech-item">Shipping & Logistics</div>
+        <div class="tech-item">Product Sourcing & Accquisition</div>
+        <div class="tech-item">Professional Communication</div>
+        <div class="tech-item">Internet Marketing & Promotions</div>
+        <div class="tech-item">Product Photography & Interior Design</div>
       </div>
     </section>
 
     <hr class="section-divider">
 
-    <!-- Challenges Section -->
-    <section class="section reverse">
-      <div class="text">
-        <h2>Challenges</h2>
-        <p>
-          The journey has never been free from obstacles, like having to learn how to photograph, price, advertise, and dispatch products effectively. As we grew, we faced other challenges: navigating international wildlife regulations, maintaining star seller designation, and more. 
-        </p>
-      </div>
-      <div class="image-group horizontal">
-        <img src="/assets/antler3.JPG" alt="Challenges">
-        <img src="/assets/antler4.JPG" alt="Challenges">
-      </div>
-    </section>
-
-    <!-- Accomplishments Section -->
     <section>
-      <h2>Accomplishments</h2>
-      <div class="accomplishments">
-        <div class="accomplishments-column">
-          <h3>Contributions</h3>
-          <ul>
-            <li>Helped maintain Etsy's Star Seller badge every month for 4+ years:
-              <ul>
-                <li>4.8+ average rating</li>
-                <li>95% of customer messages answered within 24 hours</li>
-                <li>Fewer than 3 support cases per month</li>
-              </ul>
-            </li>
-            <li>Assisted with Shopify store setup:
-              <ul>
-                <li>Theme and layout configuration</li>
-                <li>Product and listing import</li>
-                <li>App/Extension integrations</li>
-              </ul>
-            </li>
-            <li>Helped complete trademark filing for Antler Addiction, covering antlers, apparel, and other categories</li>
-            <li>Expanded antler sourcing network across Alberta:
-              <ul>
-                <li>Built relationships with sellers in Lethbridge, Canmore, Red Deer, Edmonton, Grand Prairie, and other locations</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="accomplishments-column">
-          <h3>Personal</h3>
-          <ul>
-            <li>Personally fulfilled over 200 orders, for which I:
-              <ul>
-                <li>Handled packing, labeling, shipping, customs documents, and all customer communication</li>
-              </ul>
-            </li>
-            <li>Completed hundreds of E-declarations for U.S. FWS compliance</li>
-            <li>Customized the Shopify frontend:
-              <ul>
-                <li>Included logo in customized sticky smart header via Liquid code</li>
-                <li>Replaced default cart icon with custom design</li>
-                <li>Designed and implemented a custom "About" page, among others</li>
-              </ul>
-              <li>Created a pinterest page that accumulated over 500,000 pin clicks and drove organic growth through social media, driving a 400% growth in sales from social media</li>
-            </li>
-            <li>Designed and constructed an 8' x 4' modular photography stand to simplify photography work, decreasing time to list new items by over 50%</li>
-          </ul>
+      <h2 class="section-heading">Website Showcase</h2>
+
+      <div class="workflow-header">
+        <div class="workflow-step-info">
+          <span class="workflow-number-display" id="stepNumber">1</span>
+          <div class="workflow-text-display">
+            <h3 id="stepTitle">Storefront Homepage</h3>
+            <p id="stepDescription">I developed 100+ line JSON Context Profiles to drive true-to-life AI image generation for some of the most important photos on the site, including on the homepage. This greatly improved view time and customer conversion rate.</p>
+          </div>
         </div>
       </div>
+
+      <div class="workflow-carousel-container">
+        <button class="carousel-btn carousel-btn-prev" id="prevBtn">&#8249;</button>
+        <div class="workflow-carousel">
+          <div class="workflow-carousel-inner" id="carouselInner">
+            <div class="carousel-slide active" data-step="1" data-title="Storefront Homepage" data-description="I developed 100+ line JSON Context Profiles to drive true-to-life AI image generation for some of the most important photos on the site, including on the homepage. This greatly improved view time and customer conversion rate.">
+              <img src="/assets/AntlerAddiction1.jpg" alt="Storefront homepage">
+            </div>
+            <div class="carousel-slide" data-step="2" data-title="Product Pages" data-description="Customm reusable and mobile-friendly store banners developed using Liquid.">
+              <img src="/assets/AntlerAddiction3.jpg" alt="Product page layout">
+            </div>
+            <div class="carousel-slide" data-step="3" data-title="Site Navigation" data-description="I implemented a custom sticky header that would include our logo (which I also created), as well as a dropdown menu for navigation to our product categories.">
+              <img src="/assets/AntlerAddiction8.jpg" alt="logo added to sticky header & sit enav">
+            </div>
+           <div class="carousel-slide" data-step="4" data-title="Mobile Responsiveness" data-description="I payed careful attention to screen sizes when developing front-end componenets to ensure that they would display properly on mobile devices, which make up most of our traffic.">
+              <img src="/assets/AntlerAddiction4.jpg" alt="Mobile responsive design">
+            </div>
+            <div class="carousel-slide" data-step="5" data-title="Contact Form" data-description="Custom contact page with links to important pages.">
+              <img src="/assets/AntlerAddiction6.jpg" alt="Contact form page">
+            </div>
+            <div class="carousel-slide" data-step="6" data-title="Custom Liquid Block" data-description="To show our partnership Ducks Unlimited, I made a reusable Liquid component.">
+              <img src="/assets/AntlerAddiction7.jpg" alt="Liquid block for Ducks unlimited">
+            </div>
+          </div>
+        </div>
+        <button class="carousel-btn carousel-btn-next" id="nextBtn">&#8250;</button>
+      </div>
+
+      <div class="carousel-dots" id="carouselDots"></div>
     </section>
 
-    <!-- What I Learned Section -->
-    <section class="section">
-      <div class="text">
-        <h2>What I Learned</h2>
-        <p>
-          Through this, I developed skills in e-commerce, professional communication, teamwork, and more. Improving store layouts and shipping logic, learning how to drive traffic through social platforms and SEO, and staying accountable each and every day - all while managing a full course load as a student, has been an incredibly fulfilling pursuit. 
-        </p>
-      </div>
-      <div class="image-group horizontal">
-        <img src="/assets/antler5.JPG" alt="Antler product photography">
-        <img src="/assets/antler6.JPG" alt="Antler packaging">
-      </div>
-    </section>
+    <hr class="section-divider">
 
-    <!-- Closing Reflection -->
+    <!-- Technical Work -->
     <section>
-      <h2>Closing Thoughts</h2>
-      <p>
-        Applying myself and sharing a personal passion turned into an entrepreneurial journey - one that continues to challenge and inspire me. 
+      <h2 class="section-heading">Other Technical Work</h2>
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-title">Theme Engineering & Debugging</div>
+          <div class="feature-details">Overrode Shopify Dawn theme defaults without modifying core files. Managed CSS specificity and transforms to prevent UI regressions across browsers.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">Liquid Email Templates</div>
+          <div class="feature-details">Wrote custom Liquid-based email templates for customer communication and marketing campaigns. Ensured consistent branding and reliable rendering across email clients.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">Version Control & Deployment</div>
+          <div class="feature-details">Integrated Shopify theme development with GitHub-based version control. Managed local development workflow and safe production deployments using Shopify CLI tools.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">Performance & UX</div>
+          <div class="feature-details">Audited and optimized large media assets and frontend performance. Refactored layouts into reusable components to reduce code duplication. Iteratively improved UX based on real customer behavior.</div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section> 
+      <h2 class="section-heading">Challenges & Lessons Learned</h2>
+      <p> Building and operating Antler Addiction alongside a full Computer Science course load taught me a lot, and pushed me to apply technical skills in a 
+        production environment with real implications. I learned how even small software decisions affect performance, usability, and business outcomes. 
+        On top of this, this venture has given me countless opportunities to learn and imrpove my ability to communicate professionally, 
+        manage evolving requirements and duties, and maintain a sense of urgency and vision over long timelines. 
       </p>
+
+    <!-- Behind the Scenes Gallery -->
+    <section>
+      <h2 class="section-heading", style=" margin-top: 1.5rem;">Behind the Scenes</h2>
+      <p class="gallery-caption">A selection of photos from this. It's been quite a journey.</p>
+      <div class="gallery" id="btsGallery">
+        <div class="gallery-item" data-index="0">
+          <img src="/assets/AntlerAddiction9.jpg" alt="A full garage" loading="lazy">
+        </div>
+        <div class="gallery-item" data-index="1">
+          <img src="/assets/AntlerAddiction10.jpg" alt="A Good weekend of walking" loading="lazy">
+        </div>
+        <div class="gallery-item" data-index="2">
+          <img src="/assets/AntlerAddiction11.jpg" alt="Co-founders" loading="lazy">
+        </div>
+        <div class="gallery-item" data-index="3">
+          <img src="/assets/AntlerAddiction12.jpg" alt="Raw antler inventory" loading="lazy">
+        </div>
+        <div class="gallery-item" data-index="4">
+          <img src="/assets/AntlerAddiction13.jpg" alt="Packed orders" loading="lazy">
+        </div>
+        <div class="gallery-item" data-index="5">
+          <img src="/assets/AntlerAddiction14.jpg" alt="more packed orders" loading="lazy">
+        </div>
+        <div class="gallery-item" data-index="6">
+          <img src="/assets/AntlerAddiction15.jpg" alt="Packing orders" loading="lazy">
+        </div>
+      </div>
     </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose">&times;</button>
+      <button class="lightbox-btn lightbox-prev" id="lightboxPrev">&#8249;</button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="">
+      <button class="lightbox-btn lightbox-next" id="lightboxNext">&#8250;</button>
+      <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
 
     <!-- Footer -->
     <footer>
       <p>&copy; 2026 Josh Kraft</p>
       <p>
-        <a href="mailto:joshua.kraft@ucalgary.ca">joshua.kraft@ucalgary.ca</a> | 
-        <a href="https://github.com/joshkraft44" target="_blank">GitHub</a> | 
+        <a href="mailto:joshua.kraft@ucalgary.ca">joshua.kraft@ucalgary.ca</a> |
+        <a href="https://github.com/joshkraft44" target="_blank">GitHub</a> |
         <a href="https://linkedin.com/in/josh-kraft" target="_blank">LinkedIn</a>
       </p>
     </footer>
   </div>
+
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Title typing animation
       const name = "Antler Addiction";
       const nameElement = document.getElementById('name-text');
       const cursor = document.getElementById('cursor');
-      
+
       let i = 0;
       const typingSpeed = 70;
-      
+
       function typeWriter() {
         if (i < name.length) {
           nameElement.textContent += name.charAt(i);
@@ -502,15 +780,15 @@
         } else {
           cursor.style.animation = 'blink 1s step-end infinite';
           cursor.style.opacity = '1';
-          
           setTimeout(function() {
             cursor.style.display = 'none';
           }, 1250);
         }
       }
-      
+
       setTimeout(typeWriter, 100);
-      
+
+      // Smooth scroll fr anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
           e.preventDefault();
@@ -518,6 +796,157 @@
             behavior: 'smooth'
           });
         });
+      });
+
+      // Carousel
+      const carouselInner = document.getElementById('carouselInner');
+      const slides = document.querySelectorAll('.carousel-slide');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const dotsContainer = document.getElementById('carouselDots');
+      const stepNumber = document.getElementById('stepNumber');
+      const stepTitle = document.getElementById('stepTitle');
+      const stepDescription = document.getElementById('stepDescription');
+
+      let currentIndex = 0;
+
+      slides.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('carousel-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = document.querySelectorAll('.carousel-dot');
+
+      function updateCarousel() {
+        slides.forEach((slide, index) => {
+          slide.classList.toggle('active', index === currentIndex);
+        });
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
+        });
+        const currentSlide = slides[currentIndex];
+        stepNumber.textContent = currentSlide.dataset.step;
+        stepTitle.textContent = currentSlide.dataset.title;
+        stepDescription.textContent = currentSlide.dataset.description;
+        carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
+      }
+
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
+
+      // Touch swipe
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      carouselInner.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      });
+
+      carouselInner.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchStartX - touchEndX > 50) nextSlide();
+        if (touchEndX - touchStartX > 50) prevSlide();
+      });
+
+      // Keyboard navigation - skip if lightbox is open
+      document.addEventListener('keydown', (e) => {
+        if (document.getElementById('lightbox').classList.contains('active')) return;
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+      });
+
+      // Gallery: collapse to one row with n more overlay
+      const galleryItems = document.querySelectorAll('#btsGallery .gallery-item');
+      const gallerySrcs = Array.from(galleryItems).map(item => item.querySelector('img').src);
+      const galleryAlts = Array.from(galleryItems).map(item => item.querySelector('img').alt);
+      const VISIBLE_COUNT = 4;
+
+      if (galleryItems.length > VISIBLE_COUNT) {
+        const hiddenCount = galleryItems.length - VISIBLE_COUNT;
+        galleryItems.forEach((item, idx) => {
+          if (idx >= VISIBLE_COUNT) item.classList.add('hidden-thumb');
+        });
+        const lastVisible = galleryItems[VISIBLE_COUNT - 1];
+        const overlay = document.createElement('div');
+        overlay.className = 'gallery-more-overlay';
+        overlay.textContent = '+' + (hiddenCount + 1);
+        lastVisible.appendChild(overlay);
+      }
+
+      // Lightbox
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxCounter = document.getElementById('lightboxCounter');
+      let lbIndex = 0;
+
+      function openLightbox(index) {
+        lbIndex = index;
+        updateLightbox();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      function updateLightbox() {
+        lightboxImg.src = gallerySrcs[lbIndex];
+        lightboxImg.alt = galleryAlts[lbIndex];
+        lightboxCounter.textContent = (lbIndex + 1) + ' / ' + gallerySrcs.length;
+      }
+
+      galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const idx = parseInt(item.dataset.index);
+          openLightbox(idx >= VISIBLE_COUNT - 1 && galleryItems.length > VISIBLE_COUNT ? VISIBLE_COUNT - 1 : idx);
+        });
+      });
+
+      document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+      document.getElementById('lightboxPrev').addEventListener('click', () => {
+        lbIndex = (lbIndex - 1 + gallerySrcs.length) % gallerySrcs.length;
+        updateLightbox();
+      });
+      document.getElementById('lightboxNext').addEventListener('click', () => {
+        lbIndex = (lbIndex + 1) % gallerySrcs.length;
+        updateLightbox();
+      });
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') {
+          lbIndex = (lbIndex - 1 + gallerySrcs.length) % gallerySrcs.length;
+          updateLightbox();
+        }
+        if (e.key === 'ArrowRight') {
+          lbIndex = (lbIndex + 1) % gallerySrcs.length;
+          updateLightbox();
+        }
       });
     });
   </script>
