@@ -326,6 +326,32 @@
       }
     }
 
+        .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -416,7 +442,23 @@
           </div>
         </a>
 
-        <!-- Project 4: Recompiled -->
+                <!-- Project 4: Meridian -->
+        <a class="project-card">
+          <div class="project-content">
+            <div class="project-text">
+              <h3>Meridian</h3>
+              <p>
+                An internal dashboard for Antler Addiction - syncing our Etsy and Shopify stores, providing real-time inventory management, product syncing, and collective revenue analytics. 
+              </p>
+              <div class="tech-stack">TypeScript · SvelteKit · Node.js · Prisma · PostgreSQL · Tailwind</div>
+            </div>
+            <div class="project-image" onclick="openLightbox('assets/meridian1.png')">
+              <img src="assets/meridian1.png" alt="Meridian" loading="lazy">
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 5: Recompiled -->
         <a href="recompiled.html" class="project-card">
           <div class="project-content">
             <div class="project-text">
@@ -432,7 +474,7 @@
           </div>
         </a>
 
-        <!-- Project 5: Bus Ticketing Kiosk -->
+        <!-- Project 6: Bus Ticketing Kiosk -->
         <a href="bus-ticketing-kiosk.html" class="project-card">
           <div class="project-content">
             <div class="project-text">
@@ -448,7 +490,7 @@
           </div>
         </a>
 
-                <!-- Project 6: Glance -->
+                <!-- Project 7: Glance -->
         <a class="project-card">
           <div class="project-content">
             <div class="project-text">
@@ -465,7 +507,7 @@
         </a>
       
 
-        <!-- Project 7: Portfolio Website -->
+        <!-- Project 8: Portfolio Website -->
         <a href="index.html" class="project-card">
           <div class="project-content">
             <div class="project-text">
@@ -492,6 +534,11 @@
         <a href="https://linkedin.com/in/josh-kraft" target="_blank">LinkedIn</a>
       </p>
     </footer>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Lightbox Image">
   </div>
 
   <!-- Typing animation script -->
@@ -531,6 +578,26 @@
         });
       });
     });
+
+
+    function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = src;
+    lightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('active');
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+
   </script>
 </body>
 </html>
